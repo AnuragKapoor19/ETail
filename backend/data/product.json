@@ -1,0 +1,63 @@
+[
+    {
+        "name": "SD card",
+        "price": "5",
+        "description": "This is the fastest Sd card which can store data upto 256gb.It is manufactured by Samsung",
+        "rating": "4",
+        "images": {
+            "public_id": "Image1",
+            "url": "https://m.media-amazon.com/images/I/61KjEWhIi2L.jpg"
+        },
+        "category": "Electronics",
+        "seller": "Samsung",
+        "stock": "100"
+    },
+    {
+        "name": "Hp Pr0book 650 G2",
+        "price": "60",
+        "description": "It looks like the ProBook 650 G1 was released at the end of 2013, while the G2 was released sometime in mid 2016 – maybe mid-year or so.",
+        "rating": "5",
+        "images": [{
+            "public_id": "Image1",
+            "url": "https://m.media-amazon.com/images/I/61yO+DLQrtL.jpg"
+        },{
+          "public_id": "Image2",
+            "url": "https://www.v5itsolution.in/wp-content/uploads/2023/08/6-.jpg"  
+        },{
+            "public_id": "Image3",
+            "url": "https://images-cdn.ubuy.co.in/6528cad754bfbf1eb8644739-used-hp-probook-650-g2-15-6-fhd.jpg"
+        },{
+            "public_id": "Image4",
+            "url": "https://www.sunraysystems.in/wp-content/uploads/2022/12/WhatsApp-Image-2022-12-31-at-12.05.59-PM.jpeg"
+        }],
+        "category": "Laptop",
+        "seller": "HP",
+        "stock": "250"
+    },
+    {
+        "name": "Woolen Clothes",
+        "price": "1.5",
+        "description": "Being an eminent organization in the industry, we are involved in providing a premium quality range of Mens Brown Sweater.",
+        "rating": "3.5",
+        "images": {
+            "public_id": "Image1",
+            "url": "https://5.imimg.com/data5/RN/GL/MY-15916330/woolen-sweaters-500x500.jpg"
+        },
+        "category": "Clothes",
+        "seller": "Adidas",
+        "stock": "50"
+    },
+    {
+        "name": "Cricket Bat Full Size",
+        "price": "2",
+        "description": "Flat Face profile levels out the striking area allowing more mass to be retained in the back and edges of the bat.",
+        "rating": "4.4",
+        "images": {
+            "public_id": "Image1",
+            "url": "https://sppartos.com/cdn/shop/files/bats_new_1200x1200.png?v=1704543046"
+        },
+        "category": "Sports",
+        "seller": "SS",
+        "stock": "78"
+    }
+]
