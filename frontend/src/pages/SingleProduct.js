@@ -1,14 +1,61 @@
-import React, { useState } from 'react'
-import { IoIosStarOutline } from "react-icons/io";
+import React, { useEffect, useState } from 'react'
+import { IoIosStar, IoIosStarOutline } from "react-icons/io";
 import SyncLoader from "react-spinners/SyncLoader";
 import { ContextState } from '../contextAPI';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export default function SingleProduct() {
-    const { product, setcartItems, cartItems } = ContextState();
+    const { product, setcartItems, cartItems, user, rating, setrating } = ContextState();
     const [loading, setloading] = useState(true);
     const [quantity, setQuantity] = useState(1);
+    const [comment, setcomment] = useState('')
+    const [ratingValue, setratingValue] = useState('')
+
+    const handleSubmit = async () => {
+        try {
+            if (!rating || !comment) {
+                return alert('Please enter rating and comment')
+            }
+            const res = await fetch('http://localhost:5000/api/v1/new/review', {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                credentials: 'include',
+                body: JSON.stringify({ rating: rating, comment: comment, productId: product._id })
+            })
+
+            const data = await res.json()
+
+            if (!data.success) {
+                return console.log(data.error || data.message)
+            }
+
+        } catch (error) {
+            console.log(error.message)
+        }
+    }
+
+    const handleClick = (index) => {
+        setrating(index + 1)
+    }
+
+    const handleRatingValue = () => {
+        switch (rating) {
+            case 1: setratingValue('Poor'); break;
+            case 2: setratingValue('Fair'); break;
+            case 3: setratingValue('Good'); break;
+            case 4: setratingValue('Very Good'); break;
+            case 5: setratingValue('Excellent'); break;
+            default: break;
+        }
+    }
+
+    useEffect(() => {
+        handleRatingValue()
+        //eslint-disable-next-line
+    }, [rating])
 
 
     setTimeout(() => {
@@ -129,11 +176,21 @@ export default function SingleProduct() {
                         <hr />
 
                         <div className='ratings mt-auto'>
-                            <IoIosStarOutline size='1.5rem' style={{ cursor: "pointer" }} />
-                            <IoIosStarOutline size='1.5rem' style={{ cursor: "pointer" }} />
-                            <IoIosStarOutline size='1.5rem' style={{ cursor: "pointer" }} />
-                            <IoIosStarOutline size='1.5rem' style={{ cursor: "pointer" }} />
-                            <IoIosStarOutline size='1.5rem' style={{ cursor: "pointer" }} />
+                            {
+                                (() => {
+                                    const stars = []
+                                    for (let i = 1; i <= 5; i++) {
+                                        if (i <= Math.floor(product.ratings)) {
+                                            stars.push(<IoIosStar size='1.5rem' color='orange' style={{ cursor: "pointer" }} />)
+                                        }
+                                        else {
+                                            stars.push(<IoIosStarOutline size='1.5rem' color='orange' style={{ cursor: "pointer" }} />)
+                                        }
+                                    }
+                                    return stars
+                                })
+                                    ()
+                            }
                             <span id='no_of_reviews' className='h6'>({product.numofReviews} Review)</span>
                         </div>
 
@@ -168,10 +225,48 @@ export default function SingleProduct() {
                             Sold By: <b>{product.seller}</b>
                         </div>
 
+                        <hr />
+
+                        {product.reviews
+                            ? <h4>{product.reviews.length} reviews for Ship Your Idea</h4>
+                            : ''
+                        }
+
+                        {product.reviews && product.reviews.map((review) => (
+                            <div className='reviews my-4'>
+                                <div className='stars'>
+                                    {
+                                        (() => {
+                                            const stars = []
+                                            for (let i = 1; i <= 5; i++) {
+                                                if (i <= Math.floor(review.rating)) {
+                                                    stars.push(<IoIosStar size='1rem' color='orange' style={{ cursor: "pointer" }} />)
+                                                }
+                                                else {
+                                                    stars.push(<IoIosStarOutline size='1rem' color='orange' style={{ cursor: "pointer" }} />)
+                                                }
+                                            }
+                                            return stars
+                                        })
+                                            ()
+                                    }
+                                </div>
+                                <span className='fw-bold'>{review.name}</span>
+                                <p className='mt-3'>{review.comment}</p>
+                            </div>
+                        ))}
+
                         <div className="submitReview mt-5">
-                            <button type="button" className="btn btn-warning rounded-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                Submit Your Review
-                            </button>
+                            {!user
+                                ?
+                                <button type="button" className="btn btn-warning">
+                                    Login to post a Review
+                                </button>
+                                :
+                                <button type="button" className="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Add review
+                                </button>
+                            }
 
                             <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div className="modal-dialog modal-dialog-centered">
@@ -181,18 +276,47 @@ export default function SingleProduct() {
                                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div className="modal-body">
-                                            <div className="stars">
-                                                <IoIosStarOutline size='2rem' style={{ cursor: "pointer" }} />
-                                                <IoIosStarOutline size='2rem' style={{ cursor: "pointer" }} />
-                                                <IoIosStarOutline size='2rem' style={{ cursor: "pointer" }} />
-                                                <IoIosStarOutline size='2rem' style={{ cursor: "pointer" }} />
-                                                <IoIosStarOutline size='2rem' style={{ cursor: "pointer" }} />
+                                            <div className='d-flex justify-content-between'>
+                                                <div className='col-3'>
+                                                    <img src={product.images[0].url} alt={product.name} className='w-100' />
+                                                </div>
+                                                <div className='col-10 ms-3 d-flex justify-content-center flex-column'>
+                                                    <div className='fw-bold mb-1 fs-4'>{product.name}</div>
+                                                    <div className="stars d-flex justify-content-between me-5">
+                                                        {[...Array(5)].map((_, index) => (
+                                                            <div>
+                                                                {
+                                                                    index >= rating
+                                                                        ? <IoIosStarOutline size='2.5rem' color='orange' style={{ cursor: "pointer" }} onClick={() => handleClick(index)} />
+                                                                        : <IoIosStar size='2.5rem' color='orange' style={{ cursor: "pointer" }} onClick={() => handleClick(index)} />
+                                                                }
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                    <span className='text-center col-10 fw-bolder text-warning mt-2'>{ratingValue}</span>
+                                                </div>
                                             </div>
 
-                                            <textarea rows="5" cols="60" style={{ overflow: "auto", resize: "none", margin: "10px 0", padding: "5px" }}></textarea>
+                                            <label htmlFor='description' className='fw-bold mt-3'>Description</label>
+                                            <textarea id='description' className='rounded' rows="5" cols="60" value={comment} onChange={(e) => setcomment(e.target.value)} style={{ overflow: "auto", resize: "none", margin: "10px 0", padding: "5px" }}></textarea>
+
+                                            {user &&
+                                                <div className='user-profile'>
+                                                    <div className='fw-bold mt-3'>Your Profile</div>
+                                                    <div className='d-flex flex-column'>
+                                                        <label htmlFor='name'>Name</label>
+                                                        <input type='text' value={user.name} className='rounded fw-bold px-2' readOnly />
+                                                    </div>
+
+                                                    <div className='d-flex flex-column mt-3'>
+                                                        <label htmlFor='email'>Email</label>
+                                                        <input type='text' value={user.email} className='rounded fw-bold px-2' readOnly />
+                                                    </div>
+                                                </div>
+                                            }
                                         </div>
                                         <div className="modal-footer">
-                                            <button type="button" className="btn btn-warning">Submit</button>
+                                            <button type="button" className="btn btn-warning" data-bs-dismiss="modal" aria-label="Close" onClick={handleSubmit}>Submit</button>
                                         </div>
                                     </div>
                                 </div>

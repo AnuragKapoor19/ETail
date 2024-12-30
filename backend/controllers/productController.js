@@ -41,7 +41,7 @@ const getProducts = async (req, res) => {
             success: 'true',
             count: products.length,  //Toatl products fetched at a time
             productCount,            //Total number of products in database
-            resPerPage,   
+            resPerPage,
             products: products
         })
     } catch (error) {
@@ -142,7 +142,7 @@ const createProductReview = async (req, res) => {
         if (!product) {
             return res.status(400).json({
                 success: false,
-                message: "Product not found"
+                message: `Product not found with id ${productId}`
             })
         }
 

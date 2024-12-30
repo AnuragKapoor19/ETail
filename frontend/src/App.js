@@ -53,7 +53,7 @@ function App() {
       credentials: 'include'
     })
     const data = await res.json();
-    setstripeApiKey(data.stripeApiKey)
+    setstripeApiKey(String(data.stripeApiKey))
   }
 
   useEffect(() => {

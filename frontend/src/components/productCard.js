@@ -1,10 +1,10 @@
 import React from 'react'
-import { IoIosStarOutline } from "react-icons/io";
+import { IoIosStar, IoIosStarOutline } from "react-icons/io";
 import { ContextState } from '../contextAPI';
 import { useNavigate } from 'react-router-dom';
 
 export default function ProductCard({ product }) {
-    const { setproduct } = ContextState();
+    const { setproduct} = ContextState();
     const navigate = useNavigate()
 
     const getProductDetails = async (productId) => {
@@ -28,8 +28,6 @@ export default function ProductCard({ product }) {
         }
     }
 
-
-
     return (
         <>
             <div key={product._id} className='col col-sm-12 col-md-6 col-lg-3 col-xl-3 my-3 z-0'>
@@ -40,11 +38,21 @@ export default function ProductCard({ product }) {
                             {product.name}
                         </h5>
                         <div className='ratings mt-auto'>
-                            <IoIosStarOutline size='1.5rem' style={{ cursor: "pointer" }} />
-                            <IoIosStarOutline size='1.5rem' style={{ cursor: "pointer" }} />
-                            <IoIosStarOutline size='1.5rem' style={{ cursor: "pointer" }} />
-                            <IoIosStarOutline size='1.5rem' style={{ cursor: "pointer" }} />
-                            <IoIosStarOutline size='1.5rem' style={{ cursor: "pointer" }} />
+                            {
+                                (() => {
+                                    const stars = []
+                                    for (let i = 1; i <= 5; i++) {
+                                        if (i <= Math.floor(product.ratings)) {
+                                            stars.push(<IoIosStar size='1.5rem' color='orange' style={{ cursor: "pointer" }} />)
+                                        }
+                                        else {
+                                            stars.push(<IoIosStarOutline size='1.5rem' color='orange' style={{ cursor: "pointer" }} />)
+                                        }
+                                    }
+                                    return stars
+                                })
+                                    ()
+                            }
                             <span id='no_of_reviews' className='h6'>({product.numofReviews} Review)</span>
                         </div>
                         <p className="card-text my-2 h5">${product.price}</p>
