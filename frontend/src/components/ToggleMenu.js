@@ -32,7 +32,7 @@ export default function ToggleMenu() {
                 <div className="links d-flex flex-column">
                     <Link className='text-light text-decoration-none m-3 h5' to='/me/profile' onClick={() => settoggle(false)}>Profile</Link>
                     {user.role === 'admin'
-                        ? <Link className='text-light text-decoration-none m-3 h5' to='/'>Dashboard</Link>
+                        ? <Link className='text-light text-decoration-none m-3 h5' to='/admin/dashboard' onClick={() => settoggle(false)}>Dashboard</Link>
                         : ''
                     }
                     <Link className='text-light text-decoration-none m-3 h5' to='/my/orders' onClick={() => settoggle(false)}>Orders</Link>

@@ -23,9 +23,10 @@ import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import Orders from './pages/Orders';
 import SingleOrder from './pages/SingleOrder';
+import Dasboard from './pages/Dasboard';
 
 function App() {
-  const { setuser, setisAuthenticated, isAuthenticated, isUpdated } = ContextState();
+  const { setuser, setisAuthenticated, isAuthenticated, isUpdated, user } = ContextState();
   const [stripeApiKey, setstripeApiKey] = useState('')
 
   const getUserProfile = async () => {
@@ -67,29 +68,25 @@ function App() {
       <Elements stripe={loadStripe(stripeApiKey)}>
         <Router>
           <Routes>
-            <Route exact path='/' element={<Home />}></Route>
-            <Route exact path='/productdetails' element={<SingleProduct />}></Route>
-            <Route exact path='/login' element={<Login />}></Route>
-            <Route exact path='/signin' element={<Signin />}></Route>
-            <Route exact path='/resetpassword' element={<ResetPassword />}></Route>
-            <Route exact path='/password/reset/:token' element={<ResetPassword />}></Route>
-            <Route exact path='/forgotpassword' element={<ForgotPassword />}></Route>
+            <Route exact path='/' element={<Home />} />
+            <Route exact path='/productdetails' element={<SingleProduct />} />
+            <Route exact path='/login' element={<Login />} />
+            <Route exact path='/signin' element={<Signin />} />
+            <Route exact path='/resetpassword' element={<ResetPassword />} />
+            <Route exact path='/password/reset/:token' element={<ResetPassword />} />
+            <Route exact path='/forgotpassword' element={<ForgotPassword />} />
             {isAuthenticated
               ?
               <>
-                <Route exact path='/cart' element={<Cart />}></Route>
-                <Route exact path='/me/profile' element={<Profile />}></Route>
-                <Route exact path='/me/updateprofile' element={<UpdateProfile />}></Route>
-                <Route exact path='/shipping' element={<ShippingForm />}></Route>
-                <Route exact path='/confirm/order' element={<ConfirmOrder />}></Route>
-                <Route exact path='/my/orders' element={<Orders />}></Route>
-                <Route exact path='/order/:id' element={<SingleOrder />}></Route>
-                {stripeApiKey
-                  ?
-                  <Route exact path='/payment' element={<Payment />}></Route>
-                  :
-                  ''
-                }
+                <Route exact path='/cart' element={<Cart />} />
+                <Route exact path='/me/profile' element={<Profile />} />
+                <Route exact path='/me/updateprofile' element={<UpdateProfile />} />
+                <Route exact path='/shipping' element={<ShippingForm />} />
+                <Route exact path='/confirm/order' element={<ConfirmOrder />} />
+                <Route exact path='/my/orders' element={<Orders />} />
+                <Route exact path='/order/:id' element={<SingleOrder />} />
+                {stripeApiKey && <Route exact path='/payment' element={<Payment />} />}
+                {user.role === 'admin' && <Route exact path='/admin/dashboard' element={<Dasboard />} />}
               </>
               :
               ''
