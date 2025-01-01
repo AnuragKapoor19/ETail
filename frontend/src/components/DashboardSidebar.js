@@ -25,7 +25,7 @@ export default function DashboardSidebar() {
             <span onClick={handleClick} className='text-light fw-bold fs-5'><FaProductHunt /> Products <TiArrowSortedDown /></span>
             {dropdown &&
               <div className='d-flex flex-column ms-3 mt-2 align-items-start'>
-                <Link to='/admin/dashboard' className='text-decoration-none text-light fw-bold fs-5'><FaBorderAll /> All</Link>
+                <Link to='/admin/products' className='text-decoration-none text-light fw-bold fs-5'><FaBorderAll /> All</Link>
                 <Link to='/admin/dashboard' className='text-decoration-none text-light fw-bold fs-5'><FaPlus /> Create</Link>
               </div>
             }

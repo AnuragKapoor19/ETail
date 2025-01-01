@@ -28,7 +28,7 @@ export default function Orders() {
     return (
         <>
             <Header />
-            <div className='orders-container d-flex justify-content-center my-4' style={{ height: "90vh" }}>
+            <div className='orders-container d-flex justify-content-center my-4'>
                 <div className='col-10 p-2 border border-5 rounded text-center'>
                     <h3 className='mb-5'>My Orders</h3>
                     <table className='w-100' cellPadding="5px" style={{ overflow: "scroll" }}>

@@ -1,3 +1,4 @@
+const productModel = require("../models/productModel");
 const Product = require("../models/productModel");
 const APIFeatures = require("../utils/apiFeatures");
 const ErrorHandler = require("../utils/errorHandler");
@@ -242,4 +243,29 @@ const deleteReview = async (req, res) => {
 
 }
 
-module.exports = { getProducts, newProduct, getSingleProduct, updateProduct, deleteProduct, createProductReview, getProductReviews, deleteReview }
+//Get Admin Products
+const getAdminProducts = async (req, res) => {
+
+    try {
+        const products = await Product.find();
+
+        if (!products) {
+            res.status(400).json({
+                success: false,
+                message: "No Product Found"
+            })
+        }
+
+        res.status(200).json({
+            success: 'true',
+            products
+        })
+    } catch (error) {
+        res.status(400).json({
+            success: false,
+            message: error.message
+        })
+    }
+}
+
+module.exports = { getProducts, newProduct, getSingleProduct, updateProduct, deleteProduct, createProductReview, getProductReviews, deleteReview , getAdminProducts}

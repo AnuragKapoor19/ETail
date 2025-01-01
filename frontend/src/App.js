@@ -24,6 +24,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import Orders from './pages/Orders';
 import SingleOrder from './pages/SingleOrder';
 import Dasboard from './pages/Dasboard';
+import AdminProducts from './pages/AdminProducts';
 
 function App() {
   const { setuser, setisAuthenticated, isAuthenticated, isUpdated, user } = ContextState();
@@ -86,7 +87,15 @@ function App() {
                 <Route exact path='/my/orders' element={<Orders />} />
                 <Route exact path='/order/:id' element={<SingleOrder />} />
                 {stripeApiKey && <Route exact path='/payment' element={<Payment />} />}
-                {user.role === 'admin' && <Route exact path='/admin/dashboard' element={<Dasboard />} />}
+                {user.role === 'admin'
+                  ?
+                  <>
+                    <Route exact path='/admin/dashboard' element={<Dasboard />} />
+                    <Route exact path='/admin/products' element={<AdminProducts />} />
+                  </>
+                  :
+                  ''
+                }
               </>
               :
               ''
