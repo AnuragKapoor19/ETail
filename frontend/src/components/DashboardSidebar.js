@@ -14,7 +14,7 @@ export default function DashboardSidebar() {
 
   return (
     <>
-      <div className='col-sm-3 col-md-2 col-lg-2 me-3 bg-dark text-light sidebar text-center' style={{ height: '100vh' }}>
+      <div className='col-sm-3 col-md-2 col-lg-2 me-3 bg-dark text-light sidebar text-center' style={{ minHeight: '100vh' }}>
         <ul className='mt-5 d-flex align-items-start flex-column' style={{ listStyle: 'none', cursor: 'pointer' }}>
 
           <li className='my-3' onClick={() => setdropdown(false)}>
@@ -26,7 +26,7 @@ export default function DashboardSidebar() {
             {dropdown &&
               <div className='d-flex flex-column ms-3 mt-2 align-items-start'>
                 <Link to='/admin/products' className='text-decoration-none text-light fw-bold fs-5'><FaBorderAll /> All</Link>
-                <Link to='/admin/dashboard' className='text-decoration-none text-light fw-bold fs-5'><FaPlus /> Create</Link>
+                <Link to='/admin/new/product' className='text-decoration-none text-light fw-bold fs-5'><FaPlus /> Create</Link>
               </div>
             }
           </li>

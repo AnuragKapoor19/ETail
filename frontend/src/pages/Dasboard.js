@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { FaChevronRight } from "react-icons/fa";
 import Header from '../components/Header'
@@ -6,14 +6,34 @@ import DashboardSidebar from '../components/DashboardSidebar';
 import { ContextState } from '../contextAPI';
 
 export default function Dasboard() {
-    const { adminProducts } = ContextState();
+    const { adminProducts, setadminProducts } = ContextState();
     let outOfStock = 0;
 
     adminProducts.forEach(product => {
-        if(product.stock === 0){
-            outOfStock +=1
+        if (product.stock === 0) {
+            outOfStock += 1
         }
     });
+
+    const getAdminProducts = async () => {
+        const res = await fetch('http://localhost:5000/api/v1/admin/products', {
+            method: 'GET',
+            credentials: 'include'
+        })
+
+        const data = await res.json()
+
+        if (!data.success) {
+            return console.log(data.error || data.message)
+        }
+
+        setadminProducts(data.products)
+    }
+
+    useEffect(() => {
+        getAdminProducts()
+        //eslint-disable-next-line
+    }, [])
 
     return (
         <>

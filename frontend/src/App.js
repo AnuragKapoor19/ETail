@@ -25,6 +25,7 @@ import Orders from './pages/Orders';
 import SingleOrder from './pages/SingleOrder';
 import Dasboard from './pages/Dasboard';
 import AdminProducts from './pages/AdminProducts';
+import AdminCreateProduct from './pages/AdminCreateProduct';
 
 function App() {
   const { setuser, setisAuthenticated, isAuthenticated, isUpdated, user } = ContextState();
@@ -92,6 +93,7 @@ function App() {
                   <>
                     <Route exact path='/admin/dashboard' element={<Dasboard />} />
                     <Route exact path='/admin/products' element={<AdminProducts />} />
+                    <Route exact path='/admin/new/product' element={<AdminCreateProduct />} />
                   </>
                   :
                   ''

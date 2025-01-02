@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Header from '../components/Header'
 import { MdEdit } from "react-icons/md";
 import { IoTrashBin } from "react-icons/io5";
@@ -7,27 +7,7 @@ import DashboardSidebar from '../components/DashboardSidebar';
 import { ContextState } from '../contextAPI';
 
 export default function AdminProducts() {
-    const { adminProducts, setadminProducts } = ContextState()
-
-    const getAdminProducts = async () => {
-        const res = await fetch('http://localhost:5000/api/v1/admin/products', {
-            method: 'GET',
-            credentials: 'include'
-        })
-
-        const data = await res.json()
-
-        if (!data.success) {
-            return console.log(data.error || data.message)
-        }
-
-        setadminProducts(data.products)
-    }
-
-    useEffect(() => {
-        getAdminProducts()
-        //eslint-disable-next-line
-    }, [])
+    const { adminProducts } = ContextState()
 
     return (
         <>
