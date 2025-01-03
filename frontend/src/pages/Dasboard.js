@@ -6,7 +6,7 @@ import DashboardSidebar from '../components/DashboardSidebar';
 import { ContextState } from '../contextAPI';
 
 export default function Dasboard() {
-    const { adminProducts, setadminProducts } = ContextState();
+    const { adminProducts, setadminProducts, isProductDeleted, isProductUpdated } = ContextState();
     let outOfStock = 0;
 
     adminProducts.forEach(product => {
@@ -33,7 +33,7 @@ export default function Dasboard() {
     useEffect(() => {
         getAdminProducts()
         //eslint-disable-next-line
-    }, [])
+    }, [isProductDeleted, isProductUpdated])
 
     return (
         <>

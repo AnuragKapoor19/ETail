@@ -1,13 +1,32 @@
-const productModel = require("../models/productModel");
 const Product = require("../models/productModel");
 const APIFeatures = require("../utils/apiFeatures");
-const ErrorHandler = require("../utils/errorHandler");
+const cloudinary = require('cloudinary')
 
 //Create new product
 const newProduct = async (req, res) => {
 
     try {
+        let images = [];
+        if (typeof req.body.images === 'String') {
+            images.push(req.body.images)
+        } else {
+            images = req.body.images
+        }
 
+        let imageLinks = [];
+
+        for (let i = 0; i < images.length; i++) {
+            const result = await cloudinary.v2.uploader.upload(images[i], {
+                folder: 'products'
+            })
+
+            imageLinks.push({
+                public_id: result.public_id,
+                url: result.secure_url
+            })
+        }
+
+        req.body.images = imageLinks
         req.body.user = req.user.id;
 
         const product = await Product.create(req.body);
@@ -54,13 +73,16 @@ const getProducts = async (req, res) => {
 }
 
 //Get Single Product
-const getSingleProduct = async (req, res, next) => {
+const getSingleProduct = async (req, res) => {
 
     try {
         let product = await Product.findById(req.params.id)
 
         if (!product) {
-            return next(new ErrorHandler("Product Not Found", 404))
+            return res.status(404).json({
+                success: false,
+                message: 'Product not found'
+            })
         }
         else {
             res.status(200).json({
@@ -83,16 +105,45 @@ const updateProduct = async (req, res) => {
         let product = await Product.findById(req.params.id)
 
         if (!product) {
-            return next(new ErrorHandler("Product Not Found", 404))
-        }
-        else {
-            product = await Product.findByIdAndUpdate(req.params.id, req.body)
-
-            res.status(200).json({
-                success: true,
-                product: product
+            return res.status(404).json({
+                success: false,
+                message: 'Product not found'
             })
         }
+
+        let images = []
+
+        if (req.body.images !== '') {
+            for(let i=0;i<product.images.length;i++){
+                await cloudinary.v2.uploader.destroy(product.images[i].public_id)
+            }
+            if (typeof req.body.images === 'String') {
+                images.push = req.body.images
+            }else{
+                images = req.body.images
+            }
+        }
+
+        let imageLinks = [];
+
+        for (let i = 0; i < images.length; i++) {
+            const result = await cloudinary.v2.uploader.upload(images[i], {
+                folder: 'products'
+            })
+
+            imageLinks.push({
+                public_id: result.public_id,
+                url: result.secure_url
+            })
+        }
+
+        req.body.images = imageLinks
+
+        product = await Product.findByIdAndUpdate(req.params.id, req.body)
+
+        res.status(200).json({
+            success: true,
+        })
     } catch (error) {
         res.status(400).json({
             success: false,
@@ -108,16 +159,23 @@ const deleteProduct = async (req, res) => {
         let product = await Product.findById(req.params.id)
 
         if (!product) {
-            return next(new ErrorHandler("Product Not Found", 404))
-        }
-        else {
-            await product.remove();
-
-            res.status(200).json({
-                success: true,
-                message: "Product Deleted!"
+            return res.status(404).json({
+                success: false,
+                message: 'Product not found'
             })
         }
+
+        for (let i = 0; i < product.images.length; i++) {
+            await cloudinary.v2.uploader.destroy(product.images[i].public_id)
+        }
+
+        await Product.findByIdAndDelete(req.params.id)
+
+        res.status(200).json({
+            success: true,
+            message: "Product Deleted!"
+        })
+
     } catch (error) {
         res.status(400).json({
             success: false,
@@ -268,4 +326,4 @@ const getAdminProducts = async (req, res) => {
     }
 }
 
-module.exports = { getProducts, newProduct, getSingleProduct, updateProduct, deleteProduct, createProductReview, getProductReviews, deleteReview , getAdminProducts}
+module.exports = { getProducts, newProduct, getSingleProduct, updateProduct, deleteProduct, createProductReview, getProductReviews, deleteReview, getAdminProducts }

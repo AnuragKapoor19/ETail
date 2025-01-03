@@ -22,6 +22,9 @@ const ContextProvider = ({ children }) => {
     const [shippingInfo, setshippingInfo] = useState(localStorage.getItem('shippingInfo')? JSON.parse(localStorage.getItem('shippingInfo')): {})
     const [rating, setrating] = useState(0)
     const [adminProducts, setadminProducts] = useState([])
+    const [isProductDeleted, setisProductDeleted] = useState(false)
+    const [isProductUpdated, setisProductUpdated] = useState(false)
+    const [editProduct, seteditProduct] = useState()
     
     return (
         <Context.Provider value={{ 
@@ -60,7 +63,13 @@ const ContextProvider = ({ children }) => {
             rating,
             setrating,
             adminProducts,
-            setadminProducts
+            setadminProducts,
+            isProductDeleted,
+            setisProductDeleted,
+            isProductUpdated,
+            setisProductUpdated,
+            editProduct,
+            seteditProduct
              }}
         >
             {children}

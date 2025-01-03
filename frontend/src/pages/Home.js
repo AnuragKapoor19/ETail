@@ -8,7 +8,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export default function Home() {
-    const { products, setproducts, setresPerPage, setproductsCount, currentPage, loading, setloading, keyword, minPrice, maxPrice , category, settoggle, isAuthenticated} = ContextState();
+    const { products, setproducts, setresPerPage, setproductsCount, currentPage, loading, setloading, keyword, minPrice, maxPrice , category, settoggle, isAuthenticated, isProductDeleted, isProductUpdated} = ContextState();
 
     const getAllProducts = async () => {
         try {
@@ -45,7 +45,7 @@ export default function Home() {
     useEffect(() => {
         getAllProducts();
         // eslint-disable-next-line
-    }, [currentPage, keyword, maxPrice, minPrice, category, isAuthenticated, loading])
+    }, [currentPage, keyword, maxPrice, minPrice, category, isAuthenticated, loading, isProductDeleted, isProductUpdated])
 
     return (
         <>

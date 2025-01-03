@@ -27,9 +27,9 @@ app.use(cors({
     credentials: true    //Accept cookies
 }))
 
-app.use(express.json())
+app.use(express.json({ limit: "50mb" }))
 
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }))
 
 //Setting up cloudibary
 cloudinary.config({
@@ -45,7 +45,7 @@ app.use('/api/v1', require('./routes/userRoutes'))
 
 app.use('/api/v1', require('./routes/orderRoutes'))
 
-app.use('/api/v1',require('./routes/paymentRoutes'))
+app.use('/api/v1', require('./routes/paymentRoutes'))
 
 app.use(errorMiddleware)
 
