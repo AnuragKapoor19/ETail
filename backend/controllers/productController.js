@@ -111,33 +111,40 @@ const updateProduct = async (req, res) => {
             })
         }
 
-        let images = []
+        if (req.body.images.length !== 0) {
+            let images = []
 
-        if (req.body.images !== '') {
-            for(let i=0;i<product.images.length;i++){
-                await cloudinary.v2.uploader.destroy(product.images[i].public_id)
+            for (let i = 0; i < product.images.length; i++) {
+                try {
+                    await cloudinary.v2.uploader.destroy(product.images[i].public_id)
+                } catch (error) {
+                    console.log(error.message)
+                }
             }
+
             if (typeof req.body.images === 'String') {
                 images.push = req.body.images
-            }else{
+            } else {
                 images = req.body.images
             }
+
+            let imageLinks = [];
+
+            for (let i = 0; i < images.length; i++) {
+                const result = await cloudinary.v2.uploader.upload(images[i], {
+                    folder: 'products'
+                })
+
+                imageLinks.push({
+                    public_id: result.public_id,
+                    url: result.secure_url
+                })
+            }
+
+            req.body.images = imageLinks
+        }else{
+            req.body.images = undefined
         }
-
-        let imageLinks = [];
-
-        for (let i = 0; i < images.length; i++) {
-            const result = await cloudinary.v2.uploader.upload(images[i], {
-                folder: 'products'
-            })
-
-            imageLinks.push({
-                public_id: result.public_id,
-                url: result.secure_url
-            })
-        }
-
-        req.body.images = imageLinks
 
         product = await Product.findByIdAndUpdate(req.params.id, req.body)
 
@@ -147,7 +154,8 @@ const updateProduct = async (req, res) => {
     } catch (error) {
         res.status(400).json({
             success: false,
-            message: error.message
+            message: req.body.images,
+            error: error
         })
     }
 }

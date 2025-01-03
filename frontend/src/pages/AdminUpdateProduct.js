@@ -5,7 +5,7 @@ import { ContextState } from '../contextAPI'
 import Header from '../components/Header';
 
 export default function AdminUpdateProduct() {
-    const { editProduct , setisProductUpdated} = ContextState();
+    const { editProduct, setisProductUpdated } = ContextState();
     const { id } = useParams()
     const [updateDetails, setupdateDetails] = useState({ name: editProduct ? editProduct.name : '', price: editProduct ? editProduct.price : 0, description: editProduct ? editProduct.description : '', seller: editProduct ? editProduct.seller : '', stock: editProduct ? editProduct.stock : 0, category: editProduct ? editProduct.category : '' })
     const [images, setimages] = useState([])
@@ -60,7 +60,7 @@ export default function AdminUpdateProduct() {
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({ name: updateDetails.name, price: updateDetails.price, description: updateDetails.description, seller: updateDetails.seller, stock: updateDetails.stock, category: updateDetails.category , images: images.length >=1 ? images : ''})
+                body: JSON.stringify({ name: updateDetails.name, price: updateDetails.price, description: updateDetails.description, seller: updateDetails.seller, stock: updateDetails.stock, category: updateDetails.category, images: images })
             })
 
             const data = await res.json()
