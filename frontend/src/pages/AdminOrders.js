@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../components/Header'
 import { Link } from 'react-router-dom'
 import DashboardSidebar from '../components/DashboardSidebar'
-import { MdEdit } from 'react-icons/md'
 import { IoTrashBin } from "react-icons/io5";
 import { ContextState } from '../contextAPI'
+import { FcProcess } from "react-icons/fc";
 
 export default function AdminOrders() {
-    const { adminOrders, setadminOrders } = ContextState();
+    const { adminOrders, setadminOrders, isOrderUpdated } = ContextState();
 
     const getAllorders = async () => {
         try {
@@ -27,6 +27,11 @@ export default function AdminOrders() {
     if (adminOrders.length === 0) {
         getAllorders();
     }
+
+    useEffect(() => {
+        getAllorders()
+        //eslint-disable-next-line
+    }, [isOrderUpdated])
 
     return (
         <>
@@ -55,7 +60,7 @@ export default function AdminOrders() {
                                         <td>${order.totalPrice}</td>
                                         <td>{order.orderStatus}</td>
                                         <td>
-                                            <Link to={`/admim/orders`} className='btn btn-primary me-1'><MdEdit /></Link>
+                                            <Link to={`/admin/process/order/${order._id}`} className='btn btn-info me-1'><FcProcess /></Link>
                                             <div className='btn btn-danger'><IoTrashBin /></div>
                                         </td>
                                     </tr>

@@ -102,7 +102,10 @@ const updateOrder = async (req, res) => {
     })
 
     order.orderStatus = req.body.orderStatus
-    order.deliveredAt = Date.now()
+
+    if (req.body.orderStatus === 'Delivered') {
+        order.deliveredAt = Date.now()
+    }
 
     await order.save();
 

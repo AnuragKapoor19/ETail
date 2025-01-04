@@ -16,7 +16,6 @@ export default function SingleOrder() {
             })
 
             const data = await res.json()
-            console.log(data)
 
             if (!data.success) {
                 return console.log(data.error || data.message)
@@ -49,7 +48,7 @@ export default function SingleOrder() {
                         <div className="order d-flex align-items-center my-2">
                             <h4 className='fw-bold me-3'>Order ID: {order._id}</h4>
                             <span className='text-warning bg-danger fw-bolder p-2 me-2 rounded-3'>{!order.paymentInfo ? 'Payment Pending' : 'Paid'}</span>
-                            <span className='text-danger bg-warning fw-bolder p-2 rounded-3'>{order.orderStaus !== "Delivered" ? 'Unfulfilled' : 'Fulfilled'}</span>
+                            <span className='text-danger bg-warning fw-bolder p-2 rounded-3'>{order.orderStatus !== "Delivered" ? 'Unfulfilled' : 'Fulfilled'}</span>
                         </div>
 
                         <span className='fw-bold'>{order.CreatedAt}</span>
@@ -80,7 +79,7 @@ export default function SingleOrder() {
 
                         <div className="order-items my-2">
                             <h4>Order Items</h4>
-                            <span className='text-danger bg-warning p-1 rounded-3'>{order.orderStaus !== "Delivered" ? 'Unfulfilled' : 'Fulfilled'}</span>
+                            <span className='text-danger bg-warning p-1 rounded-3'>{order.orderStatus !== "Delivered" ? 'Unfulfilled' : 'Fulfilled'}</span>
 
                             <div className='mt-3'>
                             {order.orderItems.map((item) => (
