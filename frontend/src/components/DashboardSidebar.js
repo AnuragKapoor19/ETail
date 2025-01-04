@@ -32,7 +32,7 @@ export default function DashboardSidebar() {
           </li>
 
           <li className='my-3' onClick={() => setdropdown(false)}>
-            <Link to='/admin/dashboard' className='text-decoration-none text-light fw-bold fs-5'><FaShoppingBasket /> Orders</Link>
+            <Link to='/admin/orders' className='text-decoration-none text-light fw-bold fs-5'><FaShoppingBasket /> Orders</Link>
           </li>
 
           <li className='my-3' onClick={() => setdropdown(false)}>

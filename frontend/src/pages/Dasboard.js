@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaChevronRight } from "react-icons/fa";
 import Header from '../components/Header'
@@ -6,7 +6,8 @@ import DashboardSidebar from '../components/DashboardSidebar';
 import { ContextState } from '../contextAPI';
 
 export default function Dasboard() {
-    const { adminProducts, setadminProducts, isProductDeleted, isProductUpdated } = ContextState();
+    const { adminProducts, setadminProducts, isProductDeleted, isProductUpdated, adminOrders, setadminOrders } = ContextState();
+    const [totalAmount, settotalAmount] = useState(0)
     let outOfStock = 0;
 
     adminProducts.forEach(product => {
@@ -35,6 +36,27 @@ export default function Dasboard() {
         //eslint-disable-next-line
     }, [isProductDeleted, isProductUpdated])
 
+    const getAllorders = async () => {
+        try {
+            const res = await fetch('http://localhost:5000/api/v1//admin/orders', {
+                method: 'GET',
+                credentials: 'include'
+            })
+
+            const data = await res.json()
+
+            setadminOrders(data.orders)
+            settotalAmount(data.totalAmount)
+        } catch (error) {
+            console.log(error.message)
+        }
+    }
+
+    useEffect(() => {
+        getAllorders();
+        //eslint-disable-next-line
+    }, [])
+
     return (
         <>
             <Header />
@@ -47,7 +69,7 @@ export default function Dasboard() {
 
                         <div className="total-amount col-12 bg-primary p-3 py-5 d-flex flex-column justify-content-center align-items-center fs-4">
                             <span>Total Amount</span>
-                            <b>$4523.63</b>
+                            <b>${totalAmount}</b>
                         </div>
 
                         <div className='d-flex justify-content-between align-items-center col-12 p-0 fs-4'>
@@ -64,7 +86,7 @@ export default function Dasboard() {
 
                             <div className="orders bg-info col-3 my-2 p-1 py-2 d-flex flex-column justify-content-center align-items-center">
                                 <span>Orders</span>
-                                <b>853</b>
+                                <b>{adminOrders.length}</b>
                                 <hr className='border-top border-light w-100 m-0 p-0 mt-4' />
                                 <Link className='btn d-flex justify-content-between w-100'>
                                     <span>View Details</span>

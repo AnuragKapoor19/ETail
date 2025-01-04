@@ -18,33 +18,34 @@ const ContextProvider = ({ children }) => {
     const [isAuthenticated, setisAuthenticated] = useState(false)
     const [toggle, settoggle] = useState(false)
     const [isUpdated, setisUpdated] = useState(false)
-    const [cartItems, setcartItems] = useState(localStorage.getItem('cartItems')? JSON.parse(localStorage.getItem('cartItems')): [])
-    const [shippingInfo, setshippingInfo] = useState(localStorage.getItem('shippingInfo')? JSON.parse(localStorage.getItem('shippingInfo')): {})
+    const [cartItems, setcartItems] = useState(localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [])
+    const [shippingInfo, setshippingInfo] = useState(localStorage.getItem('shippingInfo') ? JSON.parse(localStorage.getItem('shippingInfo')) : {})
     const [rating, setrating] = useState(0)
     const [adminProducts, setadminProducts] = useState([])
     const [isProductDeleted, setisProductDeleted] = useState(false)
     const [isProductUpdated, setisProductUpdated] = useState(false)
     const [editProduct, seteditProduct] = useState()
-    
+    const [adminOrders, setadminOrders] = useState([])
+
     return (
-        <Context.Provider value={{ 
-            products, 
-            setproducts, 
-            product, 
-            setproduct, 
-            currentPage, 
-            setcurrentPage, 
-            resPerPage, 
-            setresPerPage, 
-            productsCount, 
-            setproductsCount, 
-            loading, 
-            setloading, 
-            keyword, 
+        <Context.Provider value={{
+            products,
+            setproducts,
+            product,
+            setproduct,
+            currentPage,
+            setcurrentPage,
+            resPerPage,
+            setresPerPage,
+            productsCount,
+            setproductsCount,
+            loading,
+            setloading,
+            keyword,
             setkeyword,
-            minPrice, 
+            minPrice,
             setminPrice,
-            maxPrice, 
+            maxPrice,
             setmaxPrice,
             category,
             setcategory,
@@ -69,8 +70,10 @@ const ContextProvider = ({ children }) => {
             isProductUpdated,
             setisProductUpdated,
             editProduct,
-            seteditProduct
-             }}
+            seteditProduct,
+            adminOrders,
+            setadminOrders
+        }}
         >
             {children}
         </Context.Provider>
