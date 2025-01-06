@@ -31,6 +31,7 @@ import AdminOrders from './pages/AdminOrders';
 import AdminProcessOrder from './pages/AdminProcessOrder';
 import AdminAllUsers from './pages/AdminAllUsers';
 import AdminUpdateUser from './pages/AdminUpdateUser';
+import AdminProductReviews from './pages/AdminProductReviews';
 
 function App() {
   const { setuser, setisAuthenticated, isAuthenticated, isUpdated, user } = ContextState();
@@ -104,6 +105,7 @@ function App() {
                     <Route exact path='/admin/process/order/:id' element={<AdminProcessOrder />} />
                     <Route exact path='/admin/users' element={<AdminAllUsers />} />
                     <Route exact path='/admin/user/update/:id' element={<AdminUpdateUser />} />
+                    <Route exact path='/admin/reviews' element={<AdminProductReviews />} />
                   </>
                   :
                   ''

@@ -31,6 +31,7 @@ const ContextProvider = ({ children }) => {
     const [allUsers, setallUsers] = useState([])
     const [isUserDeleted, setisUserDeleted] = useState(false)
     const [isUserUpdated, setisUserUpdated] = useState(false)
+    const [isReviewDeleted, setisReviewDeleted] = useState(false)
 
     return (
         <Context.Provider value={{
@@ -87,7 +88,9 @@ const ContextProvider = ({ children }) => {
             isUserDeleted,
             setisUserDeleted,
             isUserUpdated,
-            setisUserUpdated
+            setisUserUpdated,
+            isReviewDeleted,
+            setisReviewDeleted
         }}
         >
             {children}
