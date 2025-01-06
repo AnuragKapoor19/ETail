@@ -6,7 +6,7 @@ import DashboardSidebar from '../components/DashboardSidebar';
 import { ContextState } from '../contextAPI';
 
 export default function Dasboard() {
-    const { adminProducts, setadminProducts, isProductDeleted, isProductUpdated, adminOrders, setadminOrders, isOrderUpdated, isOrderDeleted } = ContextState();
+    const { adminProducts, setadminProducts, isProductDeleted, isProductUpdated, adminOrders, setadminOrders, isOrderUpdated, isOrderDeleted, allUsers, setallUsers, isUserDeleted, isUserUpdated } = ContextState();
     const [totalAmount, settotalAmount] = useState(0)
     let outOfStock = 0;
 
@@ -57,6 +57,22 @@ export default function Dasboard() {
         //eslint-disable-next-line
     }, [isOrderUpdated, isOrderDeleted])
 
+    const getAllUsers = async () => {
+        const res = await fetch('http://localhost:5000/api/v1/admin/users', {
+            method: 'GET',
+            credentials: 'include'
+        })
+
+        const data = await res.json()
+
+        setallUsers(data.users)
+    }
+
+    useEffect(() => {
+        getAllUsers()
+        //eslint-disable-next-line
+    }, [isUserDeleted, isUserUpdated])
+
     return (
         <>
             <Header />
@@ -96,7 +112,7 @@ export default function Dasboard() {
 
                             <div className="users bg-secondary col-3 my-2 p-1 py-2 d-flex flex-column justify-content-center align-items-center">
                                 <span>Users</span>
-                                <b>45</b>
+                                <b>{allUsers.length}</b>
                                 <hr className='border-top border-light w-100 m-0 p-0 mt-4' />
                                 <Link className='btn d-flex justify-content-between w-100'>
                                     <span>View Details</span>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { MdDashboard } from "react-icons/md";
+import { MdDashboard, MdReviews } from "react-icons/md";
 import { FaBorderAll, FaPlus, FaProductHunt, FaShoppingBasket, FaUsers } from "react-icons/fa";
 import { TiArrowSortedDown } from "react-icons/ti";
 
@@ -36,7 +36,11 @@ export default function DashboardSidebar() {
           </li>
 
           <li className='my-3' onClick={() => setdropdown(false)}>
-            <Link to='/admin/dashboard' className='text-decoration-none text-light fw-bold fs-5'><FaUsers /> Users</Link>
+            <Link to='/admin/users' className='text-decoration-none text-light fw-bold fs-5'><FaUsers /> Users</Link>
+          </li>
+
+          <li className='my-3' onClick={() => setdropdown(false)}>
+            <Link to='/admin/dashboard' className='text-decoration-none text-light fw-bold fs-5'><MdReviews /> Reviews</Link>
           </li>
 
         </ul>
