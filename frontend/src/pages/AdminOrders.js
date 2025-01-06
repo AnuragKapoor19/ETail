@@ -7,7 +7,28 @@ import { ContextState } from '../contextAPI'
 import { FcProcess } from "react-icons/fc";
 
 export default function AdminOrders() {
-    const { adminOrders, setadminOrders, isOrderUpdated } = ContextState();
+    const { adminOrders, setadminOrders, isOrderUpdated, isOrderDeleted, setisOrderDeleted } = ContextState();
+
+    const handleDelete = async (id) => {
+        try {
+            const res = await fetch(`http://localhost:5000/api/v1/admin/order/${id}`, {
+                method: 'DELETE',
+                credentials: 'include'
+            })
+
+            const data = await res.json()
+
+            if (!data.success) {
+                return console.log(data.error || data.message);
+            }
+
+            setisOrderDeleted(true)
+            console.log(data.message);
+
+        } catch (error) {
+            console.log(error.message);
+        }
+    }
 
     const getAllorders = async () => {
         try {
@@ -31,7 +52,7 @@ export default function AdminOrders() {
     useEffect(() => {
         getAllorders()
         //eslint-disable-next-line
-    }, [isOrderUpdated])
+    }, [isOrderUpdated, isOrderDeleted])
 
     return (
         <>
@@ -61,7 +82,7 @@ export default function AdminOrders() {
                                         <td>{order.orderStatus}</td>
                                         <td>
                                             <Link to={`/admin/process/order/${order._id}`} className='btn btn-info me-1'><FcProcess /></Link>
-                                            <div className='btn btn-danger'><IoTrashBin /></div>
+                                            <div className='btn btn-danger' onClick={() => handleDelete(order._id)}><IoTrashBin /></div>
                                         </td>
                                     </tr>
                                 ))

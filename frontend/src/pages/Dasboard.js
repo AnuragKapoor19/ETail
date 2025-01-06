@@ -6,7 +6,7 @@ import DashboardSidebar from '../components/DashboardSidebar';
 import { ContextState } from '../contextAPI';
 
 export default function Dasboard() {
-    const { adminProducts, setadminProducts, isProductDeleted, isProductUpdated, adminOrders, setadminOrders , isOrderUpdated} = ContextState();
+    const { adminProducts, setadminProducts, isProductDeleted, isProductUpdated, adminOrders, setadminOrders, isOrderUpdated, isOrderDeleted } = ContextState();
     const [totalAmount, settotalAmount] = useState(0)
     let outOfStock = 0;
 
@@ -55,7 +55,7 @@ export default function Dasboard() {
     useEffect(() => {
         getAllorders();
         //eslint-disable-next-line
-    }, [isOrderUpdated])
+    }, [isOrderUpdated, isOrderDeleted])
 
     return (
         <>
