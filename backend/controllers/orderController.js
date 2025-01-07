@@ -3,33 +3,40 @@ const Product = require("../models/productModel");
 
 //Create New Order
 const createOrder = async (req, res) => {
-    const {
-        orderItems,
-        shippingInfo,
-        itemsPrice,
-        taxPrice,
-        shippingPrice,
-        totalPrice,
-        paymentInfo,
-        paidAt
-    } = req.body;
-
-    const order = await Order.create({
-        orderItems,
-        shippingInfo,
-        itemsPrice,
-        taxPrice,
-        shippingPrice,
-        totalPrice,
-        paymentInfo,
-        paidAt: Date.now(),
-        user: req.user.id
-    })
-
-    res.status(200).json({
-        success: true,
-        order
-    })
+    try {
+        const {
+            orderItems,
+            shippingInfo,
+            itemsPrice,
+            taxPrice,
+            shippingPrice,
+            totalPrice,
+            paymentInfo,
+            paidAt
+        } = req.body;
+    
+        const order = await Order.create({
+            orderItems,
+            shippingInfo,
+            itemsPrice,
+            taxPrice,
+            shippingPrice,
+            totalPrice,
+            paymentInfo,
+            paidAt: Date.now(),
+            user: req.user.id
+        })
+    
+        res.status(200).json({
+            success: true,
+            message: 'Order Created Successfully'
+        })
+    } catch (error) {
+        res.status(400).json({
+            success: false,
+            message: error.message
+        })
+    }
 }
 
 //Get Single Order

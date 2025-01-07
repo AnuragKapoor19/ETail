@@ -16,8 +16,8 @@ export default function ConfirmOrder() {
     })
 
     let shipping = subtotal > 200 ? 0 : 25
-    let tax = (5 / 100 * subtotal)
-    let totalPrice = subtotal + shipping + tax
+    let tax = parseFloat((5 / 100 * subtotal).toFixed(2))
+    let totalPrice = subtotal+ shipping + tax
 
     const handleProceed = () => {
         const orderData = { subtotal, shipping, tax, totalPrice }

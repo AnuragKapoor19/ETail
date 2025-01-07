@@ -10,10 +10,24 @@ import { useNavigate } from 'react-router-dom';
 
 
 export default function Payment() {
-  const { user, shippingInfo, cartItems } = ContextState()
+  const { user, shippingInfo, cartItems, setcartItems } = ContextState()
   const stripe = useStripe()
   const elements = useElements()
   const navigate = useNavigate()
+  let paymentInfo;
+  const orderItems = []
+
+  for (let i = 0; i < cartItems.length; i++) {
+    let itemData = {
+      name: cartItems[i].name,
+      quantity: cartItems[i].quantity,
+      image: cartItems[i].images[0].url,
+      price: cartItems[i].price,
+      product: cartItems[i]._id
+    }
+
+    orderItems.push(itemData)
+  }
 
   const options = {
     style: {
@@ -27,6 +41,39 @@ export default function Payment() {
   }
 
   const orderData = JSON.parse(sessionStorage.getItem('orderData'))
+
+  const createOrder = async () => {
+    try {
+      const res = await fetch('http://localhost:5000/api/v1/order/new', {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          shippingInfo: shippingInfo,
+          orderItems: orderItems,
+          paymentInfo: paymentInfo,
+          itemsPrice: orderData.subtotal,
+          taxPrice: orderData.tax,
+          shippingPrice: orderData.shipping,
+          totalPrice: orderData.totalPrice
+        })
+      })
+
+      const data = await res.json()
+
+      if (!data.success) {
+        return console.log(data.error || data.message);
+      }
+
+      setcartItems([])
+      localStorage.removeItem('cartItems')
+      console.log(data.message);
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -66,7 +113,13 @@ export default function Payment() {
         //The payment is success or not
         if (result.paymentIntent.status === 'succeeded') {
 
-          //ToDo New Order
+          paymentInfo = {
+            id: result.paymentIntent.id,
+            status: result.paymentIntent.status
+          }
+
+          //New Order
+          await createOrder()
 
           navigate('/success')
         } else {
