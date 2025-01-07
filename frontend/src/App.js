@@ -32,6 +32,7 @@ import AdminProcessOrder from './pages/AdminProcessOrder';
 import AdminAllUsers from './pages/AdminAllUsers';
 import AdminUpdateUser from './pages/AdminUpdateUser';
 import AdminProductReviews from './pages/AdminProductReviews';
+import PaymentSuccess from './pages/PaymentSuccess';
 
 function App() {
   const { setuser, setisAuthenticated, isAuthenticated, isUpdated, user } = ContextState();
@@ -93,6 +94,7 @@ function App() {
                 <Route exact path='/confirm/order' element={<ConfirmOrder />} />
                 <Route exact path='/my/orders' element={<Orders />} />
                 <Route exact path='/order/:id' element={<SingleOrder />} />
+                <Route exact path='/success' element={<PaymentSuccess />} />
                 {stripeApiKey && <Route exact path='/payment' element={<Payment />} />}
                 {user.role === 'admin'
                   ?
