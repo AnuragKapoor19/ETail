@@ -92,11 +92,35 @@
 // }
 
 import React from 'react'
+import { FaBagShopping } from "react-icons/fa6";
+import { AiOutlineAppstore } from "react-icons/ai";
+import { RiAppsLine } from "react-icons/ri";
+import { FaSearch } from "react-icons/fa";
 
 export default function Headers() {
     return (
         <>
-            <div>ETail</div>
+            <div className='navbar d-flex bg-secondary text-light'>
+                <div className='logo d-flex'>
+                    <FaBagShopping size='2rem' />
+                    <h3>ETail</h3>
+                </div>
+
+                <div className='departments d-flex'>
+                    <AiOutlineAppstore size='1.5rem' />
+                    <h5>Departments</h5>
+                </div>
+
+                <div className='services d-flex'>
+                    <RiAppsLine size='1.5rem' />
+                    <h5>Services</h5>
+                </div>
+
+                <div className='search-bar d-flex p-1 rounded-5 bg-light text-light align-items-center'>
+                    <input type='text' placeholder='Search ETail' className='border-0 fw-bold px-2 mx-2 py-1'/>
+                    <FaSearch size="1.8rem" className='bg-warning rounded-circle p-1'/>
+                </div>
+            </div>
         </>
     )
 }
