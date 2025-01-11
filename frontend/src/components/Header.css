@@ -1,0 +1,129 @@
+.menu {
+    display: none;
+}
+
+.logo {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.departments {
+    cursor: pointer;
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.departments:hover {
+    transform: scale(1.1);
+}
+
+.services {
+    cursor: pointer;
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.services:hover {
+    transform: scale(1.1);
+}
+
+.search-bar{
+    padding: 5px 7px;
+}
+
+.search-input {
+    outline: none;
+    width: 90%;
+    margin: 0 5px 0 0;
+    font-size: large;
+}
+
+.search-icon {
+    cursor: pointer;
+}
+
+.search-icon:hover {
+    color: black;
+}
+
+.sign-in {
+    cursor: pointer;
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.sign-in:hover {
+    transform: scale(1.1);
+}
+
+.cart {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.cart:hover {
+    transform: scale(1.1);
+}
+
+.links{
+    display: flex;
+}
+
+.link-1,
+.link-2,
+.link-3,
+.link-4 {
+    transition: transform 0.3s ease;
+}
+
+.link-1:hover,
+.link-2:hover,
+.link-3:hover,
+.link-4:hover {
+    transform: scale(1.1);
+}
+
+
+/*Mobile Css*/
+@media screen and (max-width: 768px) {
+    .menu {
+        display: block;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .menu:hover {
+        transform: scale(1.1);
+    }
+
+    .logo h3,
+    .departments,
+    .services,
+    .sign-in {
+        display: none;
+    }
+
+    .links{
+        display: none;
+    }
+
+    .search-bar{
+        padding: 0;
+        width: 40vw;
+        padding: 2px 2px 2px 7px;
+        font-size: small;
+    }
+
+    .search-input{
+        width: 90%;
+    }
+
+    .offer{
+        text-align: center;
+        width: 100vw;
+    }
+}

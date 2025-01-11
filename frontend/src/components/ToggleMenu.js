@@ -28,7 +28,7 @@ export default function ToggleMenu() {
 
     return (
         <>
-            <div className="menu bg-dark py-1 px-2 rounded-3 z-1" style={{ position: 'absolute', top: '60px', right: '3px' }}>
+            <div className="menu bg-dark py-1 px-2 z-1" style={{ position: 'absolute', top: '142px', left: '0px'}}>
                 <div className="links d-flex flex-column">
                     <Link className='text-light text-decoration-none m-3 h5' to='/me/profile' onClick={() => settoggle(false)}>Profile</Link>
                     {user.role === 'admin'
