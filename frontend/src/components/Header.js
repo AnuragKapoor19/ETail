@@ -104,7 +104,7 @@ import ToggleMenu from './ToggleMenu';
 import { ContextState } from '../contextAPI';
 
 export default function Headers() {
-    const { toggle, settoggle } = ContextState();
+    const { toggle, settoggle, cartItems } = ContextState();
 
     const handleToggleMenu = () => {
         settoggle(!toggle)
@@ -115,7 +115,7 @@ export default function Headers() {
             <div className='nav-container bg-dark py-3'>
                 <div className='row-1 d-flex text-light justify-content-around align-items-center'>
 
-                    <div className='menu text-light' onClick={handleToggleMenu}>
+                    <div className='menu-icon text-light' onClick={handleToggleMenu}>
                         <GiHamburgerMenu size='2rem' />
                     </div>
 
@@ -155,7 +155,7 @@ export default function Headers() {
                     <div className='cart position-relative'>
                         <FiShoppingCart size='1.8rem' />
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                            3
+                            {cartItems.length}
                             <span class="visually-hidden">unread messages</span>
                         </span>
                     </div>

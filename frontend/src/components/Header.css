@@ -1,4 +1,4 @@
-.menu {
+.menu-icon {
     display: none;
 }
 
@@ -90,13 +90,13 @@
 
 /*Mobile Css*/
 @media screen and (max-width: 768px) {
-    .menu {
+    .menu-icon {
         display: block;
         cursor: pointer;
         transition: transform 0.3s ease;
     }
 
-    .menu:hover {
+    .menu-icon:hover {
         transform: scale(1.1);
     }
 
