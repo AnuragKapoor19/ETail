@@ -92,33 +92,62 @@
 // }
 
 import React from 'react'
-import { FaBagShopping } from "react-icons/fa6";
+import { FaBagShopping, FaRegUser } from "react-icons/fa6";
 import { AiOutlineAppstore } from "react-icons/ai";
 import { RiAppsLine } from "react-icons/ri";
-import { FaSearch } from "react-icons/fa";
+import { IoMdSearch } from "react-icons/io";
+import { FiShoppingCart } from "react-icons/fi";
+import { Link } from 'react-router-dom';
 
 export default function Headers() {
     return (
         <>
-            <div className='navbar d-flex bg-secondary text-light'>
-                <div className='logo d-flex'>
-                    <FaBagShopping size='2rem' />
-                    <h3>ETail</h3>
-                </div>
+            <div className='bg-dark py-3'>
+                <div className='row-1 d-flex text-light justify-content-around align-items-center'>
+                    <div className='logo d-flex text-light'>
+                        <FaBagShopping size='2rem' />
+                        <h3>ETail</h3>
+                    </div>
 
-                <div className='departments d-flex'>
-                    <AiOutlineAppstore size='1.5rem' />
-                    <h5>Departments</h5>
-                </div>
+                    <div className='departments d-flex'>
+                        <AiOutlineAppstore size='1.5rem' />
+                        <h5>Departments</h5>
+                    </div>
 
-                <div className='services d-flex'>
-                    <RiAppsLine size='1.5rem' />
-                    <h5>Services</h5>
-                </div>
+                    <div className='services d-flex'>
+                        <RiAppsLine size='1.5rem' />
+                        <h5>Services</h5>
+                    </div>
 
-                <div className='search-bar d-flex p-1 rounded-5 bg-light text-light align-items-center'>
-                    <input type='text' placeholder='Search ETail' className='border-0 fw-bold px-2 mx-2 py-1'/>
-                    <FaSearch size="1.8rem" className='bg-warning rounded-circle p-1'/>
+                    <div className='search-bar d-flex p-1 rounded-5 bg-light text-light align-items-center'>
+                        <input type='text' placeholder='Search ETail' className='border-0 fw-bold px-5 mx-2 py-1' />
+                        <IoMdSearch size="1.8rem" className='bg-warning rounded-circle p-1' />
+                    </div>
+
+                    <div className='sign-in d-flex align-items-center'>
+                        <FaRegUser size='1.5rem' />
+                        <div className='ms-2'>
+                            <span>Sign In</span>
+                            <h5>Account</h5>
+                        </div>
+                    </div>
+
+                    <div className='cart position-relative'>
+                        <FiShoppingCart size='1.8rem' />
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            3
+                            <span class="visually-hidden">unread messages</span>
+                        </span>
+                    </div>
+                </div>
+                <hr className='border border-light border-3'/>
+                <div className='row-2'>
+                    <div className='links d-flex fs-5 fw-bold align-items-center'>
+                        <Link className='text-decoration-none text-light mx-4'>Back to School</Link>
+                        <Link className='text-decoration-none text-light mx-4'>Top Deals</Link>
+                        <Link className='text-decoration-none text-light mx-4'>Deals of the Day</Link>
+                        <Link className='text-decoration-none text-light mx-4'>Grocery & Essentials</Link>
+                    </div>
                 </div>
             </div>
         </>
