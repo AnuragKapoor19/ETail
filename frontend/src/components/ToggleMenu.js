@@ -34,7 +34,7 @@ export default function ToggleMenu() {
 
     return (
         <>
-            <div className="menu bg-dark py-1 px-2 z-1">
+            <div className={`menu bg-dark py-1 px-2 z-1 ${!user && 'hide'}`}>
                 <div className="links d-flex flex-column ms-2">
                     {user
                         ?
@@ -48,18 +48,20 @@ export default function ToggleMenu() {
                         </>
                         :
                         <>
-                            <div>
-                                <FaBagShopping />
-                                <div className='btn btn-warning'>Sign in or create account</div>
+                            <div className='sign text-center hidden-option'>
+                                <FaBagShopping size='2rem'/>
+                                <Link to={'/login'} className='text-decoration-none fw-bold fs-5 btn btn-warning ms-3 rounded-5'>Sign in or create account</Link>
                             </div>
                         </>
                     }
-                    <hr />
-                    <Link className='link d-flex text-light text-decoration-none m-3 h5'><AiOutlineAppstore size='1.5rem' /> <h5 className='ms-2'>Departments</h5></Link>
-                    <Link className='link d-flex text-light text-decoration-none m-3 h5'><RiAppsLine size='1.5rem' /> <h5 className='ms-2'>Services</h5></Link>
-                    <hr />
+                    <hr className='hidden-option'/>
+                    <Link className='hidden-option depart link text-light text-decoration-none m-3 h5'><AiOutlineAppstore size='1.5rem' /> <h5 className='ms-2'>Departments</h5></Link>
+                    <Link className='hidden-option serv link text-light text-decoration-none m-3 h5'><RiAppsLine size='1.5rem' /> <h5 className='ms-2'>Services</h5></Link>
                     {user &&
-                        <Link className='link text-light text-decoration-none m-3 h5' onClick={handleLogout}><IoIosLogOut size={30} className='text-danger' /> Logout</Link>
+                        <>
+                            <hr />
+                            <Link className='link text-light text-decoration-none m-3 h5' onClick={handleLogout}><IoIosLogOut size={30} className='text-danger' />Logout</Link>
+                        </>
                     }
                 </div>
             </div>

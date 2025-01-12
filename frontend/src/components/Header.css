@@ -69,6 +69,23 @@
     transform: scale(1.1);
 }
 
+.linktocart{
+    color: white;
+}
+
+.userAvatar{
+    display: flex;
+}
+
+.dots3 {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.dots3:hover {
+    transform: scale(1.1);
+}
+
 .links{
     display: flex;
 }
@@ -120,6 +137,10 @@
 
     .search-input{
         width: 90%;
+    }
+
+    .hidden{
+        display: none;
     }
 
     .offer{

@@ -1,22 +1,48 @@
-.menu{
+.menu {
     position: absolute;
     top: 143px;
     right: 0px;
     width: 30%;
 }
 
-.link{
+.hide{
+    display: none;
+}
+
+.hidden-option {
+    display: none;
+}
+
+.depart,
+.serv {
+    display: none;
+}
+
+.link {
     transition: transform 0.3s ease-in;
 }
 
-.link:hover{
+.link:hover {
     transform: scale(1.1);
 }
 
 /*Mobile Css*/
 @media screen and (max-width: 768px) {
-    .menu{
+    .menu {
         left: 0px;
         width: 50%;
+    }
+
+    .hide{
+        display: block;
+    }
+
+    .depart,
+    .serv {
+        display: flex;
+    }
+
+    .sign{
+        display: block;
     }
 }

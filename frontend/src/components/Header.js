@@ -91,12 +91,13 @@
 //     )
 // }
 
-import React from 'react'
+import React, { useState } from 'react'
 import { FaBagShopping, FaRegUser } from "react-icons/fa6";
 import { AiOutlineAppstore } from "react-icons/ai";
 import { RiAppsLine } from "react-icons/ri";
 import { IoMdSearch } from "react-icons/io";
 import { FiShoppingCart } from "react-icons/fi";
+import { CiMenuKebab } from "react-icons/ci";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from 'react-router-dom';
 import './Header.css'
@@ -104,10 +105,29 @@ import ToggleMenu from './ToggleMenu';
 import { ContextState } from '../contextAPI';
 
 export default function Headers() {
-    const { toggle, settoggle, cartItems } = ContextState();
+    const { toggle, settoggle, cartItems, user, setkeyword, setloading, setminPrice, setmaxPrice, setcategory } = ContextState();
+    const [word, setword] = useState('')
 
     const handleToggleMenu = () => {
         settoggle(!toggle)
+    }
+
+    const handleChange = (e) => {
+        setword(e.target.value)
+    }
+
+    const handleClick = () => {
+        setkeyword(word)
+        setloading(true)
+    }
+
+    const handleLogoClick = () => {
+        setkeyword('')
+        setword('')
+        setloading(true)
+        setminPrice(0)
+        setmaxPrice(1000)
+        setcategory('')
     }
 
     return (
@@ -124,7 +144,7 @@ export default function Headers() {
                         : ''
                     }
 
-                    <div className='logo d-flex text-light'>
+                    <div className='logo d-flex text-light' onClick={handleLogoClick}>
                         <FaBagShopping size='2rem' />
                         <h3>ETail</h3>
                     </div>
@@ -140,25 +160,38 @@ export default function Headers() {
                     </div>
 
                     <div className='search-bar d-flex rounded-5 bg-light text-light justify-content-center align-items-center'>
-                        <input type='text' placeholder='Search ETail' className='search-input border-0 fw-bold ' />
-                        <IoMdSearch size="2.5rem" className='search-icon bg-warning rounded-circle' />
-                    </div>
-
-                    <div className='sign-in align-items-center'>
-                        <FaRegUser size='1.5rem' />
-                        <div className='ms-2'>
-                            <span>Sign In</span>
-                            <h5>Account</h5>
-                        </div>
+                        <input type='text' placeholder='Search ETail' className='search-input border-0 fw-bold ' value={word} onChange={handleChange} />
+                        <IoMdSearch size="2.5rem" className='search-icon bg-warning rounded-circle' onClick={handleClick} />
                     </div>
 
                     <div className='cart position-relative'>
-                        <FiShoppingCart size='1.8rem' />
+                        <Link to={'/cart'} className='linktocart'><FiShoppingCart size='1.8rem' /></Link>
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                             {cartItems.length}
                             <span class="visually-hidden">unread messages</span>
                         </span>
                     </div>
+
+                    {user
+                        ?
+                        <div className='hidden userAvatar justify-content-center align-items-center'>
+                            <img src={user.avatar.url} className='rounded-circle me-2' style={{ maxWidth: '40px', maxHeight: '40px', minWidth: '40px', minHeight: '40px' }} alt='Avatar' />
+                            <div className='d-flex flex-column'>
+                                <span>Hi</span>
+                                <span className='fw-bold fs-5'>{String(user.name).split(' ')[0]}</span>
+                            </div>
+                            <i className='dots3 btn text-light border-0 ms-2' onClick={handleToggleMenu}><CiMenuKebab size={27} /></i>
+                        </div>
+                        :
+                        <Link to={'/login'} className='hidden sign-in align-items-center text-decoration-none text-light'>
+                            <FaRegUser size='1.5rem' />
+                            <div className='ms-2'>
+                                <span>Sign In</span>
+                                <h5>Account</h5>
+                            </div>
+                        </Link>
+                    }
+
                 </div>
                 <hr className='border border-light border-3' />
                 <div className='row-2 d-flex justify-content-between align-items-center'>
