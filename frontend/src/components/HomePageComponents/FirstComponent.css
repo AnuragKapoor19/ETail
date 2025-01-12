@@ -1,0 +1,163 @@
+.card-container {
+    padding: 15px 30px;
+    height: 40rem;
+}
+
+.card1 {
+    position: relative;
+    height: 30%;
+    width: 100%;
+    border-radius: 10px;
+    background-image: url('https://st2.depositphotos.com/1006458/6242/i/450/depositphotos_62425173-stock-photo-study-and-educted-related-items.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 15px;
+}
+
+.card2 {
+    position: relative;
+    height: 50%;
+    width: 100%;
+    border-radius: 10px;
+    background-image: url('https://previews.123rf.com/images/seventyfour74/seventyfour742004/seventyfour74200400438/145056881-vertical-background-image-of-warm-toned-kitchen-interior-with-minimal-design-and-wooden-decor-copy.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 15px;
+}
+
+.card3 {
+    position: relative;
+    height: 20%;
+    width: 100%;
+    border-radius: 10px;
+    background-image: url('https://www.shutterstock.com/image-illustration/mock-bathroom-modern-style-3d-600nw-1018945999.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card4 {
+    position: relative;
+    height: 45%;
+    width: 100%;
+    border-radius: 10px;
+    background-image: url('https://img.freepik.com/free-photo/school-office-tools-vintage-wood-table_1249-643.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 15px;
+}
+
+.card5 {
+    height: 35%;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.incard1 {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+    background-image: url('https://www.home-designing.com/wp-content/uploads/2020/03/marble-top-bedside-table-with-drawer-and-open-shelf-affordable-luxury-bedroom-furniture-for-modern-homes.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.incard2 {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+    background-image: url('https://as1.ftcdn.net/v2/jpg/01/73/68/68/1000_F_173686870_mV7No9DVbdhtBajsudK7ek4ztSGerVLU.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card6 {
+    position: relative;
+    height: 20%;
+    width: 100%;
+    border-radius: 10px;
+    background-image: url('https://png.pngtree.com/thumb_back/fh260/back_our/20190620/ourmid/pngtree-simple-food-delivery-meal-fashion-poster-background-yellow-back-image_158378.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card7 {
+    position: relative;
+    height: 20%;
+    width: 100%;
+    border-radius: 10px;
+    background-image: url('https://as1.ftcdn.net/v2/jpg/04/52/39/98/1000_F_452399842_fkhmXTe2lDj7DlgpcRHwTSftSUvxYan8.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 15px;
+}
+
+.card8 {
+    position: relative;
+    height: 30%;
+    width: 100%;
+    border-radius: 10px;
+    background-image: url('https://media.istockphoto.com/id/1348024002/photo/plastic-container-boxes-on-a-shelf-on-a-rack-for-organizing-home-space-and-storing-things.jpg?s=612x612&w=0&k=20&c=Ku3ziuDOXeLzE5azfGSqYl_oQBqQAJmkIT4yBTWI37Q=');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 15px;
+}
+
+.card9 {
+    position: relative;
+    height: 50%;
+    width: 100%;
+    border-radius: 10px;
+    background-image: url('https://thumbs.dreamstime.com/b/happy-student-man-text-cell-phone-walking-city-college-campus-backpack-144637723.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    width: 50%;
+    color: black;
+}
+
+.content h5{
+    font-size: 25px;
+    font-weight: bolder;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/*For Tablets*/
+@media screen and (max-width: 768px){
+    .content{
+        width: 80%;
+    }
+
+    .content h5{
+        font-size: 20px;
+    }
+}
+
+/*For Mobiles*/
+@media screen and (max-width: 480px){
+    .content{
+        width: 80%;
+        text-align: center;
+    }
+
+    .content h5{
+        font-size: 16px;
+        text-align: center;
+    }
+}

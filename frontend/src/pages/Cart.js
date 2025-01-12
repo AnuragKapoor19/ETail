@@ -6,7 +6,7 @@ import { ContextState } from '../contextAPI';
 import { useNavigate } from 'react-router-dom';
 
 export default function Cart() {
-    const { cartItems, setcartItems , user} = ContextState();
+    const { cartItems, setcartItems, user } = ContextState();
     const [totalPrice, settotalPrice] = useState(0)
     const navigate = useNavigate()
 
@@ -20,11 +20,11 @@ export default function Cart() {
         localStorage.setItem('cartItems', JSON.stringify(items))
     }
 
-    const handleCheckOut = ()=>{
-        if(!user){
+    const handleCheckOut = () => {
+        if (!user) {
             navigate('/login')
         }
-        else(
+        else (
             navigate('/shipping')
         )
     }
@@ -33,7 +33,7 @@ export default function Cart() {
         let sum = 0
         // eslint-disable-next-line
         cartItems.map((item) => {
-            sum += item.price*item.quantity
+            sum += item.price * item.quantity
             settotalPrice(sum)
         })
     }
@@ -91,7 +91,12 @@ export default function Cart() {
 
                     <hr />
 
-                    <div className='btn btn-warning rounded-5 w-100' onClick={handleCheckOut}>Check Out</div>
+                    {user
+                        ?
+                        <div className='btn btn-warning rounded-5 w-100' onClick={handleCheckOut}>Check Out</div>
+                        :
+                        <div className='btn btn-warning rounded-5 w-100' onClick={()=> navigate('/login')}>Sign in to Check Out</div>
+                    }
                 </div>
             </div>
             <Footer />

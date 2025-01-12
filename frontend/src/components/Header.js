@@ -103,10 +103,12 @@ import { Link } from 'react-router-dom';
 import './Header.css'
 import ToggleMenu from './ToggleMenu';
 import { ContextState } from '../contextAPI';
+import { useNavigate } from 'react-router-dom';
 
 export default function Headers() {
     const { toggle, settoggle, cartItems, user, setkeyword, setloading, setminPrice, setmaxPrice, setcategory } = ContextState();
     const [word, setword] = useState('')
+    const navigate = useNavigate()
 
     const handleToggleMenu = () => {
         settoggle(!toggle)
@@ -128,6 +130,7 @@ export default function Headers() {
         setminPrice(0)
         setmaxPrice(1000)
         setcategory('')
+        navigate('/')
     }
 
     return (

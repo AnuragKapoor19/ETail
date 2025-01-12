@@ -84,10 +84,10 @@ function App() {
             <Route exact path='/resetpassword' element={<ResetPassword />} />
             <Route exact path='/password/reset/:token' element={<ResetPassword />} />
             <Route exact path='/forgotpassword' element={<ForgotPassword />} />
+            <Route exact path='/cart' element={<Cart />} />
             {isAuthenticated
               ?
               <>
-                <Route exact path='/cart' element={<Cart />} />
                 <Route exact path='/me/profile' element={<Profile />} />
                 <Route exact path='/me/updateprofile' element={<UpdateProfile />} />
                 <Route exact path='/shipping' element={<ShippingForm />} />

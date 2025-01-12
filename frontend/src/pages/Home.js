@@ -5,7 +5,8 @@ import { ContextState } from '../contextAPI';
 import Pagination from '../components/Pagination';
 import Filter from '../components/Filter';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
+// import Footer from '../components/Footer';
+import FirstComponent from '../components/HomePageComponents/FirstComponent';
 
 export default function Home() {
     const { products, setproducts, setresPerPage, setproductsCount, currentPage, loading, setloading, keyword, minPrice, maxPrice , category, settoggle, isAuthenticated, isProductDeleted, isProductUpdated, isReviewDeleted} = ContextState();
@@ -50,6 +51,7 @@ export default function Home() {
     return (
         <>
             <Header />
+            <FirstComponent />
             <div className='products m-3 px-5' onClick={()=> settoggle(false)}>
                 <h2>Latest Products</h2>
                 <div className='row justify-content-start my-3'>
@@ -95,7 +97,7 @@ export default function Home() {
 
                 <Pagination />
             </div>
-            <Footer />
+            {/* <Footer /> */}
         </>
     )
 }
