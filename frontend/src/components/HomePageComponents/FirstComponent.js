@@ -6,7 +6,7 @@ export default function FirstComponent() {
     return (
         <>
             <div className='card-container w-100 d-flex justify-content-center'>
-                <div className='column-1 col-3 me-3'>
+                <div className='column-1 col-3 me-2'>
                     <div className='card1'>
                         <div className='content'>
                             <h5>All you need to study</h5>
@@ -29,7 +29,7 @@ export default function FirstComponent() {
                     </div>
                 </div>
 
-                <div className='column-2 col-6 me-3'>
+                <div className='column-2 col-6 me-2'>
                     <div className='card4'>
                         <div className='content'>
                             <span className='fs-5'>Get it as fast as today</span>

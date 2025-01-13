@@ -2,10 +2,10 @@ import React, { useEffect } from 'react'
 import Product from '../components/productCard';
 import SyncLoader from "react-spinners/SyncLoader";
 import { ContextState } from '../contextAPI';
-import Pagination from '../components/Pagination';
+// import Pagination from '../components/Pagination';
 import Filter from '../components/Filter';
 import Header from '../components/Header';
-// import Footer from '../components/Footer';
+import Footer from '../components/Footer';
 import FirstComponent from '../components/HomePageComponents/FirstComponent';
 
 export default function Home() {
@@ -52,8 +52,9 @@ export default function Home() {
         <>
             <Header />
             <FirstComponent />
-            <div className='products m-3 px-5' onClick={()=> settoggle(false)}>
-                <h2>Latest Products</h2>
+            <div className='products mx-3 px-2 my-4' onClick={()=> settoggle(false)}>
+                <h3 className='fw-bolder'>Weekly deals</h3>
+                <span>Up to 65% off</span>
                 <div className='row justify-content-start my-3'>
                     {loading
                         ?
@@ -95,9 +96,9 @@ export default function Home() {
                     }
                 </div>
 
-                <Pagination />
+                {/* <Pagination /> */}
             </div>
-            {/* <Footer /> */}
+            <Footer />
         </>
     )
 }

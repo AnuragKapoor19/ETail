@@ -12,7 +12,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .card2 {
@@ -24,7 +24,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .card3 {
@@ -47,13 +47,13 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .card5 {
     height: 35%;
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .incard1 {
@@ -98,7 +98,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .card8 {
@@ -110,7 +110,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .card9 {
@@ -147,6 +147,10 @@
     .content h5{
         font-size: 20px;
     }
+
+    .content Link{
+        font-size: 15px;
+    }
 }
 
 /*For Mobiles*/
@@ -159,5 +163,9 @@
     .content h5{
         font-size: 16px;
         text-align: center;
+    }
+
+    .content a{
+        font-size: 10px;
     }
 }

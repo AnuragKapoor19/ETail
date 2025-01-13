@@ -47,7 +47,7 @@ const newProduct = async (req, res) => {
 const getProducts = async (req, res) => {
 
     try {
-        const resPerPage = 4  //Products per page
+        const resPerPage = 6  //Products per page
         const productCount = await Product.countDocuments();  //Counts number of products in database
 
         const apiFeatures = await new APIFeatures(Product.find(), req.query)

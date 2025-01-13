@@ -4,7 +4,7 @@ import { ContextState } from '../contextAPI';
 import { useNavigate } from 'react-router-dom';
 
 export default function ProductCard({ product }) {
-    const { setproduct} = ContextState();
+    const { setproduct } = ContextState();
     const navigate = useNavigate()
 
     const getProductDetails = async (productId) => {
@@ -30,8 +30,8 @@ export default function ProductCard({ product }) {
 
     return (
         <>
-            <div key={product._id} className='col col-sm-12 col-md-6 col-lg-3 col-xl-3 my-3 z-0'>
-                <div className="card w-100" style={{ width: "18rem" }}>
+            <div key={product._id} className='col col-sm-6 col-md-6 col-lg-2 mb-3 z-0'>
+                <div className="card w-100 border-0" style={{ width: "18rem" }}>
                     <img src={product.images[0].url} className="card-img-top" alt="img1" height='250px' width='250px' />
                     <div className="card-body">
                         <h5 type='button' className="card-title text-warning" onClick={() => getProductDetails(product._id)} style={{ width: 'fit-content' }}>
