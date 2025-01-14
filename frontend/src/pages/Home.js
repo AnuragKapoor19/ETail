@@ -2,11 +2,12 @@ import React, { useEffect } from 'react'
 import Product from '../components/productCard';
 import SyncLoader from "react-spinners/SyncLoader";
 import { ContextState } from '../contextAPI';
-// import Pagination from '../components/Pagination';
+import Pagination from '../components/Pagination';
 import Filter from '../components/Filter';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import FirstComponent from '../components/HomePageComponents/FirstComponent';
+import WeeklyDeals from '../components/HomePageComponents/WeeklyDeals';
 
 export default function Home() {
     const { products, setproducts, setresPerPage, setproductsCount, currentPage, loading, setloading, keyword, minPrice, maxPrice , category, settoggle, isAuthenticated, isProductDeleted, isProductUpdated, isReviewDeleted} = ContextState();
@@ -52,9 +53,9 @@ export default function Home() {
         <>
             <Header />
             <FirstComponent />
+            <WeeklyDeals />
             <div className='products mx-3 px-2 my-4' onClick={()=> settoggle(false)}>
-                <h3 className='fw-bolder'>Weekly deals</h3>
-                <span>Up to 65% off</span>
+                <h3 className='fw-bolder'>Latest Products</h3>
                 <div className='row justify-content-start my-3'>
                     {loading
                         ?
@@ -96,7 +97,7 @@ export default function Home() {
                     }
                 </div>
 
-                {/* <Pagination /> */}
+                <Pagination />
             </div>
             <Footer />
         </>

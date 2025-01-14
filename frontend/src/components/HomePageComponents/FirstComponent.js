@@ -1,5 +1,5 @@
 import React from 'react'
-import './FirstComponent.css'
+import './HomeStyle.css'
 import { Link } from 'react-router-dom'
 
 export default function FirstComponent() {

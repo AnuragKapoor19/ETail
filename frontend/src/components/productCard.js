@@ -56,7 +56,7 @@ export default function ProductCard({ product }) {
                             <span id='no_of_reviews' className='h6'>({product.numofReviews} Review)</span>
                         </div>
                         <p className="card-text my-2 h5">${product.price}</p>
-                        <div type="button" className="btn btn-warning w-100" onClick={() => getProductDetails(product._id)}>View Details</div>
+                        <div type="button" className="btn btn-warning rounded-0 w-100" onClick={() => getProductDetails(product._id)}>View Details</div>
                     </div>
                 </div>
             </div>
