@@ -8,6 +8,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import FirstComponent from '../components/HomePageComponents/FirstComponent';
 import WeeklyDeals from '../components/HomePageComponents/WeeklyDeals';
+import Decor from '../components/HomePageComponents/Decor';
 
 export default function Home() {
     const { products, setproducts, setresPerPage, setproductsCount, currentPage, loading, setloading, keyword, minPrice, maxPrice , category, settoggle, isAuthenticated, isProductDeleted, isProductUpdated, isReviewDeleted} = ContextState();
@@ -54,6 +55,7 @@ export default function Home() {
             <Header />
             <FirstComponent />
             <WeeklyDeals />
+            <Decor />
             <div className='products mx-3 px-2 my-4' onClick={()=> settoggle(false)}>
                 <h3 className='fw-bolder'>Latest Products</h3>
                 <div className='row justify-content-start my-3'>

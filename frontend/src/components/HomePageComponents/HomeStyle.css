@@ -138,6 +138,26 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+.decor-container{
+    padding: 0 30px;
+}
+
+.decor-img-container{
+    position: relative;
+}
+
+.decor-img-container img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.decor-content{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
 /*For Tablets*/
 @media screen and (max-width: 768px){
     .content{
@@ -167,5 +187,9 @@
 
     .content a{
         font-size: 10px;
+    }
+
+    .decor-container{
+        padding: 0;
     }
 }

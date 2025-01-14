@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ProductCard from '../productCard'
+import { Link } from 'react-router-dom'
 
 export default function WeeklyDeals() {
     const [products, setproducts] = useState([])
@@ -22,15 +23,18 @@ export default function WeeklyDeals() {
         }
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         getProducts();
         //eslint-disable-next-line
-    },[])
+    }, [])
 
     return (
         <>
             <div className='products mx-3 px-2 my-4'>
-                <h3 className='fw-bolder'>Weekly deals</h3>
+                <div className='d-flex justify-content-between'>
+                    <h3 className='fw-bolder'>Weekly deals</h3>
+                    <Link className='text-dark'>View all</Link>
+                </div>
                 <span>Up to 65% off</span>
                 <div className='row justify-content-start my-3'>
                     {
