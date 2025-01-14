@@ -10,6 +10,7 @@ import FirstComponent from '../components/HomePageComponents/FirstComponent';
 import WeeklyDeals from '../components/HomePageComponents/WeeklyDeals';
 import Decor from '../components/HomePageComponents/Decor';
 import Apple from '../components/HomePageComponents/Apple';
+import Categories from '../components/HomePageComponents/Categories';
 
 export default function Home() {
     const { products, setproducts, setresPerPage, setproductsCount, currentPage, loading, setloading, keyword, minPrice, maxPrice , category, settoggle, isAuthenticated, isProductDeleted, isProductUpdated, isReviewDeleted} = ContextState();
@@ -55,6 +56,7 @@ export default function Home() {
         <>
             <Header />
             <FirstComponent />
+            <Categories />
             <WeeklyDeals />
             <Decor />
             <Apple />

@@ -132,93 +132,160 @@
     color: black;
 }
 
-.content h5{
+.content h5 {
     font-size: 25px;
     font-weight: bolder;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.decor-container{
+.decor-container {
     padding: 0 30px;
 }
 
-.decor-img-container{
+.decor-img-container {
     position: relative;
 }
 
-.decor-img-container img{
+.decor-img-container img {
     width: 100%;
     height: 100%;
     border-radius: 20px;
 }
 
-.decor-content{
+.decor-content {
     position: absolute;
     top: 20px;
     left: 20px;
 }
 
-.apple-container{
+.apple-container {
     height: 35rem;
     background-color: black;
     text-align: center;
     position: relative;
 }
 
-.apple-container img{
+.apple-container img {
     height: 100%;
     width: 60%;
 }
 
-.apple-top-content{
+.apple-top-content {
     position: absolute;
     top: 40px;
     color: white;
 }
 
-.apple-bottom-content{
+.apple-bottom-content {
     position: absolute;
+    display: flex;
     bottom: 80px;
     color: white;
 }
 
-.apple-buy{
+.apple-buy {
     position: absolute;
     bottom: 20px;
 }
 
+.category-container {
+    height: fit-content;
+    position: relative;
+}
+
+.btn-left{
+    left: 0px;
+    position: absolute;
+    z-index: 1;
+    bottom: 80px
+}
+
+.btn-right{
+    right: 0px;
+    position: absolute;
+    z-index: 1;
+    bottom: 80px
+}
+
+.scroller {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+/* Hide the scrollbar */
+.scroller::-webkit-scrollbar {
+    display: none;
+    /* For Chrome, Safari, and Edge */
+}
+
+.scroller {
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.category-div {
+    min-width: 7rem;
+    max-width: 7rem;
+    height: 100%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index: 0;
+}
+
+.category-div:hover {
+    transform: scale(1.2);
+}
+
+.category-logo {
+    width: 80%;
+    height: 60%;
+    border-radius: 50%;
+}
+
 /*For Tablets*/
-@media screen and (max-width: 768px){
-    .content{
+@media screen and (max-width: 768px) {
+    .content {
         width: 80%;
     }
 
-    .content h5{
+    .content h5 {
         font-size: 20px;
     }
 
-    .content Link{
+    .content Link {
         font-size: 15px;
+    }
+
+    .apple-bottom-content h4,
+    span {
+        font-size: 20px;
     }
 }
 
 /*For Mobiles*/
-@media screen and (max-width: 480px){
-    .content{
+@media screen and (max-width: 480px) {
+    .content {
         width: 80%;
         text-align: center;
     }
 
-    .content h5{
+    .content h5 {
         font-size: 16px;
         text-align: center;
     }
 
-    .content a{
+    .content a {
         font-size: 10px;
     }
 
-    .decor-container{
+    .decor-container {
         padding: 0;
+    }
+
+    .apple-bottom-content {
+        /* font-size: 10px; */
+        display: none;
     }
 }

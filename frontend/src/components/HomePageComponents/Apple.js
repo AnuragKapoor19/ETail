@@ -24,7 +24,7 @@ export default function Apple() {
                     <h1 className='d-flex align-items-center justify-content-center fw-bolder'><GrApple color='white' />iPhone 16 Pro</h1>
                     <h4>Built for Apple Intelligence</h4>
                 </div>
-                <div className='apple-bottom-content d-flex align-items-center w-100 justify-content-center'>
+                <div className='apple-bottom-content align-items-center w-100 justify-content-center'>
                     <div className='d-flex flex-column me-2'>
                         <h4>Pro Camera</h4>
                         <span>48MP Fusion Camera</span>
