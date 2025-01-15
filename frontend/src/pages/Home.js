@@ -11,6 +11,8 @@ import WeeklyDeals from '../components/HomePageComponents/WeeklyDeals';
 import Decor from '../components/HomePageComponents/Decor';
 import Apple from '../components/HomePageComponents/Apple';
 import Categories from '../components/HomePageComponents/Categories';
+import Offer from '../components/HomePageComponents/Offer';
+import Fashion from '../components/HomePageComponents/Fashion';
 
 export default function Home() {
     const { products, setproducts, setresPerPage, setproductsCount, currentPage, loading, setloading, keyword, minPrice, maxPrice , category, settoggle, isAuthenticated, isProductDeleted, isProductUpdated, isReviewDeleted} = ContextState();
@@ -56,10 +58,12 @@ export default function Home() {
         <>
             <Header />
             <FirstComponent />
-            <Categories />
             <WeeklyDeals />
             <Decor />
             <Apple />
+            <Categories />
+            <Offer />
+            <Fashion />
             <div className='products mx-3 px-2 my-4' onClick={()=> settoggle(false)}>
                 <h3 className='fw-bolder'>Latest Products</h3>
                 <div className='row justify-content-start my-3'>
