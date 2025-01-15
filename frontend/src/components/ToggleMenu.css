@@ -5,7 +5,7 @@
     width: 30%;
 }
 
-.hide{
+.hide {
     display: none;
 }
 
@@ -33,7 +33,8 @@
         width: 50%;
     }
 
-    .hide{
+    .hide,
+    .hidden-option {
         display: block;
     }
 
@@ -42,7 +43,7 @@
         display: flex;
     }
 
-    .sign{
+    .sign {
         display: block;
     }
 }

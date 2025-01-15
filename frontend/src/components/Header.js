@@ -92,9 +92,8 @@
 // }
 
 import React, { useState } from 'react'
-import { FaBagShopping, FaRegUser } from "react-icons/fa6";
-import { AiOutlineAppstore } from "react-icons/ai";
-import { RiAppsLine } from "react-icons/ri";
+import { FaBagShopping, FaBasketShopping, FaRegUser } from "react-icons/fa6";
+import { FaHome } from "react-icons/fa";
 import { IoMdSearch } from "react-icons/io";
 import { FiShoppingCart } from "react-icons/fi";
 import { CiMenuKebab } from "react-icons/ci";
@@ -123,7 +122,7 @@ export default function Headers() {
         setloading(true)
     }
 
-    const handleLogoClick = () => {
+    const handleHomeClick = () => {
         setkeyword('')
         setword('')
         setloading(true)
@@ -147,19 +146,19 @@ export default function Headers() {
                         : ''
                     }
 
-                    <div className='logo d-flex text-light' onClick={handleLogoClick}>
+                    <div className='logo d-flex text-warning'>
                         <FaBagShopping size='2rem' />
-                        <h3>ETail</h3>
+                        <h2>ETail</h2>
                     </div>
 
-                    <div className='departments'>
-                        <AiOutlineAppstore size='1.5rem' />
-                        <h5>Departments</h5>
+                    <div className='Home' onClick={handleHomeClick}>
+                        <FaHome size='1.5rem' />
+                        <h5>Home</h5>
                     </div>
 
-                    <div className='services'>
-                        <RiAppsLine size='1.5rem' />
-                        <h5>Services</h5>
+                    <div className='Shop'>
+                        <FaBasketShopping size='1.5rem' />
+                        <h5>Shop</h5>
                     </div>
 
                     <div className='search-bar d-flex rounded-5 bg-light text-light justify-content-center align-items-center'>

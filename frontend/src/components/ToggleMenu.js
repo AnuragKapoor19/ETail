@@ -4,15 +4,26 @@ import { IoIosLogOut } from "react-icons/io";
 import { Link, useNavigate } from 'react-router-dom';
 import { FaBagShopping } from "react-icons/fa6";
 import { ContextState } from '../contextAPI';
-import { AiOutlineAppstore } from 'react-icons/ai';
-import { RiAlignItemLeftFill, RiAppsLine } from 'react-icons/ri';
+import { RiAlignItemLeftFill } from 'react-icons/ri';
 import { CgProfile } from "react-icons/cg";
 import { MdDashboard } from "react-icons/md";
+import { FaHome, FaShoppingBasket } from 'react-icons/fa';
 
 export default function ToggleMenu() {
 
-    const { setuser, setisAuthenticated, settoggle, setloading, user } = ContextState();
+    const { setuser, setisAuthenticated, settoggle, setloading, user, setkeyword, setminPrice, setmaxPrice, setcategory } = ContextState();
     const navigate = useNavigate();
+
+    const handleHomeClick = () => {
+        setkeyword('')
+        setloading(true)
+        setminPrice(0)
+        setmaxPrice(1000)
+        setcategory('')
+        navigate('/')
+        settoggle(false)
+    }
+
     const handleLogout = async () => {
         const res = await fetch('http://localhost:5000/api/v1/logout', {
             method: "GET",
@@ -36,6 +47,10 @@ export default function ToggleMenu() {
         <>
             <div className={`menu bg-dark py-1 px-2 z-1 ${!user && 'hide'}`}>
                 <div className="links d-flex flex-column ms-2">
+                    <Link className='hidden-option depart link text-light text-decoration-none m-3 h5' onClick={handleHomeClick}><FaHome size='1.5rem' /> <h5 className='ms-2'>Home</h5></Link>
+                    <Link className='hidden-option serv link text-light text-decoration-none m-3 h5'  onClick={() => settoggle(false)}><FaShoppingBasket size='1.5rem' /> <h5 className='ms-2'>Shop</h5></Link>
+                    <hr className='hidden-option' />
+
                     {user
                         ?
                         <>
@@ -49,14 +64,11 @@ export default function ToggleMenu() {
                         :
                         <>
                             <div className='sign text-center hidden-option'>
-                                <FaBagShopping size='2rem'/>
+                                <FaBagShopping size='2rem' />
                                 <Link to={'/login'} className='text-decoration-none fw-bold fs-5 btn btn-warning ms-3 rounded-5'>Sign in or create account</Link>
                             </div>
                         </>
                     }
-                    <hr className='hidden-option'/>
-                    <Link className='hidden-option depart link text-light text-decoration-none m-3 h5'><AiOutlineAppstore size='1.5rem' /> <h5 className='ms-2'>Departments</h5></Link>
-                    <Link className='hidden-option serv link text-light text-decoration-none m-3 h5'><RiAppsLine size='1.5rem' /> <h5 className='ms-2'>Services</h5></Link>
                     {user &&
                         <>
                             <hr />

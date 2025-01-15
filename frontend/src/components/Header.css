@@ -2,32 +2,23 @@
     display: none;
 }
 
-.logo {
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.logo:hover {
-    transform: scale(1.1);
-}
-
-.departments {
+.Home {
     cursor: pointer;
     display: flex;
     transition: transform 0.3s ease;
 }
 
-.departments:hover {
+.Home:hover {
     transform: scale(1.1);
 }
 
-.services {
+.Shop {
     cursor: pointer;
     display: flex;
     transition: transform 0.3s ease;
 }
 
-.services:hover {
+.Shop:hover {
     transform: scale(1.1);
 }
 
@@ -118,8 +109,8 @@
     }
 
     .logo h3,
-    .departments,
-    .services,
+    .Home,
+    .Shop,
     .sign-in {
         display: none;
     }
