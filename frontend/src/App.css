@@ -1,0 +1,69 @@
+.login-page {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.div1 {
+    height: 50%;
+    width: 100%;
+    background-color: white;
+}
+
+.div2 {
+    height: 50%;
+    width: 100%;
+    background-color: rgb(182, 0, 0);
+}
+
+.login-container {
+    position: absolute;
+    top: 10%;
+    left: 17%;
+    height: 80%;
+    width: 80%;
+    color: white;
+}
+
+.login-form {
+    background-image: linear-gradient(to left, rgb(165, 0, 0), rgb(120, 160, 39));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-form form {
+    width: 90%;
+}
+
+.login-image-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-image-container img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.login-image-container h1 {
+    color: red;
+    z-index: 1;
+    font-weight: bolder;
+    margin-left: 20px;
+    width: 50%;
+    text-align: center;
+}
+
+.login-image-container span{
+    z-index: 1;
+    width: 50%;
+    margin-left: 20px;
+    color: black;
+    text-align: center;
+}
