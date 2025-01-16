@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './Filter.css'
 import { FaDollarSign, FaFilter } from 'react-icons/fa6';
 import { ContextState } from '../contextAPI';
 
@@ -20,20 +21,21 @@ export default function Filter() {
         'Home'
     ]
 
-    const {setminPrice, setmaxPrice, setloading, setcategory} = ContextState();
+    const { setminPrice, setmaxPrice, setloading, setcategory } = ContextState();
     const [lprice, setlprice] = useState(0)
     const [hprice, sethprice] = useState(1000)
+    const [selected, setselected] = useState(null)
     const [cat, setcat] = useState('')
 
-    const handleMinChange = (e)=>{
+    const handleMinChange = (e) => {
         setlprice(e.target.value)
     }
 
-    const handleMaxChange = (e)=>{
+    const handleMaxChange = (e) => {
         sethprice(e.target.value)
     }
 
-    const handleClick = ()=>{
+    const handleClick = () => {
         setminPrice(lprice)
         setmaxPrice(hprice)
         setloading(true)
@@ -60,22 +62,22 @@ export default function Filter() {
                                     <label htmlFor='min-price-input' className='ms-1 fw-bold'>Min price: </label>
                                     <div className='min-price d-flex bg-warning rounded-3'>
                                         <i className='p-1 d-flex align-items-center'><FaDollarSign /></i>
-                                        <input type='number' className='px-2 fw-bold rounded-end-3' id='min-price-input' min='0' max="1000" step={100} value={lprice} onChange={handleMinChange}/>
+                                        <input type='number' className='px-2 fw-bold rounded-end-3' id='min-price-input' min='0' max="1000" step={100} value={lprice} onChange={handleMinChange} />
                                     </div>
                                     <label htmlFor='max-price-input' className='ms-5 fw-bold'>Max price: </label>
                                     <div className='max-price d-flex bg-warning rounded-3'>
                                         <i className='p-1 d-flex align-items-center'><FaDollarSign /></i>
-                                        <input type='number' className='px-2 fw-bold rounded-end-3' id='max-price-input' min='0' max="1000" step={100} value={hprice} onChange={handleMaxChange}/>
+                                        <input type='number' className='px-2 fw-bold rounded-end-3' id='max-price-input' min='0' max="1000" step={100} value={hprice} onChange={handleMaxChange} />
                                     </div>
                                 </div>
 
                                 <div className='category mx-2 mt-5'>
                                     <h3 className='text-center text-danger'>Categories</h3>
-                                   {categories.map((category)=>(
-                                    <div className='cat btn m-1 fw-bold' onClick={()=> setcat(category)} key={category}>
-                                        {category}
-                                    </div>
-                                   ))}
+                                    {categories.map((category) => (
+                                        <div className={`cat btn m-1 fw-bold ${selected === category ? 'selected' : ''}`} onClick={() => {setcat(category); setselected(category)}} key={category}>
+                                            {category}
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                             <div className="modal-footer">

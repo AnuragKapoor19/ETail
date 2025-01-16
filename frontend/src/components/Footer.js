@@ -1,7 +1,8 @@
 import React from 'react';
 import './Footer.css'
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { Link } from 'react-router-dom'
+import { FaXTwitter } from 'react-icons/fa6';
 
 export default function Footer() {
     return (
@@ -36,16 +37,16 @@ export default function Footer() {
                         <h2 className='follow'>Follow Us</h2>
                         <div className="social-icons">
                             <Link aria-label="Facebook">
-                                <i><FaFacebook size={30}/></i>
+                                <i><FaFacebook size={30} /></i>
                             </Link>
                             <Link aria-label="Twitter">
-                                <i><FaTwitter size={30}/></i>
+                                <i><FaXTwitter size={30} /></i>
                             </Link>
                             <Link aria-label="Instagram">
-                                <i><FaInstagram size={30}/></i>
+                                <i><FaInstagram size={30} /></i>
                             </Link>
                             <Link aria-label="LinkedIn">
-                                <i><FaLinkedin size={30}/></i>
+                                <i><FaLinkedin size={30} /></i>
                             </Link>
                         </div>
                     </div>

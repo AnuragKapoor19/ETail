@@ -1,0 +1,14 @@
+.cat{
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s ease;
+    border-radius: 20px;
+}
+
+.cat:hover{
+    background-color: rgba(153, 205, 50, 0.703);
+}
+
+.cat.selected{
+    background-color: yellowgreen;
+}

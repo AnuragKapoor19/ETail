@@ -33,7 +33,7 @@ export default function WeeklyDeals() {
             <div className='products mx-3 px-2 my-4'>
                 <div className='d-flex justify-content-between'>
                     <h3 className='fw-bolder'>Weekly deals</h3>
-                    <Link className='text-dark'>View all</Link>
+                    <Link to={'/shop'} className='text-dark'>View all</Link>
                 </div>
                 <span>Up to 65% off</span>
                 <div className='row justify-content-start my-3'>

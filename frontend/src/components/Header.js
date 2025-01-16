@@ -117,19 +117,19 @@ export default function Headers() {
         setword(e.target.value)
     }
 
-    const handleClick = () => {
+    const handleSearchClick = () => {
         setkeyword(word)
         setloading(true)
+        navigate('/shop')
     }
 
-    const handleHomeClick = () => {
+    const handleClick = () => {
         setkeyword('')
         setword('')
         setloading(true)
         setminPrice(0)
         setmaxPrice(1000)
         setcategory('')
-        navigate('/')
     }
 
     return (
@@ -151,19 +151,19 @@ export default function Headers() {
                         <h2>ETail</h2>
                     </div>
 
-                    <div className='Home' onClick={handleHomeClick}>
+                    <Link to={'/'} className='Home text-decoration-none text-light' onClick={handleClick}>
                         <FaHome size='1.5rem' />
                         <h5>Home</h5>
-                    </div>
+                    </Link>
 
-                    <div className='Shop'>
+                    <Link to={'/shop'} className='Shop text-decoration-none text-light' onClick={handleClick} >
                         <FaBasketShopping size='1.5rem' />
                         <h5>Shop</h5>
-                    </div>
+                    </Link>
 
                     <div className='search-bar d-flex rounded-5 bg-light text-light justify-content-center align-items-center'>
                         <input type='text' placeholder='Search ETail' className='search-input border-0 fw-bold ' value={word} onChange={handleChange} />
-                        <IoMdSearch size="2.5rem" className='search-icon bg-warning rounded-circle' onClick={handleClick} />
+                        <IoMdSearch size="2.5rem" className='search-icon bg-warning rounded-circle' onClick={handleSearchClick} />
                     </div>
 
                     <div className='cart position-relative'>

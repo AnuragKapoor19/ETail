@@ -33,6 +33,7 @@ import AdminAllUsers from './pages/AdminAllUsers';
 import AdminUpdateUser from './pages/AdminUpdateUser';
 import AdminProductReviews from './pages/AdminProductReviews';
 import PaymentSuccess from './pages/PaymentSuccess';
+import Shop from './pages/Shop';
 
 function App() {
   const { setuser, setisAuthenticated, isAuthenticated, isUpdated, user } = ContextState();
@@ -78,6 +79,7 @@ function App() {
         <Router>
           <Routes>
             <Route exact path='/' element={<Home />} />
+            <Route exact path='/shop' element={<Shop />} />
             <Route exact path='/productdetails' element={<SingleProduct />} />
             <Route exact path='/login' element={<Login />} />
             <Route exact path='/signin' element={<Signin />} />

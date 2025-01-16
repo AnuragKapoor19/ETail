@@ -1,7 +1,7 @@
 import React from 'react'
 import './ToggleMenu.css'
 import { IoIosLogOut } from "react-icons/io";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FaBagShopping } from "react-icons/fa6";
 import { ContextState } from '../contextAPI';
 import { RiAlignItemLeftFill } from 'react-icons/ri';
@@ -12,15 +12,13 @@ import { FaHome, FaShoppingBasket } from 'react-icons/fa';
 export default function ToggleMenu() {
 
     const { setuser, setisAuthenticated, settoggle, setloading, user, setkeyword, setminPrice, setmaxPrice, setcategory } = ContextState();
-    const navigate = useNavigate();
 
-    const handleHomeClick = () => {
+    const handleClick = () => {
         setkeyword('')
         setloading(true)
         setminPrice(0)
         setmaxPrice(1000)
         setcategory('')
-        navigate('/')
         settoggle(false)
     }
 
@@ -39,7 +37,6 @@ export default function ToggleMenu() {
             setisAuthenticated(false)
             settoggle(false)
             setloading(true)
-            navigate('/')
         }
     }
 
@@ -47,8 +44,8 @@ export default function ToggleMenu() {
         <>
             <div className={`menu bg-dark py-1 px-2 z-1 ${!user && 'hide'}`}>
                 <div className="links d-flex flex-column ms-2">
-                    <Link className='hidden-option depart link text-light text-decoration-none m-3 h5' onClick={handleHomeClick}><FaHome size='1.5rem' /> <h5 className='ms-2'>Home</h5></Link>
-                    <Link className='hidden-option serv link text-light text-decoration-none m-3 h5'  onClick={() => settoggle(false)}><FaShoppingBasket size='1.5rem' /> <h5 className='ms-2'>Shop</h5></Link>
+                    <Link to={'/'} className='hidden-option depart link text-light text-decoration-none m-3 h5' onClick={handleClick}><FaHome size='1.5rem' /> <h5 className='ms-2'>Home</h5></Link>
+                    <Link to={'/shop'} className='hidden-option serv link text-light text-decoration-none m-3 h5' onClick={handleClick}><FaShoppingBasket size='1.5rem' /> <h5 className='ms-2'>Shop</h5></Link>
                     <hr className='hidden-option' />
 
                     {user
