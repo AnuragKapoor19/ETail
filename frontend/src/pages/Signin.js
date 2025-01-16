@@ -19,7 +19,7 @@ export default function Signin() {
       const reader = new FileReader();
 
       reader.onload = () => {
-        if(reader.readyState === 2){              //States of reader 0=created, 1=processing, 2=success to read data
+        if (reader.readyState === 2) {              //States of reader 0=created, 1=processing, 2=success to read data
           setavatarPreview(reader.result)
           setavatar(reader.result)
         }
@@ -38,7 +38,7 @@ export default function Signin() {
         'Content-Type': 'application/json'
       },
       credentials: 'include',
-      body: JSON.stringify({ name: credentials.name, email: credentials.email, password: credentials.password , avatar: avatar})
+      body: JSON.stringify({ name: credentials.name, email: credentials.email, password: credentials.password, avatar: avatar })
     })
 
     const data = await response.json()
@@ -62,48 +62,61 @@ export default function Signin() {
 
   return (
     <>
-      <div className="login-form d-flex justify-content-center align-items-center bg-danger" style={{ height: '100vh' }}>
-        <div className="login border border-warning rounded-5 p-3 col-sm-8 col-md-4 col-lg-3 bg-light" >
-          <h3 className='text-center fs-1'>Create Account</h3>
-          <form className='d-flex flex-column' onSubmit={handleSubmit} encType='multipart/form-data'>
+      <div className='login-page'>
+        <div className='div1' />
+        <div className='div2' />
+        <div className='login-container signup-container'>
+          <div className='login-form col-lg-6 col-md-6'>
+            <h1 className='fw-bolder text-warning mt-2 mb-4 hide-welcome'>Welcome to ETail!</h1>
+            <h3 className='text-center fs-1'>Create Account</h3>
+            <form className='d-flex flex-column' onSubmit={handleSubmit} encType='multipart/form-data'>
 
-            <div className="mt-3 mb-3">
-              <label htmlFor="name" className="form-label">Name</label>
-              <input type="text" name='name' className="form-control border-warning fw-bold" id="name" placeholder="name" value={credentials.name} onChange={handleChange} required />
-            </div>
-
-            <div className="mb-3">
-              <label htmlFor="email" className="form-label">Email address</label>
-              <input type="email" name='email' className="form-control border-warning fw-bold" id="email" placeholder="name@example.com" value={credentials.email} onChange={handleChange} required />
-            </div>
-
-            <div className='mb-3'>
-              <label htmlFor="password" className="form-label">Password</label>
-              <input type="password" name='password' className="form-control border-warning fw-bold" id="password" placeholder="password" value={credentials.password} onChange={handleChange} required />
-            </div>
-
-            <div>
-              <label htmlFor="file-upload" className="form-label">Avatar</label>
-              <div className="preview-input d-flex">
-                <div className="preview">
-                  <img src={avatarPreview} className=' border border-1 border-warning me-3' alt='Avatar Preview' style={{ maxWidth: '40px', maxHeight: '35px', borderRadius: '50%', objectFit: 'contain' }} />
-                </div>
-                <input
-                  type="file"
-                  name='avatar'
-                  className="form-control border-warning fw-bold"
-                  id="file-upload"
-                  placeholder="Choose Avatar"
-                  onChange={handleAvatarChange}
-                  accept='images/*'
-                  required
-                />
+              <div className="mt-3 mb-3">
+                <label htmlFor="name" className="form-label">Name</label>
+                <input type="text" name='name' className="form-control border-warning fw-bold" id="name" placeholder="name" value={credentials.name} onChange={handleChange} required />
               </div>
-            </div>
 
-            <button className='btn btn-warning mt-5' type='submit'>Signin</button>
-            <Link to='/login' className='text-decoration-none text-center'>Already a User? Login</Link>
-          </form>
+              <div className="mb-3">
+                <label htmlFor="email" className="form-label">Email address</label>
+                <input type="email" name='email' className="form-control border-warning fw-bold" id="email" placeholder="name@example.com" value={credentials.email} onChange={handleChange} required />
+              </div>
+
+              <div className='mb-3'>
+                <label htmlFor="password" className="form-label">Password</label>
+                <input type="password" name='password' className="form-control border-warning fw-bold" id="password" placeholder="password" value={credentials.password} onChange={handleChange} required />
+              </div>
+
+              <div>
+                <label htmlFor="file-upload" className="form-label">Avatar</label>
+                <div className="preview-input d-flex">
+                  <div className="preview">
+                    <img src={avatarPreview} className=' border border-1 border-warning me-3' alt='Avatar Preview' style={{ maxWidth: '40px', maxHeight: '35px', borderRadius: '50%', objectFit: 'contain' }} />
+                  </div>
+                  <input
+                    type="file"
+                    name='avatar'
+                    className="form-control border-warning fw-bold"
+                    id="file-upload"
+                    placeholder="Choose Avatar"
+                    onChange={handleAvatarChange}
+                    accept='images/*'
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className='text-center w-100'>
+                <button className='btn btn-warning mt-5 px-4' type='submit'>Signup</button>
+              </div>
+              <Link to='/login' className='text-decoration-none text-center text-primary fs-5 mt-3'><span className='text-danger'>Already a User?</span> Login</Link>
+            </form>
+          </div>
+
+          <div className='login-image-container col-4'>
+            <img src='https://static.vecteezy.com/system/resources/thumbnails/012/697/735/small_2x/red-and-white-abstract-background-with-geometric-elements-for-modern-presentation-template-design-free-vector.jpg' alt='welcome' />
+            <h1>Welcome to ETail!</h1>
+            <span>Your shopping journey starts here. Let’s make it amazing!</span>
+          </div>
         </div>
       </div>
     </>

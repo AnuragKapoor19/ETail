@@ -2,6 +2,11 @@
     width: 100vw;
     height: 100vh;
     position: relative;
+    overflow: hidden;
+}
+
+.hide-welcome{
+    display: none;
 }
 
 .div1 {
@@ -23,14 +28,22 @@
     height: 80%;
     width: 80%;
     color: white;
+    display: flex;
 }
 
 .login-form {
-    background-image: linear-gradient(to left, rgb(165, 0, 0), rgb(120, 160, 39));
+    background-image: linear-gradient(to bottom, rgb(165, 0, 0) 40%, yellow, white);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.login-form button {
+    background-color: rgb(165, 0, 0);
+    color: white;
+    font-weight: bold;
+    width: fit-content;
 }
 
 .login-form form {
@@ -60,10 +73,52 @@
     text-align: center;
 }
 
-.login-image-container span{
+.login-image-container span {
     z-index: 1;
     width: 50%;
     margin-left: 20px;
     color: black;
     text-align: center;
+}
+
+/* For Tablets */
+@media screen and (max-width: 768px) {
+    .login-container {
+        width: 100%;
+        left: 10%;
+        height: 60%;
+        top: 20%;
+    }
+
+    .signup-container {
+        height: 80%;
+        top: 10%;
+    }
+
+    .login-image-container h1 {
+        font-size: larger;
+    }
+
+    .login-image-container span {
+        font-size: medium;
+    }
+}
+
+/*For Mobiles*/
+@media screen and (max-width: 480px) {
+    .login-container{
+        left: 5%;
+    }
+
+    .login-form{
+        width: 90%;
+    }
+
+    .hide-welcome{
+        display: block;
+    }
+
+    .login-image-container {
+        display: none;
+    }
 }
