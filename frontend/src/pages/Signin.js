@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { ContextState } from '../contextAPI'
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 export default function Signin() {
   const { setloading, setuser, setisAuthenticated, isAuthenticated } = ContextState();
   const navigate = useNavigate();
   const [credentials, setcredentials] = useState({ name: '', email: '', password: '' })
   const [avatar, setavatar] = useState('')
+  const [showPassword, setshowPassword] = useState(false)
   const [avatarPreview, setavatarPreview] = useState('https://www.kindpng.com/picc/m/22-223863_no-avatar-png-circle-transparent-png.png')
 
   const handleChange = (e) => {
@@ -83,7 +85,10 @@ export default function Signin() {
 
               <div className='mb-3'>
                 <label htmlFor="password" className="form-label">Password</label>
-                <input type="password" name='password' className="form-control border-warning fw-bold" id="password" placeholder="password" value={credentials.password} onChange={handleChange} required />
+                <div className='login-password-container'>
+                  <input type={`${showPassword ? 'text' : 'password'}`} name='password' className="form-control border-warning fw-bold" id="password" placeholder="password" value={credentials.password} onChange={handleChange} required />
+                  <i onClick={() => setshowPassword(!showPassword)}>{showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />}</i>
+                </div>
               </div>
 
               <div>

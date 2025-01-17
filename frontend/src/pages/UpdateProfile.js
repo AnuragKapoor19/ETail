@@ -52,9 +52,10 @@ export default function UpdateProfile() {
     return (
         <>
             <Header />
-            <div className='form-container d-flex justify-content-center align-items-center flex-column m-5'>
-                <form className='d-flex flex-column border border-dark p-5 rounded bg-danger text-light' onSubmit={handleSubmit} encType='multipart/form-data'>
-                    <h3 className=' text-center'>Update Profile</h3>
+            <div className='update-profile-container d-flex justify-content-center align-items-center flex-column m-5'>
+                <form className='d-flex flex-column px-5 pb-5' onSubmit={handleSubmit} encType='multipart/form-data'>
+                    <img className='logo' src='https://static.vecteezy.com/system/resources/thumbnails/006/467/668/small_2x/a-trendy-icon-of-profile-update-isometric-design-vector.jpg' alt='logo' />
+                    <h2 className=' text-center text-warning fw-bolder'>Update Profile</h2>
                     <div className="mt-3 mb-5">
                         <label htmlFor="name" className="form-label">Name</label>
                         <input type="text" name='name' className="form-control border-warning fw-bold" id="name" placeholder="name" value={credentials.name} onChange={handleChange} />
@@ -82,7 +83,7 @@ export default function UpdateProfile() {
                         </div>
                     </div>
 
-                    <button className='btn btn-warning mt-5' type='submit'>Update</button>
+                    <button className='btn btn-warning mt-5 rounded-0' type='submit'>Update</button>
                 </form>
             </div>
             <Footer />

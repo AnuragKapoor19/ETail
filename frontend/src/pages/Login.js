@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { ContextState } from '../contextAPI'
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 export default function Login() {
     const { setloading, setuser, setisAuthenticated, isAuthenticated } = ContextState();
     const navigate = useNavigate();
+    const [showPassword, setshowPassword] = useState(false)
     const [credentials, setcredentials] = useState({ email: '', password: '' })
 
     const handleChange = (e) => {
@@ -57,7 +59,10 @@ export default function Login() {
                             </div>
                             <div>
                                 <label htmlFor="password" className="form-label">Password</label>
-                                <input type="password" name='password' className="form-control border-warning fw-bold" id="password" placeholder="password" value={credentials.password} onChange={handleChange} required />
+                                <div className='login-password-container'>
+                                    <input type={`${showPassword ? 'text' : 'password'}`} name='password' className="form-control border-warning fw-bold" id="password" placeholder="password" value={credentials.password} onChange={handleChange} required />
+                                    <i onClick={() => setshowPassword(!showPassword)}>{showPassword ? <FaEyeSlash size={20}/> : <FaEye size={20}/>}</i>
+                                </div>
                             </div>
                             <Link to='/forgotpassword' className="text-decoration-none text-danger mt-2 fs-5">Forgot Password?</Link>
                             <div className='text-center w-100'>

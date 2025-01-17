@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useNavigate, useParams } from 'react-router-dom';
 
 export default function ResetPassword() {
     const { token } = useParams()     //Takes token from the URL or route
     const navigate = useNavigate()
+    const [showPassword, setshowPassword] = useState(false)
     const [credentials, setcredentials] = useState({ password: '', confirmPassword: '' })
     const handleChange = (e) => {
         setcredentials({ ...credentials, [e.target.name]: e.target.value })
@@ -40,13 +42,14 @@ export default function ResetPassword() {
                     <div class="mb-5">
                         <label for="inputPassword" class="col-sm-2 col-form-label me-2">Password:</label>
                         <div class="col-sm-12">
-                            <input type="password" class="form-control" id="inputPassword" name='password' value={credentials.password} onChange={handleChange} required />
+                            <input type={`${showPassword ? 'text' : 'password'}`} class="form-control fw-bold" id="inputPassword" name='password' value={credentials.password} onChange={handleChange} required />
                         </div>
                     </div>
                     <div class="mb-5">
                         <label for="inputConfirmPassword" class="col-sm-5 col-form-label me-2">Confirm-Password:</label>
-                        <div class="col-sm-12">
-                            <input type="password" class="form-control" id="inputConfirmPassword" name='confirmPassword' value={credentials.confirmPassword} onChange={handleChange} required />
+                        <div class="login-password-container col-sm-12">
+                            <input type={`${showPassword ? 'text' : 'password'}`} class="form-control fw-bold" id="inputConfirmPassword" name='confirmPassword' value={credentials.confirmPassword} onChange={handleChange} required />
+                            <i onClick={() => setshowPassword(!showPassword)}>{showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />}</i>
                         </div>
                     </div>
                     <button className='btn btn-warning w-100 fw-bold' type='submit'>Reset Password</button>

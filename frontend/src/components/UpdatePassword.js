@@ -38,20 +38,22 @@ export default function UpdatePassword() {
 
     return (
         <>
-            <button type="button" className="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" className="sidebar-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Change Password
             </button>
 
             <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div className="modal-dialog">
-                    <div className="modal-content">
+                <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content text-dark">
                         <form onSubmit={handleSubmit}>
                             <div className="modal-header">
-                                <h1 className="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                <h1 className="modal-title fs-4 fw-bolder text-center text-warning w-100" id="exampleModalLabel">Update Password</h1>
                                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div className="modal-body">
-                                <h3>Update Password</h3>
+                                <div className='w-100 text-center'>
+                                    <img src='https://i.pinimg.com/736x/76/38/69/763869a33c8ac9e99a59500992c11127.jpg' alt='logo' className='w-50'/>
+                                </div>
                                 <div className="mt-3 mb-5">
                                     <label htmlFor="oldPassword" className="form-label">Old Password</label>
                                     <input type="password" name='oldPassword' className="form-control border-warning fw-bold" id="oldPassword" value={oldPassword} onChange={handleoldPassword} required />
