@@ -81,6 +81,20 @@
     text-align: center;
 }
 
+.reset-form-container{
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    position: relative;
+}
+
+.reset-form-container img{
+    position: absolute;
+    height: 100px;
+    width: 150px;
+    top: -60px;
+    left: 37%;
+}
+
+
 /* For Tablets */
 @media screen and (max-width: 768px) {
     .login-container {
@@ -101,6 +115,10 @@
 
     .login-image-container span {
         font-size: medium;
+    }
+
+    .reset-form-container img{
+        left: 30%;
     }
 }
 

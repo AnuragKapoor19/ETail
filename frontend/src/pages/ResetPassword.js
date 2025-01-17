@@ -33,9 +33,10 @@ export default function ResetPassword() {
 
     return (
         <>
-            <div className='reset_form_container d-flex justify-content-center align-items-center bg-dark' style={{ height: '100vh' }}>
-                <form className='col-sm-8 col-md-4 col-lg-4 bg-danger rounded-5 text-light p-5 border' onSubmit={handleSubmit}>
-                    <h3 className='text-center mb-5'>Reset Password</h3>
+            <div className='d-flex justify-content-center align-items-center' style={{ height: '100vh' }}>
+                <form className='reset-form-container col-sm-8 col-md-4 col-lg-4 p-5 border' onSubmit={handleSubmit}>
+                    <img src='https://cdn-icons-png.flaticon.com/512/6195/6195699.png' alt='logo' />
+                    <h3 className='text-center mb-5 fw-bolder'>Reset Password</h3>
                     <div class="mb-5">
                         <label for="inputPassword" class="col-sm-2 col-form-label me-2">Password:</label>
                         <div class="col-sm-12">
