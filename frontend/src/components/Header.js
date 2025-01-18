@@ -120,6 +120,10 @@ export default function Headers() {
     const handleSearchClick = () => {
         setkeyword(word)
         setloading(true)
+        setminPrice(0)
+        setmaxPrice(1000)
+        setcategory('')
+        setbrand('')
         navigate('/shop')
     }
 

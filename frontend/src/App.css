@@ -208,7 +208,7 @@
     font-size: 16px;
 }
 
-.update-profile-container{
+.update-profile-container {
     min-height: 70vh;
 }
 
@@ -216,13 +216,12 @@
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
-.update-profile-container .logo{
+.update-profile-container .logo {
     height: 90px;
     width: 150px;
     border-radius: 50%;
     margin-left: 30%;
 }
-
 
 /* For Tablets */
 @media screen and (max-width: 768px) {
@@ -340,7 +339,7 @@
         margin: 2px 0;
     }
 
-    .update-profile-container .logo{
+    .update-profile-container .logo {
         margin-left: 17%;
     }
 }
