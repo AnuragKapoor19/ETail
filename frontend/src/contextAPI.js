@@ -14,6 +14,7 @@ const ContextProvider = ({ children }) => {
     const [minPrice, setminPrice] = useState(0)
     const [maxPrice, setmaxPrice] = useState(1000)
     const [category, setcategory] = useState('')
+    const [brand, setbrand] = useState('')
     const [user, setuser] = useState()
     const [isAuthenticated, setisAuthenticated] = useState(false)
     const [toggle, settoggle] = useState(false)
@@ -55,6 +56,8 @@ const ContextProvider = ({ children }) => {
             setmaxPrice,
             category,
             setcategory,
+            brand,
+            setbrand,
             user,
             setuser,
             isAuthenticated,

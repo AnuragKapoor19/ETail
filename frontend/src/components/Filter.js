@@ -21,11 +21,21 @@ export default function Filter() {
         'Home'
     ]
 
-    const { setminPrice, setmaxPrice, setloading, setcategory } = ContextState();
+    const brands = [
+        'HP',
+        'Samsung',
+        'Apple',
+        'StanFord',
+        'Adidas'
+    ]
+
+    const { setminPrice, setmaxPrice, setloading, setcategory, setbrand, setcurrentPage } = ContextState();
     const [lprice, setlprice] = useState(0)
     const [hprice, sethprice] = useState(1000)
     const [selected, setselected] = useState(null)
     const [cat, setcat] = useState('')
+    const [selectedseller, setselectedseller] = useState(null)
+    const [seller, setseller] = useState('')
 
     const handleMinChange = (e) => {
         setlprice(e.target.value)
@@ -35,11 +45,35 @@ export default function Filter() {
         sethprice(e.target.value)
     }
 
+    const handleCategory = (category) => {
+        if (selected === category) {
+            setcat('')
+            setselected(null)
+        }
+        else {
+            setcat(category);
+            setselected(category)
+        }
+    }
+
+    const handleBrand = (brand) => {
+        if (selectedseller === brand) {
+            setseller('')
+            setselectedseller(null)
+        }
+        else {
+            setseller(brand);
+            setselectedseller(brand)
+        }
+    }
+
     const handleClick = () => {
         setminPrice(lprice)
         setmaxPrice(hprice)
         setloading(true)
         setcategory(cat)
+        setbrand(seller)
+        setcurrentPage(1)
     }
 
     return (
@@ -74,8 +108,17 @@ export default function Filter() {
                                 <div className='category mx-2 mt-5'>
                                     <h3 className='text-center text-danger'>Categories</h3>
                                     {categories.map((category) => (
-                                        <div className={`cat btn m-1 fw-bold ${selected === category ? 'selected' : ''}`} onClick={() => {setcat(category); setselected(category)}} key={category}>
+                                        <div className={`cat btn m-1 fw-bold ${selected === category ? 'selected' : ''}`} onClick={() => handleCategory(category)} key={category}>
                                             {category}
+                                        </div>
+                                    ))}
+                                </div>
+
+                                <div className='brands mx-2 mt-5'>
+                                    <h3 className='text-center text-danger'>Brands</h3>
+                                    {brands.map((brand) => (
+                                        <div className={`brand btn m-1 fw-bold ${selectedseller === brand ? 'selected' : ''}`} onClick={() => handleBrand(brand)} key={brand}>
+                                            {brand}
                                         </div>
                                     ))}
                                 </div>

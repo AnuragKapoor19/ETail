@@ -9,14 +9,24 @@ import Filter from '../components/Filter';
 
 export default function Shop() {
 
-    const { products, setproducts, setresPerPage, setproductsCount, currentPage, loading, setloading, keyword, minPrice, maxPrice, category, settoggle, isAuthenticated, isProductDeleted, isProductUpdated, isReviewDeleted } = ContextState();
+    const { products, setproducts, setresPerPage, setproductsCount, currentPage, loading, setloading, keyword, minPrice, maxPrice, category, brand, settoggle, isAuthenticated, isProductDeleted, isProductUpdated, isReviewDeleted } = ContextState();
 
     const getAllProducts = async () => {
         try {
             let link = `http://localhost:5000/api/v1/products/?keyword=${keyword}&page=${currentPage}&price[$lte]=${maxPrice}&price[$gte]=${minPrice}`;
 
-            if (category) {
-                link = `http://localhost:5000/api/v1/products/?keyword=${keyword}&page=${currentPage}&price[$lte]=${maxPrice}&price[$gte]=${minPrice}&category=${category}`
+            if (category !== '') {
+                if (brand !== '') {
+                    link = `http://localhost:5000/api/v1/products/?keyword=${keyword}&page=${currentPage}&price[$lte]=${maxPrice}&price[$gte]=${minPrice}&category=${category}&seller=${brand}`
+                }
+                else {
+                    link = `http://localhost:5000/api/v1/products/?keyword=${keyword}&page=${currentPage}&price[$lte]=${maxPrice}&price[$gte]=${minPrice}&category=${category}`
+                }
+            }
+            else {
+                if (brand !== '') {
+                    link = `http://localhost:5000/api/v1/products/?keyword=${keyword}&page=${currentPage}&price[$lte]=${maxPrice}&price[$gte]=${minPrice}&seller=${brand}`
+                }
             }
 
             const response = await fetch(link, {
@@ -46,7 +56,7 @@ export default function Shop() {
     useEffect(() => {
         getAllProducts();
         // eslint-disable-next-line
-    }, [currentPage, keyword, maxPrice, minPrice, category, isAuthenticated, loading, isProductDeleted, isProductUpdated, isReviewDeleted])
+    }, [currentPage, keyword, maxPrice, minPrice, category, brand, isAuthenticated, loading, isProductDeleted, isProductUpdated, isReviewDeleted])
 
     return (
         <>

@@ -11,7 +11,7 @@ import { FaHome, FaShoppingBasket } from 'react-icons/fa';
 
 export default function ToggleMenu() {
 
-    const { setuser, setisAuthenticated, settoggle, setloading, user, setkeyword, setminPrice, setmaxPrice, setcategory } = ContextState();
+    const { setuser, setisAuthenticated, settoggle, setloading, user, setkeyword, setminPrice, setmaxPrice, setcategory, setbrand } = ContextState();
 
     const handleClick = () => {
         setkeyword('')
@@ -19,6 +19,7 @@ export default function ToggleMenu() {
         setminPrice(0)
         setmaxPrice(1000)
         setcategory('')
+        setbrand('')
         settoggle(false)
     }
 
