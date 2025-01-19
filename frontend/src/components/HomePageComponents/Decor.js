@@ -45,7 +45,7 @@ export default function Decor() {
                     <div className='row justify-content-start my-3'>
                         {
                             products.map((product) => (
-                                <ProductCard key={product._id} product={product} col='4' />
+                                <ProductCard key={product._id} product={product} collg='4' colmd='4' colsm='4' />
                             ))
                         }
                     </div>

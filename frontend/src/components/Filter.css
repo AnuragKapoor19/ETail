@@ -3,7 +3,8 @@
     overflow-y: auto;
     overflow-x: hidden;
     min-height: 100%;
-    background-color: rgba(0, 0, 0, 0.179);
+    background-color: rgba(0, 0, 0, 0.247);
+    border-right: 1px solid black;
 }
 
 .filter-container h3 {
@@ -70,7 +71,7 @@
     .filter-container2 {
         display: block;
         position: absolute;
-        right: 10px;
+        right: 20px;
         margin-top: 10px;
     }
 }

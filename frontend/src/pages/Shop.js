@@ -65,7 +65,9 @@ export default function Shop() {
                 <Filter />
                 {products.length === 0
                     ?
-                    <div className='w-100 text-center fs-2 fw-bolder' style={{minHeight: '50vh'}}>Sorry, No Product Found!</div>
+                    <>
+                        <div className='w-100 text-center fs-2 fw-bolder' style={{ minHeight: '75vh' }}>Sorry, No Product Found!</div>
+                    </>
                     :
                     <div className='products px-3 my-4 col-lg-10' onClick={() => settoggle(false)}>
                         <div className='d-flex justify-content-between'>
@@ -100,13 +102,13 @@ export default function Shop() {
                                                 </b>
                                             </div>
                                         </div>
-                                        {products.map((product) => (
-                                            <Product key={product._id} product={product} />
+                                        {products.map((product, index) => (
+                                            <Product key={index} product={product} col='3' />
                                         ))}
                                     </>
                                     :
                                     products.map((product) => (
-                                        <Product key={product._id} product={product} />
+                                        <Product key={product._id} product={product} collg='3' colmd='4' />
                                     ))
                             }
                         </div>

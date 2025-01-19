@@ -3,7 +3,7 @@ import { IoIosStar, IoIosStarOutline } from "react-icons/io";
 import { ContextState } from '../contextAPI';
 import { useNavigate } from 'react-router-dom';
 
-export default function ProductCard({ product, col }) {
+export default function ProductCard({ product, collg, colmd, colsm }) {
     const { setproduct } = ContextState();
     const navigate = useNavigate()
 
@@ -30,7 +30,7 @@ export default function ProductCard({ product, col }) {
 
     return (
         <>
-            <div key={product._id} className={`col z-0 ${col ? `col-${col}` : 'col-sm-6 col-md-6 col-lg-2 mb-3'}`}>
+            <div key={product._id} className={`z-0 ${collg ? `col-lg-${collg}` : 'col-lg-2'} ${colmd ? `col-md-${colmd}` : 'col-md-6 '} ${colsm ? `col-sm-${colsm}` : 'col-sm-6 '} mb-3`}>
                 <div className="card w-100 border-0" style={{ width: "18rem" }}>
                     <img src={product.images[0].url} className="card-img-top" alt="img1" height='250px' width='250px' />
                     <div className="card-body">

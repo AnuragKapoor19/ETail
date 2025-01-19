@@ -139,7 +139,7 @@ export default function Filter() {
                     </button>
 
                     <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable z-1">
                             <div className="modal-content">
                                 <div className="modal-header">
                                     <h1 className="modal-title fs-5" id="exampleModalLabel">Filter Products</h1>
@@ -147,7 +147,7 @@ export default function Filter() {
                                 </div>
                                 <div className="modal-body text-center">
                                     <h3 className='text-center text-danger'>Price</h3>
-                                    <div className='price d-flex'>
+                                    <div className='price d-flex justify-content-center'>
                                         <label htmlFor='min-price-input' className='ms-1 fw-bold'>Min price: </label>
                                         <div className='min-price d-flex bg-warning rounded-3'>
                                             <i className='p-1 d-flex align-items-center'><FaDollarSign /></i>

@@ -54,7 +54,7 @@ export default function Cart() {
                     <div className='h4 text-center d-flex justify-content-center align-items-center' style={{ height: '80vh' }}> Cart is Empty !</div>
                     :
                     <>
-                        <div className='cart-items m-3 col-sm-10 col-md-8 col-lg-8' style={{ overflowY: 'scroll', height: '75vh' }}>
+                        <div className='cart-items m-3 col-sm-10 col-md-8 col-lg-8' >
                             <div className='d-flex justify-content-around'>
                                 <h4 className='col-2 text-center'>Image</h4>
                                 <h4 className='col-2 text-center'>Name</h4>
@@ -63,7 +63,7 @@ export default function Cart() {
                                 <h4 className='col-1 text-center'>Del</h4>
                             </div>
                             {cartItems.map(item => (
-                                <div key={item._id} className='card-item d-flex justify-content-around align-items-center border border-dark rounded-3 p-2 my-2'>
+                                <div key={item._id} className='cart-item d-flex justify-content-around align-items-center border border-dark rounded-3 p-2 my-2'>
                                     <img src={item.images[0].url} alt='Product' className='col-2' />
                                     <span className='name fw-bolder fs-5 col-2 text-center'>{item.name}</span>
                                     <span className='price text-warning text-center h5 col-1'>${item.price}</span>
@@ -95,7 +95,7 @@ export default function Cart() {
                         ?
                         <div className='btn btn-warning rounded-5 w-100' onClick={handleCheckOut}>Check Out</div>
                         :
-                        <div className='btn btn-warning rounded-5 w-100' onClick={()=> navigate('/login')}>Sign in to Check Out</div>
+                        <div className='btn btn-warning rounded-5 w-100' onClick={() => navigate('/login')}>Sign in to Check Out</div>
                     }
                 </div>
             </div>
