@@ -184,7 +184,7 @@ export default function Headers() {
                         <div className='hidden userAvatar justify-content-center align-items-center'>
                             <img src={user.avatar.url} className='rounded-circle me-2' style={{ maxWidth: '40px', maxHeight: '40px', minWidth: '40px', minHeight: '40px' }} alt='Avatar' />
                             <div className='d-flex flex-column'>
-                                <span>Hi</span>
+                                <span className='fs-6'>Hi</span>
                                 <span className='fw-bold fs-5'>{String(user.name).split(' ')[0]}</span>
                             </div>
                             <i className='dots3 btn text-light border-0 ms-2' onClick={handleToggleMenu}><CiMenuKebab size={27} /></i>

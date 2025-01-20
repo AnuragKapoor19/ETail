@@ -89,9 +89,9 @@ export default function AdminProductReviews() {
 
                     {reviews.length <= 0
                         ?
-                        <div>No Reviews Yet</div>
+                        <div className='fs-5'>No Reviews Yet!</div>
                         :
-                        <div className='col-11 p-2 border border-5 rounded text-center'>
+                        <div className='col-11 p-2 b-shadow text-center'>
                             <h3 className='mb-5'>All Reviews</h3>
                             <table className='col-12' cellPadding="5px">
                                 <thead>

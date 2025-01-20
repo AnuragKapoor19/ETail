@@ -79,7 +79,7 @@ export default function AdminUpdateUser() {
                         ?
                         <h3>Loading...</h3>
                         :
-                        <form className='p-5 col-sm-8 col-md-6 col-lg-6 mt-2 mb-4 border border-info border-5' onSubmit={handleSubmit}>
+                        <form className='p-5 col-sm-8 col-md-6 col-lg-6 mt-2 mb-4 b-shadow' onSubmit={handleSubmit}>
                             <div className='p-name d-flex flex-column mb-3'>
                                 <label htmlFor='name' className='fw-bold fs-5' >Name</label>
                                 <input type='text' id='name' className='rounded fs-5 py-1 px-2' name='name' onChange={handleChange} value={credentials.name} />

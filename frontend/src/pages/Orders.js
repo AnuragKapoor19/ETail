@@ -28,36 +28,38 @@ export default function Orders() {
     return (
         <>
             <Header />
-            <div className='orders-container d-flex justify-content-center my-4'>
-                <div className='col-10 p-2 border border-5 rounded text-center'>
-                    <h3 className='mb-5'>My Orders</h3>
-                    <table className='w-100' cellPadding="5px" style={{ overflow: "scroll" }}>
-                        <thead>
-                            <tr>
-                                <th>Sr No.</th>
-                                <th>Order Id</th>
-                                <th>Amount</th>
-                                <th>Status</th>
-                                <th>Items</th>
-                                <th>Details</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            {orders && orders.map((order) => (
-                                <tr>
-                                    <td>1</td>
-                                    <td>{order._id}</td>
-                                    <td>${order.totalPrice}</td>
-                                    <td>{order.orderStatus}</td>
-                                    <td>{order.orderItems.length}Items</td>
-                                    <td><Link to={`/order/${order._id}`} className='btn btn-warning'>Details</Link></td>
+            <div style={{ minHeight: '50vh' }}>
+                <div className='orders-container d-flex justify-content-center my-4'>
+                    <div className='col-10 p-2 b-shadow text-center'>
+                        <h3 className='mb-5'>My Orders</h3>
+                        <table className='w-100' cellPadding="5px">
+                            <thead>
+                                <tr className='top-tr'>
+                                    <th>Sr No.</th>
+                                    <th>Order Id</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Items</th>
+                                    <th>Details</th>
                                 </tr>
-                            ))
-                            }
-                        </tbody>
+                            </thead>
 
-                    </table>
+                            <tbody>
+                                {orders && orders.map((order, index) => (
+                                    <tr className='tr' key={index}>
+                                        <td>{index + 1}</td>
+                                        <td>{order._id}</td>
+                                        <td>${order.totalPrice}</td>
+                                        <td>{order.orderStatus}</td>
+                                        <td>{order.orderItems.length}Items</td>
+                                        <td><Link to={`/order/${order._id}`} className='btn btn-warning w-100'>Details</Link></td>
+                                    </tr>
+                                ))
+                                }
+                            </tbody>
+
+                        </table>
+                    </div>
                 </div>
             </div>
             <Footer />

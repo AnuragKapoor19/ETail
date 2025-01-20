@@ -52,7 +52,7 @@ export default function AdminAllUsers() {
             <div className='big-d-container big-o-container d-flex'>
                 <DashboardSidebar />
                 <div className='users-container ms-1 d-flex justify-content-center my-4 col-sm-12 col-md-12 col-lg-9'>
-                    <div className='col-11 p-2 border border-5 rounded text-center'>
+                    <div className='col-11 p-2 b-shadow text-center'>
                         <h3 className='mb-5'>All Users</h3>
                         <table className='col-12 ' cellPadding="5px">
                             <thead>
