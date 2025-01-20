@@ -73,9 +73,9 @@ export default function AdminProductReviews() {
     return (
         <>
             <Header />
-            <div className='update-container d-flex'>
+            <div className='big-d-container d-flex'>
                 <DashboardSidebar />
-                <div className='update-form-container d-flex align-items-center flex-column col-sm-8 col-md-9 col-lg-9'>
+                <div className='update-form-container d-flex align-items-center flex-column col-sm-12 col-md-12 col-lg-9'>
                     <h3 className='col-12 text-center fw-bolder mt-3'>Product Reviews</h3>
                     <form className='p-5 col-sm-8 col-md-6 col-lg-6 mt-2 mb-4 border border-info border-5' onSubmit={handleSubmit}>
 
@@ -91,11 +91,11 @@ export default function AdminProductReviews() {
                         ?
                         <div>No Reviews Yet</div>
                         :
-                        <div className='col-12 p-2 border border-5 rounded text-center'>
+                        <div className='col-11 p-2 border border-5 rounded text-center'>
                             <h3 className='mb-5'>All Reviews</h3>
-                            <table className='col-12 flex-column' cellPadding="5px" style={{ overflowY: "scroll" }}>
+                            <table className='col-12' cellPadding="5px">
                                 <thead>
-                                    <tr>
+                                    <tr className='top-tr'>
                                         <th>Review ID</th>
                                         <th>Rating</th>
                                         <th>Comment</th>
@@ -106,7 +106,7 @@ export default function AdminProductReviews() {
 
                                 <tbody>
                                     {reviews && reviews.map((review) => (
-                                        <tr>
+                                        <tr className='tr'>
                                             <td>{review._id}</td>
                                             <td>{review.rating}</td>
                                             <td>{review.comment}</td>

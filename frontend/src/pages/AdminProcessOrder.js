@@ -70,13 +70,13 @@ export default function AdminProcessOrder() {
     return (
         <>
             <Header />
-            <div className='order-container d-flex'>
+            <div className='big-d-container d-flex'>
                 <DashboardSidebar />
                 {loading
                     ?
                     <h4>Loading...</h4>
                     :
-                    <div className='order-data-conatiner col-sm-8 col-md-9 col-md-9'>
+                    <div className='order-data-conatiner col-sm-12 col-md-12 col-lg-9 p-3'>
 
                         <h3 className='text-center mt-2 mb-5 fw-bolder'>Order Details</h3>
 
@@ -100,17 +100,17 @@ export default function AdminProcessOrder() {
 
                             <div className="name d-flex justify-content-between fs-5 mt-3">
                                 <span className='fw-bold'>Name</span>
-                                <span>{order.user.name}</span>
+                                <span className='sp'>{order.user.name}</span>
                             </div>
 
                             <div className="phone d-flex justify-content-between fs-5">
                                 <span className='fw-bold'>Phone</span>
-                                <span>{order.shippingInfo.phoneNo}</span>
+                                <span className='sp'>{order.shippingInfo.phoneNo}</span>
                             </div>
 
                             <div className="address d-flex justify-content-between fs-5">
                                 <span className='fw-bold'>Address</span>
-                                <span>{order.shippingInfo.address},{order.shippingInfo.city},{order.shippingInfo.postalCode},{order.shippingInfo.country}</span>
+                                <span className='sp'>{order.shippingInfo.address},{order.shippingInfo.city},{order.shippingInfo.postalCode},{order.shippingInfo.country}</span>
                             </div>
 
                         </div>

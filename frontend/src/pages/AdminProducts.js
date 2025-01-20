@@ -56,14 +56,14 @@ export default function AdminProducts() {
     return (
         <>
             <Header />
-            <div className='d-flex'>
+            <div className='big-d-container big-o-container d-flex'>
                 <DashboardSidebar />
-                <div className='products-container ms-1 d-flex justify-content-center my-4 col-sm-8 col-md-9 col-lg-9'>
-                    <div className='col-12 p-2 border border-5 rounded text-center'>
+                <div className='products-container ms-1 d-flex justify-content-center my-4 col-sm-12 col-md-12 col-lg-9'>
+                    <div className='col-11 p-2 border border-5 rounded text-center'>
                         <h3 className='mb-5'>All Products</h3>
-                        <table className='col-12 flex-column' cellPadding="5px" style={{ overflowY: "scroll" }}>
+                        <table className='col-12' cellPadding="5px" >
                             <thead>
-                                <tr>
+                                <tr className='top-tr'>
                                     <th>Product Id</th>
                                     <th>Name</th>
                                     <th>Price</th>
@@ -74,12 +74,12 @@ export default function AdminProducts() {
 
                             <tbody>
                                 {adminProducts && adminProducts.map((product) => (
-                                    <tr>
+                                    <tr className='tr'>
                                         <td>{product._id}</td>
                                         <td>{product.name}</td>
                                         <td>${product.price}</td>
                                         <td>{product.stock}</td>
-                                        <td>
+                                        <td className='d-flex justify-content-center'>
                                             <Link to={`/admin/product/update/${product._id}`} onClick={() => seteditProduct(product)} className='btn btn-primary me-1'><MdEdit /></Link>
                                             <div className='btn btn-danger' onClick={() => handleDelete(product._id)}><IoTrashBin /></div>
                                         </td>
