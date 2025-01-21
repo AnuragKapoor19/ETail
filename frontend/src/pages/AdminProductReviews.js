@@ -81,7 +81,7 @@ export default function AdminProductReviews() {
 
                         <div className='p-name d-flex flex-column mb-3'>
                             <label htmlFor='name' className='fw-bold fs-5' >Enter Product Id</label>
-                            <input type='text' id='name' className='rounded fs-5 py-1 px-2' name='name' onChange={handleChange} value={productId} required />
+                            <input type='text' id='name' className='rounded fs-5 py-1 px-2' name='name' minLength='24' maxLength='24' onChange={handleChange} value={productId} required />
                         </div>
 
                         <button type='submit' className='btn btn-warning py-2 w-100' >Search</button>
