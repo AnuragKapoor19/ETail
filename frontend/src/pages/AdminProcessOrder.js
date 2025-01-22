@@ -3,6 +3,7 @@ import DashboardSidebar from '../components/DashboardSidebar'
 import { useParams } from 'react-router-dom'
 import Header from '../components/Header'
 import { ContextState } from '../contextAPI'
+import toast from 'react-hot-toast'
 
 export default function AdminProcessOrder() {
     const { setisOrderUpdated, isOrderUpdated } = ContextState();
@@ -61,6 +62,7 @@ export default function AdminProcessOrder() {
             }
 
             setisOrderUpdated(true)
+            toast.success('Order Status Updated!')
 
         } catch (error) {
             console.log(error.message);

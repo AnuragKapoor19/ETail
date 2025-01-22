@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { ContextState } from '../contextAPI'
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import toast from 'react-hot-toast';
 
 export default function Login() {
     const { setloading, setuser, setisAuthenticated, isAuthenticated } = ContextState();
@@ -33,6 +34,7 @@ export default function Login() {
 
         await setuser(data.user)
         await setisAuthenticated(true)
+        toast.success("Signed In successfully!")
         navigate('/')
     }
 

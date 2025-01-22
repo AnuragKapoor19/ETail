@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import DashboardSidebar from '../components/DashboardSidebar'
 import { IoTrashBin } from 'react-icons/io5'
 import { ContextState } from '../contextAPI'
+import toast from 'react-hot-toast'
 
 export default function AdminProductReviews() {
     const [productId, setproductId] = useState('')
@@ -64,7 +65,7 @@ export default function AdminProductReviews() {
             }
 
             setisReviewDeleted(true)
-            console.log(data.message);
+            toast.success(data.message);
         } catch (error) {
             console.log(error);
         }

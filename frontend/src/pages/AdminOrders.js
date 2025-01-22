@@ -5,6 +5,7 @@ import DashboardSidebar from '../components/DashboardSidebar'
 import { IoTrashBin } from "react-icons/io5";
 import { ContextState } from '../contextAPI'
 import { FcProcess } from "react-icons/fc";
+import toast from 'react-hot-toast';
 
 export default function AdminOrders() {
     const { adminOrders, setadminOrders, isOrderUpdated, isOrderDeleted, setisOrderDeleted } = ContextState();
@@ -23,7 +24,7 @@ export default function AdminOrders() {
             }
 
             setisOrderDeleted(true)
-            console.log(data.message);
+            toast.success(data.message);
 
         } catch (error) {
             console.log(error.message);

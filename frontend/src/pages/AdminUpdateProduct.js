@@ -3,6 +3,7 @@ import DashboardSidebar from '../components/DashboardSidebar'
 import { useNavigate, useParams } from 'react-router-dom'
 import { ContextState } from '../contextAPI'
 import Header from '../components/Header';
+import toast from 'react-hot-toast';
 
 export default function AdminUpdateProduct() {
     const { editProduct, setisProductUpdated } = ContextState();
@@ -68,6 +69,7 @@ export default function AdminUpdateProduct() {
             if (data.success) {
                 navigate('/admin/products')
                 setisProductUpdated(true)
+                toast.success('Product Updated Successfully!')
             }
 
         } catch (error) {

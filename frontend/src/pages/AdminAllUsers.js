@@ -5,6 +5,7 @@ import Header from '../components/Header'
 import { MdEdit } from 'react-icons/md'
 import { Link } from 'react-router-dom'
 import { ContextState } from '../contextAPI'
+import toast from 'react-hot-toast'
 
 export default function AdminAllUsers() {
     const { allUsers, setallUsers, isUserDeleted, isUserUpdated, setisUserDeleted } = ContextState()
@@ -43,7 +44,7 @@ export default function AdminAllUsers() {
         }
 
         setisUserDeleted(true)
-        console.log(data.message);
+        toast.success(data.message);
     }
 
     return (

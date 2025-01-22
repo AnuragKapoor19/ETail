@@ -8,6 +8,7 @@ import { RiAlignItemLeftFill } from 'react-icons/ri';
 import { CgProfile } from "react-icons/cg";
 import { MdDashboard } from "react-icons/md";
 import { FaHome, FaShoppingBasket } from 'react-icons/fa';
+import toast from 'react-hot-toast';
 
 export default function ToggleMenu() {
 
@@ -38,6 +39,7 @@ export default function ToggleMenu() {
             setisAuthenticated(false)
             settoggle(false)
             setloading(true)
+            toast.success('User logged out successfully!')
         }
     }
 

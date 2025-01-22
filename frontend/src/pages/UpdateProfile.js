@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { ContextState } from '../contextAPI'
+import toast from 'react-hot-toast'
 
 export default function UpdateProfile() {
     const { user, setisUpdated } = ContextState()
@@ -45,6 +46,7 @@ export default function UpdateProfile() {
 
         if (data.success) {
             setisUpdated(true)
+            toast.success('Profile Updated!')
         }
 
     }

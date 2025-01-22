@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { ContextState } from '../contextAPI'
+import toast from 'react-hot-toast';
 
 export default function UpdatePassword() {
     const [oldPassword, setoldPassword] = useState('')
@@ -30,7 +31,7 @@ export default function UpdatePassword() {
             return console.log(data.message)
         }
 
-        console.log("Password Changed Successfully")
+        toast.success("Password Changed Successfully!")
         setisUpdated(true)
         setoldPassword('')
         setnewPassword('')

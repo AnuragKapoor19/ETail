@@ -4,6 +4,8 @@ import SyncLoader from "react-spinners/SyncLoader";
 import { ContextState } from '../contextAPI';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 
 export default function SingleProduct() {
     const { product, setcartItems, cartItems, user, rating, setrating } = ContextState();
@@ -31,6 +33,8 @@ export default function SingleProduct() {
             if (!data.success) {
                 return console.log(data.error || data.message)
             }
+
+            toast.success("Review Added successfully!")
 
         } catch (error) {
             console.log(error.message)
@@ -80,17 +84,17 @@ export default function SingleProduct() {
                 })
             )
 
-            let items = JSON.parse(localStorage.getItem('cartItems'))
+            // let items = JSON.parse(localStorage.getItem('cartItems'))
 
-            items = cartItems.map((item) => {
-                if (item._id === id) {
-                    item.quantity = quantity;
-                    return item
-                }
-                return item
-            })
+            // items = cartItems.map((item) => {
+            //     if (item._id === id) {
+            //         item.quantity += quantity;
+            //         return item
+            //     }
+            //     return item
+            // })
 
-            localStorage.setItem('cartItems', JSON.stringify(items))
+            localStorage.setItem('cartItems', JSON.stringify(cartItems))
 
         }
 
@@ -103,6 +107,8 @@ export default function SingleProduct() {
 
             localStorage.setItem('cartItems', JSON.stringify(items))
         }
+
+        toast.success("Item added to cart!")
 
     }
 
@@ -259,9 +265,9 @@ export default function SingleProduct() {
                         <div className="submitReview mt-5">
                             {!user
                                 ?
-                                <button type="button" className="btn btn-warning">
+                                <Link to={'/login'} type="button" className="btn btn-warning">
                                     Login to post a Review
-                                </button>
+                                </Link>
                                 :
                                 <button type="button" className="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     Add review

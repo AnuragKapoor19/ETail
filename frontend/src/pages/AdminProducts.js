@@ -5,6 +5,7 @@ import { IoTrashBin } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 import DashboardSidebar from '../components/DashboardSidebar';
 import { ContextState } from '../contextAPI';
+import toast from 'react-hot-toast';
 
 export default function AdminProducts() {
     const { adminProducts, setadminProducts, isProductDeleted, setisProductDeleted, seteditProduct, isProductUpdated } = ContextState()
@@ -23,7 +24,7 @@ export default function AdminProducts() {
             }
 
             setisProductDeleted(true)
-            console.log(data.message)
+            toast.success(data.message)
         } catch (error) {
             console.log(error.message)
         }

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Header from '../components/Header'
 import DashboardSidebar from '../components/DashboardSidebar'
 import { useNavigate } from 'react-router-dom'
+import toast from 'react-hot-toast'
 
 export default function AdminCreateProduct() {
     const navigate = useNavigate()
@@ -66,7 +67,7 @@ export default function AdminCreateProduct() {
                 return console.log(data.error || data.message)
             }
 
-            alert('Product added successfully')
+            toast.success('Product added successfully')
             navigate('/admin/dashboard')
         } catch (error) {
             console.log(error)

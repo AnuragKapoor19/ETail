@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { ContextState } from '../contextAPI'
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import toast from 'react-hot-toast';
 
 export default function Signin() {
   const { setloading, setuser, setisAuthenticated, isAuthenticated } = ContextState();
@@ -52,6 +53,7 @@ export default function Signin() {
     await setuser(data.user)
     await setisAuthenticated(true)
     await setloading(true)
+    toast.success("Account Created successfully!")
     navigate('/')
   }
 

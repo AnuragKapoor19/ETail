@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import DashboardSidebar from '../components/DashboardSidebar'
 import { useNavigate, useParams } from 'react-router-dom'
 import { ContextState } from '../contextAPI'
+import toast from 'react-hot-toast'
 
 export default function AdminUpdateUser() {
 
@@ -59,7 +60,7 @@ export default function AdminUpdateUser() {
 
             if (data.success) {
                 setisUserUpdated(true)
-                console.log(data.message)
+                toast.success(data.message)
                 navigate('/admin/users')
             }
 
