@@ -8,7 +8,6 @@ export default function Decor() {
 
     const getProducts = async () => {
         try {
-            let array = [];
             const res = await fetch('http://localhost:5000/api/v1/products', {
                 method: 'GET'
             })
@@ -19,10 +18,7 @@ export default function Decor() {
                 return console.log("Error: ", data.message || data.error)
             }
 
-            for (let i = 0; i < 3; i++) {
-                array.push(data.products[i])
-            }
-            setproducts(array);
+            setproducts(data.products);
         } catch (error) {
             console.log("Enable to load server! Please Try again later")
         }
@@ -44,7 +40,7 @@ export default function Decor() {
                     <span>Make your house feel like home.</span>
                     <div className='row justify-content-start my-3'>
                         {
-                            products.map((product) => (
+                            products.slice(0,3).map((product) => (
                                 <ProductCard key={product._id} product={product} collg='4' colmd='4' colsm='4' />
                             ))
                         }

@@ -8,7 +8,6 @@ export default function WeeklyDeals() {
 
     const getProducts = async () => {
         try {
-            let array = []
             const res = await fetch('http://localhost:5000/api/v1/products', {
                 method: 'GET'
             })
@@ -19,11 +18,7 @@ export default function WeeklyDeals() {
                 return console.log("Error: ", data.message || data.error)
             }
 
-            for (let i = 0; i < 6; i++) {
-                array.push(data.products[i])
-            }
-
-            setproducts(array)
+            setproducts(data.products)
             setloading(false)
 
         } catch (error) {
@@ -50,7 +45,7 @@ export default function WeeklyDeals() {
                     :
                     <div className='row justify-content-start my-3'>
                         {
-                            products.map((product, index) => (
+                            products.slice(0,6).map((product, index) => (
                                 <ProductCard key={index} product={product} />
                             ))
                         }
