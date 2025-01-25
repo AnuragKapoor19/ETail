@@ -134,44 +134,38 @@ export default function SingleProduct() {
                         <div id="carouselExampleIndicators" className="carousel slide">
                             <div className="carousel-indicators">
                                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-                                {product.images[1] ? <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button> : ''}
-                                {product.images[3] ? <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button> : ''}
+                                {product.images.length > 1 && <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2" />}
+                                {product.images.length > 2 && <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3" />}
+                                {product.images.length > 3 && <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4" />}
                             </div>
                             <div className="carousel-inner">
                                 <div className="carousel-item active">
-                                    <img src={product.images[0].url} className="d-block" alt="img1" style={{ height: "500px", width: "600px" }} />
+                                    <img src={product.images[0].url} className="d-block" alt="img1" style={{ maxHeight: "500px", width: "600px" }} />
                                 </div>
-                                {product.images[1]
-                                    ? <div className="carousel-item">
-                                        <img src={product.images[1].url} className="d-block" alt="img2" style={{ height: "500px", width: "600px" }} />
-                                    </div>
-                                    : ''
-                                }
 
-                                {product.images[2]
-                                    ? <div className="carousel-item">
-                                        <img src={product.images[2].url} className="d-block" alt="img3" style={{ height: "500px", width: "600px" }} />
-                                    </div>
-                                    : ''
-                                }
+                                {product.images.length > 1 && <div className='carousel-item'>
+                                    <img src={product.images[1].url} className="d-block" alt="img2" style={{ maxHeight: "500px", width: "600px" }} />
+                                </div>}
+
+                                {product.images.length > 2 && <div className='carousel-item'>
+                                    <img src={product.images[2].url} className="d-block" alt="img3" style={{ maxHeight: "500px", width: "600px" }} />
+                                </div>}
+
+                                {product.images.length > 3 && <div className='carousel-item'>
+                                    <img src={product.images[3].url} className="d-block" alt="img3" style={{ maxHeight: "500px", width: "600px" }} />
+                                </div>}
 
                             </div>
 
-                            {product.images.length > 1
-                                ?
-                                <>
-                                    <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                                        <span className="carousel-control-prev-icon" aria-hidden="true" style={{ backgroundColor: "black" }}></span>
-                                        <span className="visually-hidden">Previous</span>
-                                    </button>
-                                    <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                                        <span className="carousel-control-next-icon" aria-hidden="true" style={{ backgroundColor: "black" }}></span>
-                                        <span className="visually-hidden">Next</span>
-                                    </button>
-                                </>
-                                :
-                                ''
-                            }
+                            <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                <span className="carousel-control-prev-icon" aria-hidden="true" style={{ backgroundColor: "black" }}></span>
+                                <span className="visually-hidden">Previous</span>
+                            </button>
+                            <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                <span className="carousel-control-next-icon" aria-hidden="true" style={{ backgroundColor: "black" }}></span>
+                                <span className="visually-hidden">Next</span>
+                            </button>
+
                         </div>
                     </div>
 

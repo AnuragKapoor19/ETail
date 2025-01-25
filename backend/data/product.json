@@ -1,63 +1,63 @@
 [
     {
-        "name": "SD card",
-        "price": "5",
-        "description": "This is the fastest Sd card which can store data upto 256gb.It is manufactured by Samsung",
-        "rating": "4",
-        "images": {
-            "public_id": "Image1",
-            "url": "https://m.media-amazon.com/images/I/61KjEWhIi2L.jpg"
-        },
-        "category": "Electronics",
-        "seller": "Samsung",
-        "stock": "100"
+        "name": "Dell Latitude 5500",
+        "price": "80",
+        "description": "The Dell Latitude 5500 is a business-class laptop introduced in early 2019, known for its durability and performance.",
+        "rating": "4.5",
+        "images": [
+            "https://images-cdn.ubuy.co.in/667fcbbc40e0e42f731cc3cb-restored-dell-latitude-5500-15-6-fhd.jpg",
+            "https://m.media-amazon.com/images/I/81n97KeVxEL._AC_UF1000,1000_QL80_.jpg",
+            "https://cdn.dotpe.in/longtail/store-items/7786470/xLdQjvG5.jpeg"
+        ],
+        "category": "Laptop",
+        "seller": "Dell",
+        "stock": "150",
+        "user": "675af4b1f672b333815b8e19"
     },
     {
-        "name": "Hp Pr0book 650 G2",
-        "price": "60",
-        "description": "It looks like the ProBook 650 G1 was released at the end of 2013, while the G2 was released sometime in mid 2016 – maybe mid-year or so.",
-        "rating": "5",
-        "images": [{
-            "public_id": "Image1",
-            "url": "https://m.media-amazon.com/images/I/61yO+DLQrtL.jpg"
-        },{
-          "public_id": "Image2",
-            "url": "https://www.v5itsolution.in/wp-content/uploads/2023/08/6-.jpg"  
-        },{
-            "public_id": "Image3",
-            "url": "https://images-cdn.ubuy.co.in/6528cad754bfbf1eb8644739-used-hp-probook-650-g2-15-6-fhd.jpg"
-        },{
-            "public_id": "Image4",
-            "url": "https://www.sunraysystems.in/wp-content/uploads/2022/12/WhatsApp-Image-2022-12-31-at-12.05.59-PM.jpeg"
-        }],
+        "name": "Lenovo ThinkPad T490",
+        "price": "75",
+        "description": "Released in 2019, the Lenovo ThinkPad T490 is a lightweight and robust business laptop with exceptional keyboard and security features.",
+        "rating": "4.7",
+        "images": [
+            "https://m.media-amazon.com/images/I/511YXa6GauL._AC_UF1000,1000_QL80_.jpg",
+            "https://images-cdn.ubuy.co.id/635f254dcee86665f13feb24-lenovo-thinkpad-t490-20n20032us-14.jpg",
+            "https://p1-ofp.static.pub/medias/bWFzdGVyfHJvb3R8NjMyNTl8aW1hZ2UvanBlZ3xoNjkvaGVkLzk5MTkzOTc0OTQ4MTQuanBnfGY0ZWViODEyNzM2NzRmMWZhODE5NGNjOTg4ODY1N2Y5Y2Q1NWRiYTU2N2FlODgzZjAyYmNkNmY3MDc3Nzc4YjM/bWFzdGVyfH.jpg",
+            "https://5.imimg.com/data5/SELLER/Default/2021/5/AS/QN/HC/122431461/lenovo-thinkpad-t490.png"
+        ],
+        "category": "Laptop",
+        "seller": "Lenovo",
+        "stock": "200",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Apple MacBook Pro 16",
+        "price": "120",
+        "description": "Apple's MacBook Pro 16-inch model, launched in late 2019, is renowned for its powerful performance and high-resolution Retina display.",
+        "rating": "4.8",
+        "images": [
+            "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111902_mbp14-silver2.png",
+            "https://www.apple.com/v/macbook-pro-14-and-16/a/images/overview/hero/hero_intro_endframe__e6khcva4hkeq_large.jpg",
+            "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111932_sp809-mbp16touch-silver-2019.jpeg"
+        ],
+        "category": "Laptop",
+        "seller": "Apple",
+        "stock": "200",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "HP Spectre x360",
+        "price": "120",
+        "description": "The HP Spectre x360 is a premium convertible laptop known for its stunning design and powerful performance.",
+        "rating": "4.7",
+        "images": [
+            "https://www.hp.com/ca-en/shop/Html/Merch/Images/c08744992_1750x1285.jpg",
+            "https://www.hp.com/ca-en/shop/Html/Merch/Images/c08745164_1750x1285.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFqPKS6GsfFEW5iyGH4nnp7DN8haYI3PAX-nnWTuWwp5q3oh52L6LVV_zIOwntnuy2OPU&usqp=CAU"
+        ],
         "category": "Laptop",
         "seller": "HP",
-        "stock": "250"
-    },
-    {
-        "name": "Woolen Clothes",
-        "price": "1.5",
-        "description": "Being an eminent organization in the industry, we are involved in providing a premium quality range of Mens Brown Sweater.",
-        "rating": "3.5",
-        "images": {
-            "public_id": "Image1",
-            "url": "https://5.imimg.com/data5/RN/GL/MY-15916330/woolen-sweaters-500x500.jpg"
-        },
-        "category": "Clothes",
-        "seller": "Adidas",
-        "stock": "50"
-    },
-    {
-        "name": "Cricket Bat Full Size",
-        "price": "2",
-        "description": "Flat Face profile levels out the striking area allowing more mass to be retained in the back and edges of the bat.",
-        "rating": "4.4",
-        "images": {
-            "public_id": "Image1",
-            "url": "https://sppartos.com/cdn/shop/files/bats_new_1200x1200.png?v=1704543046"
-        },
-        "category": "Sports",
-        "seller": "SS",
-        "stock": "78"
+        "stock": "200",
+        "user": "675af4b1f672b333815b8e19"
     }
 ]

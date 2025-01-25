@@ -16,18 +16,19 @@ export default function AdminProductReviews() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const res = await fetch(`http://localhost:5000/api/v1/reviews/?id=${productId}`, {
-            method: 'GET',
-            credentials: 'include'
-        })
+        getReviews();
+        // const res = await fetch(`http://localhost:5000/api/v1/reviews/?id=${productId}`, {
+        //     method: 'GET',
+        //     credentials: 'include'
+        // })
 
-        const data = await res.json()
+        // const data = await res.json()
 
-        if (!data.success) {
-            return console.log(data.error || data.message);
-        }
+        // if (!data.success) {
+        //     return console.log(data.error || data.message);
+        // }
 
-        setreviews(data.reviews)
+        // setreviews(data.reviews)
     }
 
     const getReviews = async () => {
