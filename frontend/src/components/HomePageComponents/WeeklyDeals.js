@@ -8,7 +8,7 @@ export default function WeeklyDeals() {
 
     const getProducts = async () => {
         try {
-            const res = await fetch('http://localhost:5000/api/v1/products', {
+            const res = await fetch('http://localhost:5000/api/v1/random/products', {
                 method: 'GET'
             })
 

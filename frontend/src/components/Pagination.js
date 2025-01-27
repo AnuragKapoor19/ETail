@@ -22,7 +22,6 @@ export default function Pagination() {
                 <div className='page btn bg-warning mx-3'>{currentPage}</div>
                 <button className={`next btn btn-primary ${currentPage === totalPages ? 'disabled' : ' '}`} onClick={handleNext}>Next</button>
             </div>
-
         </>
     )
 }

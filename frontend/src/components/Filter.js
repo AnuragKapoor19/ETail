@@ -6,19 +6,28 @@ import { ContextState } from '../contextAPI';
 
 export default function Filter() {
     const categories = [
+        'Study',
+        'Cooking and Dining',
+        'Bath',
+        'Decor',
+        'Storage',
+        'Furniture',
         'Electronics',
-        'Camera',
-        'Laptop',
+        'Home',
+        'Sports and Outdoors',
+        'Toys',
+        'Fashion and Apparel',
+        'Grocery and Food Items',
+        'Automotive and Tires',
+        'Glasses',
+        'Handbags',
         'Accessories',
-        'Headphones',
-        'Food',
-        'Books',
-        'Clothes',
-        'Shoes',
-        'Beauty/Health',
-        'Sports',
-        'Outdoor',
-        'Home'
+        'Beauty and Personal Care',
+        'Health and Wellness',
+        'Kids',
+        'Fitness and Gym Equipment',
+        'Jewellery and Watches',
+        'Travel Essentials'
     ]
 
     const brands = [
@@ -26,7 +35,13 @@ export default function Filter() {
         'Samsung',
         'Apple',
         'StanFord',
-        'Adidas'
+        'Adidas',
+        "BagWorld",
+        "HomeBasics",
+        "BeautyCare",
+        "SportsFit",
+        "FurniturePlus",
+        "FashionHub"
     ]
 
     const { setminPrice, setmaxPrice, setloading, setcategory, setbrand, setcurrentPage } = ContextState();

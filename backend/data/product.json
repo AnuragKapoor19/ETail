@@ -856,5 +856,69 @@
         "seller": "HP",
         "stock": "200",
         "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Elegant Oak Coffee Table",
+        "price": 129.99,
+        "description": "Crafted from solid oak wood, this coffee table features a minimalist design with a spacious tabletop and a lower shelf for storage, making it a perfect addition to modern living rooms.",
+        "rating": "4.6",
+        "images": [
+            "https://m.media-amazon.com/images/I/91c9NGvWsCL.jpg",
+            "https://m.media-amazon.com/images/I/614uwu-knLL.jpg",
+            "https://m.media-amazon.com/images/I/91+WHIbu4zL.jpg",
+            "https://m.media-amazon.com/images/I/91JW678kfaL.jpg"
+        ],
+        "category": "Furniture",
+        "seller": "FurniturePlus",
+        "stock": "75",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Velvet Wingback Armchair",
+        "price": 249.99,
+        "description": "A luxurious wingback armchair upholstered in soft velvet fabric with tufted detailing and sturdy wooden legs, designed for both comfort and style.",
+        "rating": "4.7",
+        "images": [
+            "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTCXM8Xjt5KWLN6eJZUdt40TVl_lDeRyqg-zXoTB_N4FuI2k0SgR0wUt8F6JWJKk7sHpXEpY0-feY3zmW7xkq-lnLBDoWyARVBX0dig9DLT",
+            "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ53XcM-dh8tehbAIKP-AgfYJwQBNeMzPkIDJXen-x_Z7cCai3RhviTfndjmK0z-Rt2kTaxSD-Vs4d0Ccd9RaR2q6_6pVT2hZ2RRVbAh_b_UwA-kvrYuMJ_-g",
+            "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRdXxsIwMkbdoxZTVy4j36OFnscvOh_4UDk2B6KwvkVE9PZENMYHog2iOCS1cJL1pW9ROJmkEjFeTwjCdk6euzAp5QK7Fd3uNLpRW6tsKrPU0nK1YC0T1k_",
+            "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQLDdTQRlEARCAk6yDvSOOgL_jqw2GLRLup7N_V8x1nd8iSqrVmk9jTxvWERqwQKWOPw0vxRk6RzOHn8IkQQW8Nc_C3Q2bnCjN0Bt1giigXNz7nGbVU_v1E"
+        ],
+        "category": "Furniture",
+        "seller": "FurniturePlus",
+        "stock": "50",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Abstract Metal Wall Art",
+        "price": 89.99,
+        "description": "A modern abstract metal wall art piece with intricate geometric patterns, perfect for adding a contemporary touch to your living or office space.",
+        "rating": "4.5",
+        "images": [
+            "https://images.meesho.com/images/products/459713348/dwwad_1200.jpg",
+            "https://images.meesho.com/images/products/459713348/fbv0g_1200.jpg",
+            "https://images.meesho.com/images/products/459713348/uhlq6_1200.jpg",
+            "https://images.meesho.com/images/products/459713348/h01zm_1200.jpg"
+        ],
+        "category": "Decor",
+        "seller": "HomeDecor",
+        "stock": "100",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Rustic Floating Shelves",
+        "price": 39.99,
+        "description": "Set of 3 rustic wooden floating shelves with a distressed finish, ideal for displaying books, plants, and decorative items in any room.",
+        "rating": "4.6",
+        "images": [
+            "https://m.media-amazon.com/images/I/81dSP+RgfQL.jpg",
+            "https://m.media-amazon.com/images/I/71GKlVK-2ML.jpg",
+            "https://m.media-amazon.com/images/I/717S6kw+ZKL.jpg",
+            "https://m.media-amazon.com/images/I/71+MS6CXpkL.jpg"
+        ],
+        "category": "Decor",
+        "seller": "HomeDecor",
+        "stock": "150",
+        "user": "675af4b1f672b333815b8e19"
     }
 ]

@@ -98,6 +98,25 @@ const getSingleProduct = async (req, res) => {
     }
 }
 
+const getRandomProducts = async (req, res) => {
+    try {
+        const products = await Product.aggregate([
+            { $sample: { size: 6 } } // Replace 5 with the number of random products you want
+        ])
+
+        res.status(200).json({
+            success: true,
+            products
+        })
+
+    } catch (error) {
+        res.status(400).json({
+            success: false,
+            error: error.message
+        })
+    }
+}
+
 //Update Product
 const updateProduct = async (req, res) => {
 
@@ -142,7 +161,7 @@ const updateProduct = async (req, res) => {
             }
 
             req.body.images = imageLinks
-        }else{
+        } else {
             req.body.images = undefined
         }
 
@@ -334,4 +353,4 @@ const getAdminProducts = async (req, res) => {
     }
 }
 
-module.exports = { getProducts, newProduct, getSingleProduct, updateProduct, deleteProduct, createProductReview, getProductReviews, deleteReview, getAdminProducts }
+module.exports = { getProducts, newProduct, getSingleProduct, getRandomProducts, updateProduct, deleteProduct, createProductReview, getProductReviews, deleteReview, getAdminProducts }
