@@ -1,5 +1,133 @@
 [
     {
+        "name": "Amazon basics Pro Series 2.4G ",
+        "price": 11.99,
+        "description": "Dual Connectivity: Utilizes 2.4G wireless technology to connect with up to three devices seamlessly.Adjustable DPI for Precision Control: This mouse features optical tracking technology with four adjustable DPI levels (800, 1200, 1600, and 2400), easily set via the DPI button. Enjoy precise movement tailored to your specific needs.",
+        "rating": "4.4",
+        "images": [
+            "https://m.media-amazon.com/images/I/514+G95EHnL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/61+K-eGQp-L._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/614MT2ax-FL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/61uGswwFodL._SL1500_.jpg"
+        ],
+        "category": "Electronics",
+        "seller": "TechGear",
+        "stock": "150",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Urban Jungle by Safari Venture",
+        "price": 53.94,
+        "description": "Premium High-Strength Fabric: Crafted from premium, lightweight polyester fabric, this olive backpack offers exceptional durability and water resistance, while the vibrant orange highlights make it extremely easy on the eyes. The easy-to-clean material ensures your backpack remains pristine, no matter where your journey takes you.",
+        "rating": "4.5",
+        "images": [
+            "https://m.media-amazon.com/images/I/61jI4jxdGmL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/61QIbEjtLnL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/71rhfM4uvGL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/71mT-7hxj1L._SX679_.jpg"
+        ],
+        "category": "Travel Essentials",
+        "seller": "BagWorld",
+        "stock": "75",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Lifelong 1350 W Digital Espres",
+        "price": 119.87,
+        "description": "Efficient Operation: The Lifelong One Touch Digital Espresso Coffee Maker Machine features a powerful 1350 Watts motor, ensuring quick and reliable brewing. With a 1-meter long A/C cord, it offers safe and reliable use in your home.",
+        "rating": "4.6",
+        "images": [
+            "https://m.media-amazon.com/images/I/71YrAO-xrbL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/61zQPmSv5PL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/71lvz+PNRDL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/61B2YBOFgYL._SL1500_.jpg"
+        ],
+        "category": "Cooking and Dining",
+        "seller": "KitchenPro",
+        "stock": "60",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Cloth Fusion Satin Bedsheet fo",
+        "price": 17.99,
+        "description": "Embrace Self-Love: Experience the silk-like softness with our king size satin bedsheet set, pampering your skin and hair, leaving you frizz-free and feeling cared for",
+        "rating": "4.3",
+        "images": [
+            "https://m.media-amazon.com/images/I/71uv8fBw3QL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/71WHdxYki7L._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/61nMi9vI5xL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/61n2rO6ZdOL._SL1500_.jpg"
+        ],
+        "category": "Home",
+        "seller": "HomeBasics",
+        "stock": "100",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "eardo Studio Professional Torn",
+        "price": 17.99,
+        "description": "Powerful Performance: Boasting a robust 2000W motor, this hair dryer offers ultra-quick drying to save you precious time. With 3 temperature settings and 2 speed settings, you can tailor your styling experience according to your hair type and desired look. Plus, the cool shot button helps set your style for long-lasting results.",
+        "rating": "4.4",
+        "images": [
+            "https://m.media-amazon.com/images/I/71NX37k4P6L._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/818pLbbkCyL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/81PnIrDGPCL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/71VXGCnyVrL._SL1500_.jpg"
+        ],
+        "category": "Beauty and Personal Care",
+        "seller": "BeautyCare",
+        "stock": "85",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Bacca Bucci Mens Intensity Wit",
+        "price": 26.39,
+        "description": "Unleash Your Potential: Bacca Bucci INTENSITY shoes are designed to fuel your workouts, gym sessions, and runs, helping you push boundaries and achieve your fitness goals.",
+        "rating": "4.5",
+        "images": [
+            "https://m.media-amazon.com/images/I/71yQU6viTSL._SY675_.jpg",
+            "https://m.media-amazon.com/images/I/71vBssNOjiL._SY675_.jpg",
+            "https://m.media-amazon.com/images/I/71rBe0tcIPL._SY675_.jpg",
+            "https://m.media-amazon.com/images/I/81qjlmqcC1L._SY675_.jpg"
+        ],
+        "category": "Sports and Outdoors",
+        "seller": "SportsFit",
+        "stock": "70",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "HUL Pureit Wave Prime Mineral ",
+        "price": 83.99,
+        "description": "Mineral enhancer cartridge enriches your water with essential minerals like Calcium & Magnesium, providing you with 100% RO water without bypass.",
+        "rating": "4.7",
+        "images": [
+            "https://m.media-amazon.com/images/I/41WVJ5JgEYL._SL1000_.jpg",
+            "https://m.media-amazon.com/images/I/61GA+Flk9NL._SL1000_.jpg",
+            "https://m.media-amazon.com/images/I/61NBlDbzF2L._SL1000_.jpg",
+            "https://m.media-amazon.com/images/I/61MHOgCCV2L._SL1000_.jpg"
+        ],
+        "category": "Home",
+        "seller": "HomeBasics",
+        "stock": "55",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "ABOUT SPACE DIY Desk Organizer",
+        "price": 17.99,
+        "description": "DESKTOP ORGANIZER: Furnish your table / desk with ABOUT SPACE 2-way modern desk shelf which ensures stability and durability and will last longer. It is slim and elegant with a modern and minimalist aesthetic look",
+        "rating": "4.2",
+        "images": [
+            "https://m.media-amazon.com/images/I/61uFi+JxxxL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/61AdigwDm3L._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/7122FytoDGL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/71DplZnuiLL._SL1500_.jpg"
+        ],
+        "category": "Study",
+        "seller": "OrganizeIt",
+        "stock": "120",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
         "name": "Dell Latitude 5500",
         "price": "80",
         "description": "The Dell Latitude 5500 is a business-class laptop introduced in early 2019, known for its durability and performance.",
@@ -9,9 +137,678 @@
             "https://m.media-amazon.com/images/I/81n97KeVxEL._AC_UF1000,1000_QL80_.jpg",
             "https://cdn.dotpe.in/longtail/store-items/7786470/xLdQjvG5.jpeg"
         ],
-        "category": "Laptop",
+        "category": "Electronics",
         "seller": "Dell",
         "stock": "150",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Wooden Study Table",
+        "price": 239.99,
+        "description": "Simple wooden study table with two drawers",
+        "rating": "4.5",
+        "images": [
+            "https://www.ulcdn.net/images/products/201809/slide/666x363/Truman_Study_Table_Creamy_Crust_Finish_Teak_merc.jpg?1624608693",
+            "https://www.ulcdn.net/images/products/201811/slide/666x363/Truman_Study_Table_Creamy_Crust_Finish_Teak_1.jpg?1624608717",
+            "https://www.ulcdn.net/images/products/201810/slide/666x363/Truman_Study_Table_Creamy_Crust_Finish_Teak_2.jpg?1624608669",
+            "https://www.ulcdn.net/images/products/201813/slide/666x363/Truman_Study_Table_Creamy_Crust_Finish_Teak_4_copy.png?1668406351"
+        ],
+        "category": "Study",
+        "seller": "FurniturePlus",
+        "stock": "50",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Homesake Table Lamp",
+        "price": 8.39,
+        "description": "Basic desk lamp for study and reading",
+        "rating": "4.3",
+        "images": [
+            "https://www.homesake.in/cdn/shop/files/IH0E598_theme.jpg?v=1704949289",
+            "https://www.homesake.in/cdn/shop/files/IH0E599_white1.jpg?v=1704949289&width=324",
+            "https://www.homesake.in/cdn/shop/files/IH0E599_D.jpg?v=1704949291&width=324",
+            "https://www.homesake.in/cdn/shop/files/IH0E598_white1.jpg?v=1704949292"
+        ],
+        "category": "Study",
+        "seller": "LightingCo",
+        "stock": "100",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Agaro Kitchen Knife Set",
+        "price": 11.1,
+        "description": "Special kitchen knife set of 4",
+        "rating": "4.4",
+        "images": [
+            "https://m.media-amazon.com/images/I/71ARyC4XoYS.jpg",
+            "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRvD4JXvAk7yHCgs_2bHF1QRpDd9rm5I31drQlQapd4ntkI8gO9_5ppSx3EMbfl4vGYemgfhXJ2FsPfyeB8vShyO32pu5uOyLtmkC30cr81",
+            "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTSIxzLorgLSPa2gu79aa7ArXmTYQXDortJZ71opMWb7SpNJsPK8Gry4qhFpHRhq0VQGJyR0H-v5hfFeD_Zx6pUf8iTQuY5nH_Yxq9RYBk",
+            "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcShs3k4DLwtVB95NRvZgxA9tS5SnLlYaVkZ2a-4svZpeKK78lF7f2h4l4wLh6TASAjEsFO3er9uDKnnFcKxDlKiQszCj-Rsun9eNLqGZKTLMK9RVmahjKJkYA"
+        ],
+        "category": "Cooking and Dining",
+        "seller": "KitchenPro",
+        "stock": "75",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Servewell Dinner Plates Set",
+        "price": 54.0,
+        "description": " ceramic dinner plate and bowl set",
+        "rating": "4.5",
+        "images": [
+            "https://www.servewell.co.in/cdn/shop/files/IMAGE1_e155b792-7cb6-4d26-9ffc-0279c721334c.jpg?v=1728272406&width=823",
+            "https://www.servewell.co.in/cdn/shop/files/IMAGE2_017b73dd-d5d6-440c-8237-71426b58338a.jpg?v=1728272406&width=1100",
+            "https://www.servewell.co.in/cdn/shop/files/IMAGE3_52d0e975-b27a-43b5-8947-23d720beee3a.jpg?v=1728272406&width=1100",
+            "https://www.servewell.co.in/cdn/shop/files/IMAGE4_5845d905-814e-4af5-b8c9-1919029ac204.jpg?v=1728272406&width=823"
+        ],
+        "category": "Cooking and Dining",
+        "seller": "DineElite",
+        "stock": "60",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Cotton Bath Towels",
+        "price": 3.59,
+        "description": "Pack of 4 cotton bath towels",
+        "rating": "4.2",
+        "images": [
+            "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSOnxcyhbtCuiZaGzjImGyphjV3-Y6AuZ3rXc8OW-YH7Hb12-Y5uNwZ4gmARxlyPjKRdt9Tr1P87XbU4Klmb02wH5-27ukWngrnLcjYmhmciuh8zlly-NqS",
+            "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSYWNaF2rX2zu15gttVRXXHHOj4mKXfNZV66BwoGZNbng2hBdkjY-81ghsVcSxHuRfIPQHTkBY6W6M-oV8fUnNqzRQ31F1nm7OrPjPkfnxNKyu1zajcGx8g7Q",
+            "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRJnRanRe5qgcIONqeiByXfTYDKeG6N0SocwyvKez-IQOdHJW7OUYJWSz5V5MBGIaDq-Ny3TLckaHDrsWbUwpKGIZ1S7g9axubC7oSzoNCtjsZpCE12-eieUQ",
+            "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTRd146ZwAKBR3vVgdMnrMHaZS31qj32or60Fsfzeg7KKTSGtdJ9WJL2kwg9aSFHkvnmt0hBiKthtsD4QHsZNyRWIiyU23luGBZ4uVfYhZt6_s_q7MFjqMZ"
+        ],
+        "category": "Bath",
+        "seller": "HomeBasics",
+        "stock": "100",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Plantex Steel Bathroom Mirror ",
+        "price": 154.8,
+        "description": "Wall-mounted bathroom mirror with storage",
+        "rating": "4.4",
+        "images": [
+            "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQuV_2rmLOe3jaYk-KH5xclLu0AsKQ2sjDp0mbSBhDLw6f9PrBXLugIzgWlcePPr9dfaej4iPoSvRUXJUnoHyC1oLyPNNS59RRAjAGXh248",
+            "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRV-8uwgq4N81VqovXko0OI9Ji6lQzkQXcQUIgSL_mKUOAuLpy49A2w-geM4nhqK6q6tVR6yYi42iHUavtlowR7K_8HfRxHbi1yV3eOcl1g",
+            "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQnAkO-rrN3ypxkeb_-jQU8jAkAVAyDeiCpVtmL3YZREGQX-VNMxUDx61bAPOmZFgiZa3Xrlx8zNyGkwsE2PWVUVvYcJvdWzshc2LTDIcnM5gIhg_ylVa3meQ",
+            "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ9G8ok4yNYTj3x6CT8VhkuWdb2fg1iiRsISCEvQ_7Ni05d4HIylJAmDbdJkmb87ziLyxPF46EUVfjzbCUu-B4Y-JCN06FlBvw4gSA7kpbpbj8jXBaNRPUqNg"
+        ],
+        "category": "Bath",
+        "seller": "BathFittings",
+        "stock": "40",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "STAR WORK Quartz 12 Inches Pre",
+        "price": 8.4,
+        "description": "Modern decorative wall clock 12 Inches",
+        "rating": "4.3",
+        "images": [
+            "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQrIkdDamI_RHCn8AZ_gHu66mbyLAO2u3e1lvkUYAxfBqNzMGwiikXGcCYiAgYGC_XYvAXu3igehPs53eHk7wo2n2So7DBcCTXjDJ7FQGF8ZFz4RlZBxkkc",
+            "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRKvmNc-A7ADb0ttmsJUSFkLwMXZQ6oJj22qtAZejafQRC189iCQr2MKVd1W7nEn5hp7a_Yjep5GWxeL5ELjbU86wXxmsZeefwlvs3k7PPq",
+            "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcR5vYWn7gs67oF4JaPcM5KGl4tZpk0kNQ8ra-Oy9RIIDsJilHWJDl-lly6NXDUD2GtRUTJ8FrzYBbRVZWMbuI_zIUinVtSyamkOhvUDEgg",
+            "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQY6A8xBbA2F6TSh4boRTnnDBrpl6EA7PUscbS_XH4-_F3l0E8kAIj4WbmoxV1K4uUX2q4A-kc-t7_AX4xbsr66xQdfWjZtgU9zs1YmdeZq"
+        ],
+        "category": "Decor",
+        "seller": "HomeDecor",
+        "stock": "80",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Artificial Coastal Palm Plant ",
+        "price": 22.8,
+        "description": "Decorative 6 Feet artificial plant with pot",
+        "rating": "4.1",
+        "images": [
+            "https://masonhome.in/cdn/shop/files/443_5ad0b38f-a244-460d-925f-815cfa7f07c6.png?v=1737617702&width=750",
+            "https://masonhome.in/cdn/shop/files/431_022e45ed-f06e-46a1-8447-540e3634566b.png?v=1737617702&width=750",
+            "https://masonhome.in/cdn/shop/files/444_4088a155-865d-4bd1-a889-28e1638e5aa7.png?v=1737617699&width=750"
+        ],
+        "category": "Decor",
+        "seller": "GreenDecor",
+        "stock": "120",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Nilkamal Freedom Mini Small (F",
+        "price": 28.79,
+        "description": "Multi-purpose mini storage cabinet with shelves",
+        "rating": "4.4",
+        "images": [
+            "https://m.media-amazon.com/images/I/71N853shGQL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/71mCMRZmeGL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/410YsHUcSlL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/614w8ub4LfL._SX679_.jpg"
+        ],
+        "category": "Storage",
+        "seller": "FurniturePlus",
+        "stock": "35",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "NOW & ZEN 23 L (Pack of 2) Lar",
+        "price": 20.18,
+        "description": "Set of 2 stackable storage boxes",
+        "rating": "4.2",
+        "images": [
+            "https://m.media-amazon.com/images/I/31zrSDQ-4zL._SX300_SY300_QL70_FMwebp_.jpg",
+            "https://m.media-amazon.com/images/I/41l0o9JoMQL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/41A85a5D8qL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/51nxonUGF9L._SX679_.jpg"
+        ],
+        "category": "Storage",
+        "seller": "HomeOrganize",
+        "stock": "100",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Sleepyhead Bae - 3-Person Sofa",
+        "price": 225.59,
+        "description": "3 comfortable sofa set",
+        "rating": "4.6",
+        "images": [
+            "https://m.media-amazon.com/images/I/41wx9Ek0hjL._SX300_SY300_QL70_FMwebp_.jpg",
+            "https://m.media-amazon.com/images/I/41LclFyUjyL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/41OB9Z0HLlL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/41ePCMiqv9L._SX679_.jpg"
+        ],
+        "category": "Furniture",
+        "seller": "FurniturePlus",
+        "stock": "25",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Adichwal Furniture Solid Shees",
+        "price": 191.39,
+        "description": "6-seater wooden dining table set",
+        "rating": "4.5",
+        "images": [
+            "https://m.media-amazon.com/images/I/516X0gpg6lL._SX300_SY300_QL70_FMwebp_.jpg",
+            "https://m.media-amazon.com/images/I/71YVUNWO8bL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/61go-g1QDtL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/61xHqCvOrZL._SX679_.jpg"
+        ],
+        "category": "Furniture",
+        "seller": "FurniturePlus",
+        "stock": "20",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Acer 80 cm I Pro Series LED TV",
+        "price": 125.99,
+        "description": "Resolution: HD Ready (1366x768) | Refresh Rate: 60 Hertz | 178 Degree wide viewing angle",
+        "rating": "4.7",
+        "images": [
+            "https://m.media-amazon.com/images/I/714ccOfBThL._SX466_.jpg",
+            "https://m.media-amazon.com/images/I/71EHJgypZfL._SX466_.jpg",
+            "https://m.media-amazon.com/images/I/61VjBFegRPL._SX466_.jpg",
+            "https://m.media-amazon.com/images/I/71IAzdhDsTL._SX466_.jpg"
+        ],
+        "category": "Electronics",
+        "seller": "ElectroTech",
+        "stock": "30",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "boAt Airdopes 141 TWS",
+        "price": 11.99,
+        "description": "Playback- Enjoy an extended break on weekends with your favourite episodes on stream, virtue of a playback time of up to 42 hours including the 6 hours nonstop playtime for earbuds.",
+        "rating": "4.4",
+        "images": [
+            "https://m.media-amazon.com/images/I/41umTKqeziL._SX300_SY300_QL70_FMwebp_.jpg",
+            "https://m.media-amazon.com/images/I/61mEqp7RZXL._SX466_.jpg",
+            "https://m.media-amazon.com/images/I/71QZbcvD65L._SX466_.jpg",
+            "https://m.media-amazon.com/images/I/61vBE3t4x1L._SX466_.jpg"
+        ],
+        "category": "Electronics",
+        "seller": "BOAT",
+        "stock": "85",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Boldfit Ethylene Vinyl Acetate",
+        "price": 3.0,
+        "description": "Yoga Mat with Strap - A yoga mat strap is included with our Boldfit EVA all-purpose premium workout mat , Easy strapping and light weight feature are added to this mat for easy transport and storage. Carry around your yoga mat & flaunt it with ease!",
+        "rating": "4.3",
+        "images": [
+            "https://m.media-amazon.com/images/I/41ILvWZvb1L._SX300_SY300_QL70_FMwebp_.jpg",
+            "https://m.media-amazon.com/images/I/51ONPHAoduL.jpg",
+            "https://m.media-amazon.com/images/I/61f8uteQ8bL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/51fYjLRLlfL.jpg"
+        ],
+        "category": "Sports and Outdoors",
+        "seller": "SportsFit",
+        "stock": "100",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Cosco Drive 25 Tennis Racquet ",
+        "price": 13.56,
+        "description": "Lightweight: Its lightweight offers kids the right ammunition to manipulate the racquet",
+        "rating": "4.4",
+        "images": [
+            "https://m.media-amazon.com/images/I/71G0YATrNtL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/71AUV6bP9iL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/71JD3s9JA1L._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/71GCi-07-FL._SL1500_.jpg"
+        ],
+        "category": "Sports and Outdoors",
+        "seller": "SportsFit",
+        "stock": "50",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "VGRASSP 120 PCS Super Domino B",
+        "price": 3.47,
+        "description": "This VGRASSP colorful wooden dominos helps in cultivate creativity and imagination. Your child can create various types of patterns which can enhance their logical thinking and hand-eye coordination",
+        "rating": "4.5",
+        "images": [
+            "https://m.media-amazon.com/images/I/61dvTsLeubL._SL1025_.jpg",
+            "https://m.media-amazon.com/images/I/71XMTaSn2KL._SL1001_.jpg",
+            "https://m.media-amazon.com/images/I/41r1m3boNJS.jpg",
+            "https://m.media-amazon.com/images/I/51W2eMW+uBL.jpg"
+        ],
+        "category": "Toys",
+        "seller": "ToyWorld",
+        "stock": "120",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "L.O.T TOYS Remote Control Car ",
+        "price": 20.4,
+        "description": "High-Speed Drifter: Experience thrilling adventures with our Remote Control Car, which offers dual speed modes, reaching speeds of up to 20 Kmph. Perfect for both kids and adults who love racing!",
+        "rating": "4.3",
+        "images": [
+            "https://m.media-amazon.com/images/I/71Kxw3pvGVL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/71S9BS-Ll-L._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/91741n687HL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/71A-L2IbuyL._SL1500_.jpg"
+        ],
+        "category": "Toys",
+        "seller": "ToyWorld",
+        "stock": "75",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Jockey 2714 Men's Super Combed",
+        "price": 6.59,
+        "description": "Style Number - 2714,Super Combed Cotton Rich Printed Fabric,Fabric Composition : Cotton and Polyester,Round Neck",
+        "rating": "4.2",
+        "images": [
+            "https://m.media-amazon.com/images/I/61u6Qz-GLKL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/61IfunAM80L._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/61Jjjtnds2L._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/61ZfpwvsTyL._SX679_.jpg"
+        ],
+        "category": "Fashion and Apparel",
+        "seller": "FashionHub",
+        "stock": "200",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Seryeon\u00ae Women's Viscose Tie-u",
+        "price": 11.99,
+        "description": "MATERIAL : It is made from viscose rayon and is light-weight. The A-line dress will make you feel smart when you walk and feels soft against your skin.",
+        "rating": "4.4",
+        "images": [
+            "https://m.media-amazon.com/images/I/81Wl3rgK5iL._SY741_.jpg",
+            "https://m.media-amazon.com/images/I/713H-DPJjVL._SY741_.jpg",
+            "https://m.media-amazon.com/images/I/81+H2daDlEL._SY741_.jpg",
+            "https://m.media-amazon.com/images/I/71DMSyRRA+L._SX679_.jpg"
+        ],
+        "category": "Fashion and Apparel",
+        "seller": "FashionHub",
+        "stock": "85",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Fortune Biryani Special Basmat",
+        "price": 8.7,
+        "description": "The extra-long grain and Non-Sticky texture make this rice ideal for all types of Biryani.",
+        "rating": "4.6",
+        "images": [
+            "https://m.media-amazon.com/images/I/81ShgpqhFyL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/816ethT-yVL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/813ZclMCFRL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/81YjtNyFYxL._SL1500_.jpg"
+        ],
+        "category": "Grocery and Food Items",
+        "seller": "FreshMart",
+        "stock": "150",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "ivo Cold Pressed Chemical-Free",
+        "price": 9.3,
+        "description": "Rich in Vitamin E: Packed with Vitamin E, a powerful antioxidant, this oil helps protect your body from oxidative stress and promotes healthy skin. It's an excellent addition to your diet for overall wellness.",
+        "rating": "4.3",
+        "images": [
+            "https://m.media-amazon.com/images/I/61mgkOsB+TL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/81cYlvrh5RL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/81nblQKU0jL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/81n+uGSp1zL._SL1500_.jpg"
+        ],
+        "category": "Grocery and Food Items",
+        "seller": "FreshMart",
+        "stock": "200",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Aromahpure Premium Car Perfume",
+        "price": 2.39,
+        "description": "Aromahpure Premium Hanging Pod: A unique car perfume hanging pod designed to create a luxurious and aromatic ambiance in your car upto 30 Days.",
+        "rating": "4.1",
+        "images": [
+            "https://m.media-amazon.com/images/I/71oQYsBLEVL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/81nEN1NC+YL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/71lUyeKykVL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/71RCq-7AZIL._SL1500_.jpg"
+        ],
+        "category": "Automotive and Tires",
+        "seller": "AutoCare",
+        "stock": "150",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "GoMechanic Car Mat 4 pcs",
+        "price": 23.99,
+        "description": "All-Weather Protection: Our car mats provide comprehensive all-weather protection, ensuring your car interior stays clean and dry in any condition. Ideal for rainy season accessories, they protect against mud, water, and debris.",
+        "rating": "4.4",
+        "images": [
+            "https://m.media-amazon.com/images/I/81rgmURn-gL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/71us9h4l-dL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/718uDAGsxnL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/81efwYOV1sL._SL1500_.jpg"
+        ],
+        "category": "Automotive and Tires",
+        "seller": "AutoCare",
+        "stock": "80",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "CHEERS DEVICES\u00ae Power Reading ",
+        "price": 7.19,
+        "description": "dvanced Blue Light Filter: Our anti-Blue Light Reading Glasses feature UV400 lenses that can block 100% of harmful blue light and UV400, providing comprehensive protection for your eyes during reading, watching TV, gaming, or using digital devices.",
+        "rating": "4.3",
+        "images": [
+            "https://m.media-amazon.com/images/I/617QSdSElDL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/71iXXuwo1bL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/61cLbFIxRbS._SL1484_.jpg",
+            "https://m.media-amazon.com/images/I/71R+fUACd6L._SL1500_.jpg"
+        ],
+        "category": "Glasses",
+        "seller": "OpticsWorld",
+        "stock": "100",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "VINCENT CHASE EYEWEAR By Lensk",
+        "price": 6.59,
+        "description": "ABOUT THE BRAND:- The Vincent Chase collection features some of the most stylish and trendy sunglasses for men and women. Available in a variety of colours and shapes, it ensures you always stand out with your unique style.",
+        "rating": "4.4",
+        "images": [
+            "https://m.media-amazon.com/images/I/41YCu1qZtqL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/61EAVh6m2GL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/61-GXwlQixL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/71D-7PqlAJL._SX679_.jpg"
+        ],
+        "category": "Glasses",
+        "seller": "EyeWear",
+        "stock": "85",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "RICHSIGN LEATHER ACCESSORIES E",
+        "price": 35.99,
+        "description": "Handle Type: Fixed Solid Full Grain Leather Double Handle With 6 Inch DropDown & Lenght - 16 Inch./ Adjustable & Detachable Shoulder Strap Of 50 Inches.",
+        "rating": "4.6",
+        "images": [
+            "https://m.media-amazon.com/images/I/81dYKtRl6WL._SY675_.jpg",
+            "https://m.media-amazon.com/images/I/81W3yOKn0dL._SY675_.jpg",
+            "https://m.media-amazon.com/images/I/815gU4Jjt4L._SY675_.jpg",
+            "https://m.media-amazon.com/images/I/716iZyOnXKL._SY675_.jpg"
+        ],
+        "category": "Handbags",
+        "seller": "BagWorld",
+        "stock": "45",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "DailyObjects Field Tote Bag ",
+        "price": 23.99,
+        "description": "Padded laptop with elasticated loop holds up to 14\u2019\u2019 MacBook Pro, Quick-access pocket in the front for hands-on essentials like phone, keys, wallets and more",
+        "rating": "4.2",
+        "images": [
+            "https://m.media-amazon.com/images/I/818E49l5QWL._SY695_.jpg",
+            "https://m.media-amazon.com/images/I/714JpguYtfL._SY695_.jpg",
+            "https://m.media-amazon.com/images/I/71HOv4gMvVL._SY695_.jpg",
+            "https://m.media-amazon.com/images/I/61PMuCLHI5L._SY695_.jpg"
+        ],
+        "category": "Handbags",
+        "seller": "BagWorld",
+        "stock": "120",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Labnoft Men's Reversible PU Le",
+        "price": 8.36,
+        "description": "Adjustable size: One big size that fits all waist (28, 30, 32, 34, 36, 38, 40, 42, 44). To adjust, trim the belt according to your size by removing the buckle and cutting the edge as per your waist.",
+        "rating": "4.4",
+        "images": [
+            "https://m.media-amazon.com/images/I/71aplh5AFZL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/71qQs06tGYL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/71-3PMT+QXL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/7171XLICtQL._SX679_.jpg"
+        ],
+        "category": "Accessories",
+        "seller": "FashionHub",
+        "stock": "150",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Frackson Pink Check with Line ",
+        "price": 8.39,
+        "description": "Trendy Design & Style: This blended cotton wool scarf/shawl for women has a fashionable design. This neck and head scarf for women instantly elevates the look of any outfit and helps you make a statement with your amazing style and aura.",
+        "rating": "4.3",
+        "images": [
+            "https://m.media-amazon.com/images/I/41rb+zVME2L.jpg",
+            "https://m.media-amazon.com/images/I/61Opttd9S9L._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/7173rwjWB6L._SX569_.jpg",
+            "https://m.media-amazon.com/images/I/513V1ma6OpL.jpg"
+        ],
+        "category": "Accessories",
+        "seller": "FashionHub",
+        "stock": "100",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Minimalist 10% Vitamin B5 Gel ",
+        "price": 3.97,
+        "description": "Nourishes skin and reduces trans epidermal water loss",
+        "rating": "4.5",
+        "images": [
+            "https://m.media-amazon.com/images/I/51Sy8ktByyL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/51AgNlvnNxL._SL1043_.jpg",
+            "https://m.media-amazon.com/images/I/61GO8iq7WpL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/617qOCFLTGL._SL1500_.jpg"
+        ],
+        "category": "Beauty and Personal Care",
+        "seller": "BeautyCare",
+        "stock": "200",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "LOr\u00e9al Professionnel Density A",
+        "price": 8.94,
+        "description": "Searching for effective solutions for thinning hair? Trust the L'Or\u00e9al Professionnel Density Advanced shampoo to restore the hair vitality and density.",
+        "rating": "4.3",
+        "images": [
+            "https://m.media-amazon.com/images/I/51hfhIjSbXL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/714St94nJ0L._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/61AORMtD4AL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/71--tVMVjgL._SL1500_.jpg"
+        ],
+        "category": "Beauty and Personal Care",
+        "seller": "BeautyCare",
+        "stock": "250",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Centrum Adult 50+, World's No.",
+        "price": 7.19,
+        "description": "Multivitamin, Centrum presents Centrum Adult 50+ Multivitamin & Multimineral Supplement, now in India. One bottle with 30 tablets. Take one per day.",
+        "rating": "4.6",
+        "images": [
+            "https://m.media-amazon.com/images/I/51xb-MgsXcL._SL1100_.jpg",
+            "https://m.media-amazon.com/images/I/618hjzx+NjL._SL1100_.jpg",
+            "https://m.media-amazon.com/images/I/61XwJLtPkPL._SL1100_.jpg",
+            "https://m.media-amazon.com/images/I/71YXRzKD7NL._SX679_.jpg"
+        ],
+        "category": "Health and Wellness",
+        "seller": "HealthStore",
+        "stock": "150",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Apollo Pharmacy First Aid Kit,",
+        "price": 5.4,
+        "description": "Composition: Crepe Bandage (Unit-1, Size: 6cm),Adhesive bandage Regular (Unit-4),Adhesive bandage Round (Unit-4),Pain Relief Gel (Unit-1),Povidone Iodine Ointment (Unit-1),Unit Digital Thermometer (Unit-1),Antiseptic Liquid (Unit-1),Absorbent Cotton I.P. 15gm (Unit-1),Microporous Surgical tape (Unit-1),Disprin (Unit-10),Paracip/Parachoice (Unit-10),Gauze Swab (Unit-4),Roller Gauze (Unit-4),Scissor Small (Unit-2),Sterila Swab (Unit-1),Container with Lid (Unit-1),First Aid Bag (Unit-1).",
+        "rating": "4.7",
+        "images": [
+            "https://m.media-amazon.com/images/I/61ufZ6DhVwL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/61t7NVsn+bL._SX679_.jpg"
+        ],
+        "category": "Health and Wellness",
+        "seller": "HealthStore",
+        "stock": "100",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Chris & Kate Multi-Print Schoo",
+        "price": 10.91,
+        "description": "SCHOOL BAGS FOR BOYS 7 YEARS OLD: WATER RESISTANT: Yes; Compartments: 3. Front large zipper easily accessible compartment. One mesh stash pocket to accommodate a drinking bottle & other accessory. Capacity: 35 Litres; Weight: 590g.; Dimensions: 46 cms X 32 cms X 24cms (LXWXD)",
+        "rating": "4.4",
+        "images": [
+            "https://m.media-amazon.com/images/I/81i8gKLt3VL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/71ISsIgDIFL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/817xOfAacmL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/71jkYJQgQOL._SX679_.jpg"
+        ],
+        "category": "Kids",
+        "seller": "KidsWorld",
+        "stock": "80",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "KSOLARA Insulated Water Bottle",
+        "price": 11.99,
+        "description": "PREMIUM QUALITY - Made with rust-resistant, 18/8 food-grade stainless steel, the SOLARA Insulated Water Bottle restricts temperature transfer, making it a great choice for hot or cold drinks.",
+        "rating": "4.3",
+        "images": [
+            "https://m.media-amazon.com/images/I/71t87g3vmHL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/81jxmRmuzUL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/816iVfJfabL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/81gVhSPEAsL._SL1500_.jpg"
+        ],
+        "category": "Kids",
+        "seller": "KidsWorld",
+        "stock": "120",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Cockatoo ADB-01 2.5 KG- 24 Kg ",
+        "price": 203.88,
+        "description": "Versatile and Efficient:Enables a wide range of exercises for a full-body workout,Convenient one-second adjustment for seamless transitions between exercises. Adjustable Weight:Range: 2.5-24KG, 15 different weight settings for versatile workouts",
+        "rating": "4.5",
+        "images": [
+            "https://m.media-amazon.com/images/I/61x99oiDoZL._SL1000_.jpg",
+            "https://m.media-amazon.com/images/I/611X63FNV4L._SL1400_.jpg",
+            "https://m.media-amazon.com/images/I/61vKzbts4RL._SL1400_.jpg",
+            "https://m.media-amazon.com/images/I/61d1Hxm6XBL.jpg"
+        ],
+        "category": "Fitness and Gym Equipment",
+        "seller": "FitnessWorld",
+        "stock": "60",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Boldfit Skipping Rope For Men ",
+        "price": 2.75,
+        "description": "Adjustable length: the skipping ropes is 9.2 ft long, you can easily adjust the length according to your height by Cutting the excess rope. Suitable for all women, men, and kids",
+        "rating": "4.2",
+        "images": [
+            "https://m.media-amazon.com/images/I/61K3u2hniiL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/71add0pKUVL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/71uQ5Z7eEEL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/61JJsnKr0TL._SL1500_.jpg"
+        ],
+        "category": "Fitness and Gym Equipment",
+        "seller": "FitnessWorld",
+        "stock": "100",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Carlington Resin Endurance Ana",
+        "price": 13.79,
+        "description": "This analog-digital watch features an alarm function, backlit display, calendar display, chronograph, stopwatch, and convenient buttons for start, reset, mode, and light. It ensures you stay on schedule, even in low-light conditions, and provides accurate timing for various activities. Its functional design makes it suitable for everyday wear and outdoor adventures.",
+        "rating": "4.4",
+        "images": [
+            "https://m.media-amazon.com/images/I/81ocGlHItTL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/71NzaOGWEaL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/61QhReEgZUL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/61ydSUu9I6L._SX679_.jpg"
+        ],
+        "category": "Jewellery and Watches",
+        "seller": "TimeKeeper",
+        "stock": "75",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "Fossil Women Drew Silver Neckl",
+        "price": 36.11,
+        "description": "ewellery Color- Silver, Jewellery Material- Stainless Steel,Jewellery Closure- Lobster Clasp,Platform Name- Drew",
+        "rating": "4.6",
+        "images": [
+            "https://m.media-amazon.com/images/I/51IzvQiUpDL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/61dgUaXHqXL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/512ZpPqagzL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/81l8WJenSlL._SX679_.jpg"
+        ],
+        "category": "Jewellery and Watches",
+        "seller": "JewelCraft",
+        "stock": "40",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "American Tourister Ivy Nxt 55C",
+        "price": 39.59,
+        "description": "Sleek & Secure: Our trusted, mounted TSA Lock seamlessly blends with the bag's design, offering peace of mind without compromising on style. One click, and you're on your way to a stress-free adventure.",
+        "rating": "4.5",
+        "images": [
+            "https://m.media-amazon.com/images/I/51kxy4PJy+L._SL1080_.jpg",
+            "https://m.media-amazon.com/images/I/61SNnmuQc9L._SL1080_.jpg",
+            "https://m.media-amazon.com/images/I/61exbFlffvL._SL1080_.jpg",
+            "https://m.media-amazon.com/images/I/61gZROq0DgL._SL1080_.jpg"
+        ],
+        "category": "Travel Essentials",
+        "seller": "TravelGear",
+        "stock": "50",
+        "user": "675af4b1f672b333815b8e19"
+    },
+    {
+        "name": "ProQ Memory Foam Travel Pillow",
+        "price": 9.59,
+        "description": "PORTABLE AND LIGHTWEIGHT: Our neck rest pillows is lightweight and comes with a convenient carrying bag, making it easy to pack and take with you anywhere. This travel neck pillow for women is the perfect travel companion for any journey.",
+        "rating": "4.3",
+        "images": [
+            "https://m.media-amazon.com/images/I/71T0M0vo2eL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/81nFGg-Ho5L._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/71l7k4GfmvL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/7140YEg6dPL._SL1500_.jpg"
+        ],
+        "category": "Travel Essentials",
+        "seller": "TravelGear",
+        "stock": "90",
         "user": "675af4b1f672b333815b8e19"
     },
     {
@@ -25,7 +822,7 @@
             "https://p1-ofp.static.pub/medias/bWFzdGVyfHJvb3R8NjMyNTl8aW1hZ2UvanBlZ3xoNjkvaGVkLzk5MTkzOTc0OTQ4MTQuanBnfGY0ZWViODEyNzM2NzRmMWZhODE5NGNjOTg4ODY1N2Y5Y2Q1NWRiYTU2N2FlODgzZjAyYmNkNmY3MDc3Nzc4YjM/bWFzdGVyfH.jpg",
             "https://5.imimg.com/data5/SELLER/Default/2021/5/AS/QN/HC/122431461/lenovo-thinkpad-t490.png"
         ],
-        "category": "Laptop",
+        "category": "Electronics",
         "seller": "Lenovo",
         "stock": "200",
         "user": "675af4b1f672b333815b8e19"
@@ -40,7 +837,7 @@
             "https://www.apple.com/v/macbook-pro-14-and-16/a/images/overview/hero/hero_intro_endframe__e6khcva4hkeq_large.jpg",
             "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111932_sp809-mbp16touch-silver-2019.jpeg"
         ],
-        "category": "Laptop",
+        "category": "Electronics",
         "seller": "Apple",
         "stock": "200",
         "user": "675af4b1f672b333815b8e19"
@@ -55,7 +852,7 @@
             "https://www.hp.com/ca-en/shop/Html/Merch/Images/c08745164_1750x1285.jpg",
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFqPKS6GsfFEW5iyGH4nnp7DN8haYI3PAX-nnWTuWwp5q3oh52L6LVV_zIOwntnuy2OPU&usqp=CAU"
         ],
-        "category": "Laptop",
+        "category": "Electronics",
         "seller": "HP",
         "stock": "200",
         "user": "675af4b1f672b333815b8e19"

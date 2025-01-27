@@ -6,7 +6,7 @@ const productSchema = new Schema({
         type: String,
         required: [true, 'Please enter product name'],
         trim: true,
-        maxlength: [100, 'Product name cannot exceed 100 characters']
+        maxlength: [40, 'Product name cannot exceed 100 characters']
     },
     price: {
         type: Number,
@@ -39,19 +39,28 @@ const productSchema = new Schema({
         required: [true, 'Please select category for this product'],
         enum: {
             values: [
+                'Study',
+                'Cooking and Dining',
+                'Bath',
+                'Decor',
+                'Storage',
+                'Furniture',
                 'Electronics',
-                'Camera',
-                'Laptop',
+                'Home',
+                'Sports and Outdoors',
+                'Toys',
+                'Fashion and Apparel',
+                'Grocery and Food Items',
+                'Automotive and Tires',
+                'Glasses',
+                'Handbags',
                 'Accessories',
-                'Headphones',
-                'Food',
-                'Books',
-                'Clothes',
-                'Shoes',
-                'Beauty/Health',
-                'Sports',
-                'Outdoor',
-                'Home'
+                'Beauty and Personal Care',
+                'Health and Wellness',
+                'Kids',
+                'Fitness and Gym Equipment',
+                'Jewellery and Watches',
+                'Travel Essentials'
             ],
             message: 'Please select correct category for product'
         }
@@ -93,7 +102,6 @@ const productSchema = new Schema({
     user: {
         type: mongoose.Schema.ObjectId,
         ref: 'User',
-        required: true
     },
     createdAt: {
         type: Date,
