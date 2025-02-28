@@ -168,7 +168,7 @@ export default function Headers() {
 
                     <div className='search-bar d-flex rounded-5 bg-light text-light justify-content-center align-items-center'>
                         <input type='text' placeholder='Search ETail' className='search-input border-0 fw-bold ' value={word} onChange={handleChange} />
-                        <IoMdSearch size="2.5rem" className='search-icon bg-warning rounded-circle' onClick={handleSearchClick} />
+                        <IoMdSearch size="2rem" className='search-icon text-dark' onClick={handleSearchClick} />
                     </div>
 
                     <div className='cart position-relative'>

@@ -35,7 +35,7 @@ export default function SingleOrder() {
 
     return (
         <>
-        <Header />
+            <Header />
             {loading
                 ?
                 <div>Loading....</div>
@@ -47,11 +47,22 @@ export default function SingleOrder() {
 
                         <div className="order d-flex align-items-center my-2">
                             <h4 className='fw-bold me-3'>Order ID: {order._id}</h4>
-                            <span className='text-warning bg-danger fw-bolder p-2 me-2 rounded-3'>{!order.paymentInfo ? 'Payment Pending' : 'Paid'}</span>
-                            <span className='text-danger bg-warning fw-bolder p-2 rounded-3'>{order.orderStatus !== "Delivered" ? 'Unfulfilled' : 'Fulfilled'}</span>
+                            <span className='text-warning bg-danger fw-bolder p-1 me-2 rounded-3'>{!order.paymentInfo ? 'Payment Pending' : 'Paid'}</span>
+                            <span className='text-danger bg-warning fw-bolder p-1 rounded-3'>{order.orderStatus !== "Delivered" ? 'Unfulfilled' : 'Fulfilled'}</span>
                         </div>
 
-                        <span className='fw-bold'>{order.CreatedAt}</span>
+                        <span className='fs-6'>
+                            {
+                               new Date(order.CreatedAt).toLocaleDateString('en-US', {
+                                    year: "numeric",
+                                    month: "long",
+                                    day: "2-digit",
+                                    hour: "2-digit",
+                                    minute: "2-digit",
+                                    hour12: true,
+                                })
+                            }
+                        </span>
 
                         <hr />
 
@@ -82,14 +93,14 @@ export default function SingleOrder() {
                             <span className='text-danger bg-warning p-1 rounded-3'>{order.orderStatus !== "Delivered" ? 'Unfulfilled' : 'Fulfilled'}</span>
 
                             <div className='mt-3'>
-                            {order.orderItems.map((item) => (
-                                <div key={item.name} className="order-item d-flex justify-content-between align-items-center my-2 border border-3 p-2 rounded rounded-3">
-                                    <img src={item.image} alt={item.name} className='col-1' />
-                                    <span className='fw-bolder col-4'>{item.name}</span>
-                                    <span className='col-2 fw-bold'>{item.quantity} X ${item.price}</span>
-                                    <span className='col-1 fw-bold'>${item.quantity * item.price}</span>
-                                </div>
-                            ))}
+                                {order.orderItems.map((item) => (
+                                    <div key={item.name} className="order-item d-flex justify-content-between align-items-center my-2 border border-3 p-2 rounded rounded-3">
+                                        <img src={item.image} alt={item.name} className='col-1' />
+                                        <span className='fw-bolder col-4'>{item.name}</span>
+                                        <span className='col-2 fw-bold'>{item.quantity} X ${item.price}</span>
+                                        <span className='col-1 fw-bold'>${item.quantity * item.price}</span>
+                                    </div>
+                                ))}
                             </div>
                         </div>
 

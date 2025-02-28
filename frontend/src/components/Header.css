@@ -35,10 +35,11 @@
 
 .search-icon {
     cursor: pointer;
+    transition: transform 0.5s ease;
 }
 
 .search-icon:hover {
-    color: black;
+    transform: scale(1.2);
 }
 
 .sign-in {

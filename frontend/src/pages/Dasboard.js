@@ -131,7 +131,7 @@ export default function Dasboard() {
                                 <span>Products</span>
                                 <b>{adminProducts.length}</b>
                                 <hr className='border-top border-light w-100 m-0 p-0 mt-4' />
-                                <Link className='btn d-flex justify-content-between w-100'>
+                                <Link to='/admin/products' className='btn d-flex justify-content-between w-100'>
                                     <span>View Details</span>
                                     <i><FaChevronRight size='10px' /></i>
                                 </Link>
@@ -142,7 +142,7 @@ export default function Dasboard() {
                                 <span>Orders</span>
                                 <b>{adminOrders.length}</b>
                                 <hr className='border-top border-light w-100 m-0 p-0 mt-4' />
-                                <Link className='btn d-flex justify-content-between w-100'>
+                                <Link to='/admin/orders' className='btn d-flex justify-content-between w-100'>
                                     <span>View Details</span>
                                     <i><FaChevronRight size='10px' /></i>
                                 </Link>
@@ -153,7 +153,7 @@ export default function Dasboard() {
                                 <span>Users</span>
                                 <b>{allUsers.length}</b>
                                 <hr className='border-top border-light w-100 m-0 p-0 mt-4' />
-                                <Link className='btn d-flex justify-content-between w-100'>
+                                <Link to='/admin/users' className='btn d-flex justify-content-between w-100'>
                                     <span>View Details</span>
                                     <i><FaChevronRight size='10px' /></i>
                                 </Link>

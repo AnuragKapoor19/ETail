@@ -62,8 +62,8 @@ export default function Cart() {
                                 <h4 className='col-2 text-center'>Qty</h4>
                                 <h4 className='col-1 text-center'>Del</h4>
                             </div>
-                            {cartItems.map(item => (
-                                <div key={item._id} className='cart-item d-flex justify-content-around align-items-center border border-dark rounded-3 p-2 my-2'>
+                            {cartItems.map((item, index) => (
+                                <div key={index} className='cart-item d-flex justify-content-around align-items-center border border-dark rounded-3 p-2 my-2'>
                                     <img src={item.images[0].url} alt='Product' className='col-2' />
                                     <span className='name fw-bolder fs-5 col-2 text-center'>{item.name}</span>
                                     <span className='price text-warning text-center h5 col-1'>${item.price}</span>
