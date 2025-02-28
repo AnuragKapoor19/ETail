@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import ProductCard from '../productCard'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { ContextState } from '../../contextAPI'
 
 export default function Decor() {
 
     const [products, setproducts] = useState([])
+    const { setcategory } = ContextState();
+    const navigate = useNavigate();
 
     const getProducts = async () => {
         try {
@@ -29,18 +32,23 @@ export default function Decor() {
         //eslint-disable-next-line
     }, [])
 
+    const handleClick = async () => {
+        await setcategory('Furniture')
+        navigate('/shop')
+    }
+
     return (
         <>
             <div className='decor-container d-flex justify-content-center'>
                 <div className='decor-product-container mx-3 px-2 my-4 col col-lg-6 col-md-12 col-sm-12'>
                     <div className='d-flex justify-content-between'>
                         <h3 className='fw-bolder'>Furniture, decor & more</h3>
-                        <Link className='text-dark'>View all</Link>
+                        <Link onClick={handleClick} className='text-dark'>View all</Link>
                     </div>
                     <span>Make your house feel like home.</span>
                     <div className='row justify-content-start my-3'>
                         {
-                            products.slice(0,3).map((product) => (
+                            products.slice(0, 3).map((product) => (
                                 <ProductCard key={product._id} product={product} collg='4' colmd='4' colsm='4' />
                             ))
                         }

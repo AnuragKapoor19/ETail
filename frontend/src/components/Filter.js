@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Filter.css'
 import { FaDollarSign, FaFilter, FaCheck } from 'react-icons/fa6';
 import { ContextState } from '../contextAPI';
@@ -44,13 +44,17 @@ export default function Filter() {
         "FashionHub"
     ]
 
-    const { setminPrice, setmaxPrice, setloading, setcategory, setbrand, setcurrentPage } = ContextState();
+    const { setminPrice, setmaxPrice, setloading, category, setcategory, setbrand, setcurrentPage } = ContextState();
     const [lprice, setlprice] = useState(0)
     const [hprice, sethprice] = useState(1000)
     const [selected, setselected] = useState(null)
-    const [cat, setcat] = useState('')
+    const [cat, setcat] = useState(category ? category : '')
     const [selectedseller, setselectedseller] = useState(null)
     const [seller, setseller] = useState('')
+
+    useEffect(() => {
+        setcat(category)
+    }, [category])
 
     const handleMinChange = (e) => {
         setlprice(e.target.value)
