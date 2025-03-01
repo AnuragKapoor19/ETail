@@ -1,9 +1,12 @@
 import React, { useRef } from 'react'
 import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 import './HomeStyle.css'
+import { useNavigate } from 'react-router-dom';
+import { ContextState } from '../../contextAPI';
 
 export default function Categories() {
-
+    const navigate = useNavigate();
+    const { setcategory } = ContextState();
     const categories = [
         {
             category: 'Electronics',
@@ -63,6 +66,30 @@ export default function Categories() {
         });
     };
 
+    const handleClick = async (c) => {
+        if (c === 'Fashion') {
+            await setcategory("Fashion and Apparel");
+        }
+
+        else if (c === 'Grocery') {
+            await setcategory("Grocery and Food Items");
+        }
+
+        else if (c === 'Auto & Tires') {
+            await setcategory("Automotive and Tires");
+        }
+
+        else if (c === 'Sports & Outdoors') {
+            await setcategory("Sports and Outdoors");
+        }
+
+        else {
+            await setcategory(c);
+        }
+
+        navigate('/shop')
+    }
+
     return (
         <>
             <div className='category-container my-4'>
@@ -72,8 +99,8 @@ export default function Categories() {
                     <div className='btn btn-right' onClick={scrollRight} style={{ marginLeft: "10px" }}><BsArrowRightCircle size='3rem' /></div>
                 </div>
                 <div ref={scrollContainerRef} className='scroller d-flex justify-content-between py-3'>
-                    {categories.map((cat) => (
-                        <div className='category-div text-center mx-2' key={cat}>
+                    {categories.map((cat, index) => (
+                        <div className='category-div text-center mx-2' key={index} onClick={() => handleClick(cat.category)}>
                             <img className='category-logo' src={cat.image} alt={cat} />
                             <span className='fw-bold'>{cat.category}</span>
                         </div>

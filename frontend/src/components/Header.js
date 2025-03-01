@@ -45,6 +45,26 @@ export default function Headers() {
         setcurrentPage(1)
     }
 
+    const handleClick1 = async () => {
+        await setcategory('Grocery and Food Items');
+        navigate('/shop')
+    }
+
+    const handleClick2 = async () => {
+        await setcategory('Grocery and Food Items');
+        navigate('/shop')
+    }
+
+    const handleClick3 = async () => {
+        await setcategory('Grocery and Food Items');
+        navigate('/shop')
+    }
+
+    const handleClick4 = async () => {
+        await setcategory('Grocery and Food Items');
+        navigate('/shop')
+    }
+
     return (
         <>
             <div className='nav-container bg-dark py-3'>
@@ -83,7 +103,6 @@ export default function Headers() {
                         <Link to={'/cart'} className='linktocart'><FiShoppingCart size='1.8rem' /></Link>
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                             {cartItems.length}
-                            <span class="visually-hidden">unread messages</span>
                         </span>
                     </div>
 
@@ -111,10 +130,10 @@ export default function Headers() {
                 <hr className='border border-light border-3' />
                 <div className='row-2 d-flex justify-content-between align-items-center'>
                     <div className='links fs-5 fw-bold align-items-center'>
-                        <Link className='link-1 text-decoration-none text-light mx-4'>Back to School</Link>
-                        <Link className='link-2 text-decoration-none text-light mx-4'>Top Deals</Link>
-                        <Link className='link-3 text-decoration-none text-light mx-4'>Deals of the Day</Link>
-                        <Link className='link-4 text-decoration-none text-light mx-4'>Grocery & Essentials</Link>
+                        <Link className='link-1 text-decoration-none text-light mx-4' onClick={handleClick1}>Back to School</Link>
+                        <Link className='link-2 text-decoration-none text-light mx-4' onClick={handleClick2}>Top Deals</Link>
+                        <Link className='link-3 text-decoration-none text-light mx-4' onClick={handleClick3}>Deals of the Day</Link>
+                        <Link className='link-4 text-decoration-none text-light mx-4' onClick={handleClick4}>Grocery & Essentials</Link>
                     </div>
 
                     <div className='offer'>
