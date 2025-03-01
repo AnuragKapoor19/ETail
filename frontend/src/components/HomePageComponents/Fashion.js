@@ -1,7 +1,22 @@
 import React from 'react'
 import './HomeStyle.css'
+import { useNavigate } from 'react-router-dom'
+import { ContextState } from '../../contextAPI';
 
 export default function Fashion() {
+    const { setkeyword } = ContextState();
+    const navigate = useNavigate();
+
+    const handleMenClick = async () => {
+        await setkeyword('Men');
+        navigate('/shop')
+    }
+
+    const handleWomenClick = async () => {
+        await setkeyword('Women');
+        navigate('/shop')
+    }
+
     return (
         <>
             <div className='fashion-container my-3'>
@@ -11,7 +26,7 @@ export default function Fashion() {
                         <img className='fashion-image' src='https://res.cloudinary.com/anuragkapoor/image/upload/t_Fashion2/v1737025956/Fashion.png' alt='men-fashion' />
                         <div className='fashion-content text-light'>
                             <h1 className='menh1'>Fashion for the man who leads, not follows.</h1>
-                            <div className='fashion-btn btn btn-light rounded-5'>Shop now</div>
+                            <div className='fashion-btn btn btn-light rounded-5' onClick={handleMenClick}>Shop now</div>
                         </div>
                     </div>
 
@@ -19,7 +34,7 @@ export default function Fashion() {
                         <img className='fashion-image' src='https://d2line.com/thatlook/wp-content/uploads/sites/4/2022/02/40s-women-fashion-d2line-tips.png' alt='women-fashion' />
                         <div className='fashion-content'>
                             <h1>Fashion That Celebrates the Queen in You.</h1>
-                            <div className='fashion-btn btn btn-dark rounded-5'>Shop now</div>
+                            <div className='fashion-btn btn btn-dark rounded-5' onClick={handleWomenClick}>Shop now</div>
                         </div>
                     </div>
                 </div>

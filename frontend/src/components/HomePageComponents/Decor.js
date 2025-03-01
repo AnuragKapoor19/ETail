@@ -37,6 +37,11 @@ export default function Decor() {
         navigate('/shop')
     }
 
+    const handleDecorClick = async () => {
+        await setcategory('Decor')
+        navigate('/shop')
+    }
+
     return (
         <>
             <div className='decor-container d-flex justify-content-center'>
@@ -60,7 +65,7 @@ export default function Decor() {
                     <div className='decor-content'>
                         <span>Up to 20% off</span>
                         <h2 className='fw-bolder'>Where Style Meets Comfort</h2>
-                        <Link className='btn btn-light rounded-5 border border-dark fw-bold mt-3'>Shop now</Link>
+                        <Link className='btn btn-light rounded-5 border border-dark fw-bold mt-3' onClick={handleDecorClick}>Shop now</Link>
                     </div>
                 </div>
             </div>

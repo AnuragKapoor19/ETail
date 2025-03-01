@@ -12,7 +12,7 @@ import { ContextState } from '../contextAPI';
 import { useNavigate } from 'react-router-dom';
 
 export default function Headers() {
-    const { toggle, settoggle, cartItems, user, setkeyword, setloading, setminPrice, setmaxPrice, setcategory, setbrand } = ContextState();
+    const { toggle, settoggle, cartItems, user, setkeyword, setloading, setminPrice, setmaxPrice, setcategory, setbrand, setcurrentPage } = ContextState();
     const [word, setword] = useState('')
     const navigate = useNavigate()
 
@@ -42,6 +42,7 @@ export default function Headers() {
         setmaxPrice(1000)
         setcategory('')
         setbrand('')
+        setcurrentPage(1)
     }
 
     return (
