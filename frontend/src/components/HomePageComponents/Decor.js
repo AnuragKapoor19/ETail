@@ -53,8 +53,8 @@ export default function Decor() {
                     <span>Make your house feel like home.</span>
                     <div className='row justify-content-start my-3'>
                         {
-                            products.slice(0, 3).map((product) => (
-                                <ProductCard key={product._id} product={product} collg='4' colmd='4' colsm='4' />
+                            products.slice(0, 3).map((product,index) => (
+                                <ProductCard key={index} product={product} collg='4' colmd='4' colsm='4' />
                             ))
                         }
                     </div>

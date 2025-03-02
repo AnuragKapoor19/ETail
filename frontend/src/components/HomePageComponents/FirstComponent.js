@@ -1,8 +1,11 @@
 import React from 'react'
 import './HomeStyle.css'
 import { Link } from 'react-router-dom'
+import { ContextState } from '../../contextAPI'
 
 export default function FirstComponent() {
+    const { setcategory } = ContextState();
+
     return (
         <>
             <div className='card-container w-100 d-flex justify-content-center'>
@@ -10,21 +13,21 @@ export default function FirstComponent() {
                     <div className='card1'>
                         <div className='content'>
                             <h5>All you need to study</h5>
-                            <Link>Shop now</Link>
+                            <Link to={'shop'}>Shop now</Link>
                         </div>
                     </div>
 
                     <div className='card2'>
                         <div className='content'>
                             <h5>Campus cooking and dining</h5>
-                            <Link>Shop now</Link>
+                            <Link to={'shop'}>Shop now</Link>
                         </div>
                     </div>
 
                     <div className='card3'>
                         <div className='content'>
                             <h5>Bath needs from $2</h5>
-                            <Link>Shop now</Link>
+                            <Link to={'shop'}>Shop now</Link>
                         </div>
                     </div>
                 </div>
@@ -34,7 +37,7 @@ export default function FirstComponent() {
                         <div className='content'>
                             <span className='fs-5'>Get it as fast as today</span>
                             <h2>College prep</h2>
-                            <Link className='btn btn-light text-dark border border-dark rounded-5 fw-bold'>Shop now</Link>
+                            <Link to={'shop'} className='btn btn-light text-dark border border-dark rounded-5 fw-bold'>Shop now</Link>
                         </div>
                     </div>
 
@@ -42,14 +45,14 @@ export default function FirstComponent() {
                         <div className='incard1 me-2'>
                             <div className='content'>
                                 <h5>Sleep, study, repeat</h5>
-                                <Link>Shop bedding</Link>
+                                <Link to={'shop'}>Shop bedding</Link>
                             </div>
                         </div>
 
                         <div className='incard2'>
                             <div className='content'>
                                 <h5>Up to 65% off</h5>
-                                <Link>Shop now</Link>
+                                <Link to={'/shop'}>Shop now</Link>
                             </div>
                         </div>
                     </div>
@@ -66,21 +69,21 @@ export default function FirstComponent() {
                     <div className='card7'>
                         <div className='content'>
                             <h5>Dorm decor from $2</h5>
-                            <Link>Shop now</Link>
+                            <Link to={'/shop'} onClick={() => setcategory('Decor')}>Shop now</Link>
                         </div>
                     </div>
 
                     <div className='card8'>
                         <div className='content'>
                             <h5>Extra space, under $15</h5>
-                            <Link>Shop storage</Link>
+                            <Link to={'/shop'} onClick={() => setcategory('Storage')}>Shop storage</Link>
                         </div>
                     </div>
 
                     <div className='card9'>
                         <div className='content'>
                             <h5>Cool college looks</h5>
-                            <Link>Shop now</Link>
+                            <Link to={'shop'}>Shop now</Link>
                         </div>
                     </div>
                 </div>
