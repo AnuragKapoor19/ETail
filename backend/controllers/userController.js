@@ -335,7 +335,7 @@ const updateProfile = async (req, res) => {
 
 //Logout a user
 const logoutUser = async (req, res) => {
-    res.cookie('token', null, { expires: new Date(Date.now()), httpOnly: true })
+    res.cookie('token', null, { expires: new Date(Date.now()), httpOnly: true, sameSite: 'None', secure: true })
 
     res.status(200).json({
         success: true,
