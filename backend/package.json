@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "server": "cross-env NODE_ENV=development nodemon server.js",
-    "prod_server": "cross-env NODE_ENV=production node server.js",
+    "server": "cross-env NODE_ENV=development nodemon index.js",
+    "prod_server": "cross-env NODE_ENV=production node index.js",
     "seeder": "node utils/seeder.js"
   },
   "author": "Anurag Kapoor",
