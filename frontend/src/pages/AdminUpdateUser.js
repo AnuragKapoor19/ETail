@@ -16,7 +16,7 @@ export default function AdminUpdateUser() {
     const getUser = async () => {
         try {
             setloading(true)
-            const res = await fetch(`http://localhost:5000/api/v1/admin/user/${id}`, {
+            const res = await fetch(`${process.env.REACT_APP_API_URL}/admin/user/${id}`, {
                 method: "GET",
                 credentials: 'include'
             })
@@ -47,7 +47,7 @@ export default function AdminUpdateUser() {
         e.preventDefault()
         setisUserUpdated(false)
         try {
-            const res = await fetch(`http://localhost:5000/api/v1/admin/user/${id}`, {
+            const res = await fetch(`${process.env.REACT_APP_API_URL}/admin/user/${id}`, {
                 method: 'PUT',
                 credentials: 'include',
                 headers: {

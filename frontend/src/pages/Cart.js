@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { RiDeleteBin6Fill } from "react-icons/ri";
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { ContextState } from '../contextAPI';
@@ -9,6 +10,80 @@ export default function Cart() {
     const { cartItems, setcartItems, user } = ContextState();
     const [totalPrice, settotalPrice] = useState(0)
     const navigate = useNavigate()
+
+    const handleAddQuantity = async (id) => {
+        await setcartItems(cartItems.map((item) => {
+            if (item._id === id) {
+                if (item.quantity >= item.stock) {
+                    return item;
+                }
+                else {
+                    item.quantity += 1;
+                    return item;
+                }
+            }
+            else {
+                return item;
+            }
+        }
+        ))
+        let items = JSON.parse(localStorage.getItem('cartItems'))
+
+        items = items.map((item) => {
+            if (item._id === id) {
+                if (item.quantity >= item.stock) {
+                    return item;
+                }
+                else {
+                    item.quantity += 1;
+                    return item;
+                }
+            }
+            else {
+                return item;
+            }
+        }
+        )
+
+        localStorage.setItem('cartItems', JSON.stringify(items))
+    }
+
+    const handleRemoveQuantity = async (id) => {
+        await setcartItems(cartItems.map((item) => {
+            if (item._id === id) {
+                if (item.quantity === 1) {
+                    return item;
+                }
+                else {
+                    item.quantity -= 1;
+                    return item;
+                }
+            }
+            else {
+                return item;
+            }
+        }
+        ))
+        let items = JSON.parse(localStorage.getItem('cartItems'))
+
+        items = items.map((item) => {
+            if (item._id === id) {
+                if (item.quantity === 1) {
+                    return item;
+                }
+                else {
+                    item.quantity -= 1;
+                    return item;
+                }
+            }
+            else {
+                return item;
+            }
+        }
+        )
+
+        localStorage.setItem('cartItems', JSON.stringify(items))
+    }
 
     const handleDeleteClick = (id) => {
         setcartItems(cartItems.filter(item => item._id !== id))
@@ -65,10 +140,12 @@ export default function Cart() {
                             {cartItems.map((item, index) => (
                                 <div key={index} className='cart-item d-flex justify-content-around align-items-center border border-dark rounded-3 p-2 my-2'>
                                     <img src={item.images[0].url} alt='Product' className='col-2' />
-                                    <span className='name fw-bolder fs-5 col-2 text-center'>{item.name}</span>
+                                    <span className='name fw-bolder fs-5 col-2 text-center'>{String(item.name).slice(0, 23)}...</span>
                                     <span className='price text-warning text-center h5 col-1'>${item.price}</span>
-                                    <div className="count d-flex justify-content-center col-2">
+                                    <div className="count d-flex justify-content-center align-items-center flex-column col-2">
+                                        <div id='arrow' onClick={() => item.quantity < item.stock && handleAddQuantity(item._id)}><MdKeyboardArrowUp size={25} /></div>
                                         <div className="quantity text-dark p-2 d-flex justify-content-center align-items-center h5"><b>{item.quantity}</b></div>
+                                        <div id='arrow' onClick={() => item.quantity > 1 && handleRemoveQuantity(item._id)}><MdKeyboardArrowDown size={25} /></div>
                                     </div>
                                     <i className='btn col-1 text-danger' onClick={() => handleDeleteClick(item._id)}><RiDeleteBin6Fill size={30} /></i>
                                 </div>

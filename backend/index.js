@@ -7,8 +7,15 @@ const errorMiddleware = require("./middlewares/error")
 const cookieParser = require("cookie-parser")
 const bodyParser = require("body-parser")
 const cloudinary = require('cloudinary')
-dotenv.config()
-const PORT = process.env.PORT
+
+// Detect environment and load correct file
+if (process.env.NODE_ENV === 'production') {
+    dotenv.config({ path: '.env.production' });
+} else {
+    dotenv.config({ path: '.env.development' });
+}
+
+const PORT = process.env.PORT;
 
 //Handling uncaught exceptions
 process.on('uncaughtExceptions', (err) => {
@@ -23,7 +30,7 @@ mongodb()
 app.use(cookieParser())
 
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: process.env.ORIGIN,
     credentials: true    //Accept cookies
 }))
 

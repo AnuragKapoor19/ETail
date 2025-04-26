@@ -2,7 +2,6 @@ import React from 'react'
 import './ToggleMenu.css'
 import { IoIosLogOut } from "react-icons/io";
 import { Link } from 'react-router-dom';
-import { FaBagShopping } from "react-icons/fa6";
 import { ContextState } from '../contextAPI';
 import { RiAlignItemLeftFill } from 'react-icons/ri';
 import { CgProfile } from "react-icons/cg";
@@ -25,7 +24,7 @@ export default function ToggleMenu() {
     }
 
     const handleLogout = async () => {
-        const res = await fetch('http://localhost:5000/api/v1/logout', {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/logout`, {
             method: "GET",
             credentials: 'include'
         })
@@ -64,8 +63,7 @@ export default function ToggleMenu() {
                         :
                         <>
                             <div className='sign text-center hidden-option'>
-                                <FaBagShopping size='2rem' />
-                                <Link to={'/login'} className='text-decoration-none fw-bold fs-5 btn btn-warning ms-3 rounded-5'>Sign in or create account</Link>
+                                <Link to={'/login'} className='text-decoration-none fw-bold fs-6 btn btn-warning '>Login or Create Account</Link>
                             </div>
                         </>
                     }

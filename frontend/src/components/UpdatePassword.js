@@ -17,7 +17,7 @@ export default function UpdatePassword() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const res = await fetch('http://localhost:5000/api/v1/password/update', {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/password/update`, {
             method: 'PUT',
             headers: {
                 "Content-Type": "application/json"
@@ -53,7 +53,7 @@ export default function UpdatePassword() {
                             </div>
                             <div className="modal-body">
                                 <div className='w-100 text-center'>
-                                    <img src='https://i.pinimg.com/736x/76/38/69/763869a33c8ac9e99a59500992c11127.jpg' alt='logo' className='w-50'/>
+                                    <img src='https://i.pinimg.com/736x/76/38/69/763869a33c8ac9e99a59500992c11127.jpg' alt='logo' className='w-50' />
                                 </div>
                                 <div className="mt-3 mb-5">
                                     <label htmlFor="oldPassword" className="form-label">Old Password</label>

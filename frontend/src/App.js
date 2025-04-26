@@ -40,7 +40,7 @@ function App() {
   const [stripeApiKey, setstripeApiKey] = useState('')
 
   const getUserProfile = async () => {
-    const res = await fetch('http://localhost:5000/api/v1/me', {
+    const res = await fetch(`${process.env.REACT_APP_API_URL}/me`, {
       method: 'GET',
       credentials: 'include',
     })
@@ -59,12 +59,16 @@ function App() {
   }
 
   const getStripeApiKey = async () => {
-    const res = await fetch('http://localhost:5000/api/v1/stripeapi', {
-      method: "GET",
-      credentials: 'include'
-    })
-    const data = await res.json();
-    setstripeApiKey(String(data.stripeApiKey))
+    try {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/stripeapi`, {
+        method: "GET",
+        credentials: 'include'
+      })
+      const data = await res.json();
+      await setstripeApiKey(String(data.stripeApiKey))
+    } catch (error) {
+      console.log(error.message);
+    }
   }
 
   useEffect(() => {

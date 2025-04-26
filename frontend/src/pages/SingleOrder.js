@@ -10,7 +10,7 @@ export default function SingleOrder() {
 
     const getSingleOrder = async () => {
         try {
-            const res = await fetch(`http://localhost:5000/api/v1/order/${id}`, {
+            const res = await fetch(`${process.env.REACT_APP_API_URL}/order/${id}`, {
                 method: 'GET',
                 credentials: 'include'
             })

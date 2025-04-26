@@ -17,7 +17,7 @@ export default function AdminProductReviews() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         getReviews();
-        // const res = await fetch(`http://localhost:5000/api/v1/reviews/?id=${productId}`, {
+        // const res = await fetch(`${process.env.REACT_APP_API_URL}/reviews/?id=${productId}`, {
         //     method: 'GET',
         //     credentials: 'include'
         // })
@@ -32,7 +32,7 @@ export default function AdminProductReviews() {
     }
 
     const getReviews = async () => {
-        const res = await fetch(`http://localhost:5000/api/v1/reviews/?id=${productId}`, {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/reviews/?id=${productId}`, {
             method: 'GET',
             credentials: 'include'
         })
@@ -54,7 +54,7 @@ export default function AdminProductReviews() {
     const handleDelete = async (reviewId) => {
         try {
             setisReviewDeleted(false)
-            const res = await fetch(`http://localhost:5000/api/v1/reviews/?id=${productId}&reviewId=${reviewId}`, {
+            const res = await fetch(`${process.env.REACT_APP_API_URL}/reviews/?id=${productId}&reviewId=${reviewId}`, {
                 method: 'DELETE',
                 credentials: 'include'
             })

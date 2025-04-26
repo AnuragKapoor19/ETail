@@ -11,7 +11,7 @@ export default function AdminAllUsers() {
     const { allUsers, setallUsers, isUserDeleted, isUserUpdated, setisUserDeleted } = ContextState()
 
     const getAllUsers = async () => {
-        const res = await fetch('http://localhost:5000/api/v1/admin/users', {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/admin/users`, {
             method: 'GET',
             credentials: 'include'
         })
@@ -32,7 +32,7 @@ export default function AdminAllUsers() {
 
     const handleDelete = async (id) => {
         setisUserDeleted(false)
-        const res = await fetch(`http://localhost:5000/api/v1/admin/user/${id}`, {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/admin/user/${id}`, {
             method: 'DELETE',
             credentials: 'include'
         })

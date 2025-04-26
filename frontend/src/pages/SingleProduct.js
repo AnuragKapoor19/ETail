@@ -19,7 +19,7 @@ export default function SingleProduct() {
             if (!rating || !comment) {
                 return alert('Please enter rating and comment')
             }
-            const res = await fetch('http://localhost:5000/api/v1/new/review', {
+            const res = await fetch(`${process.env.REACT_APP_API_URL}/new/review`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
@@ -71,10 +71,10 @@ export default function SingleProduct() {
     const handleAddToCart = async (id) => {
         product.quantity = quantity;
 
-        const isItemInCart = cartItems.find(item => item._id === id)
+        const isItemInCart = await cartItems.find(item => item._id === id)
 
         if (isItemInCart) {
-            setcartItems(
+            await setcartItems(
                 cartItems.map((item) => {
                     if (item._id === id) {
                         item.quantity = quantity;
@@ -84,16 +84,6 @@ export default function SingleProduct() {
                 })
             )
 
-            // let items = JSON.parse(localStorage.getItem('cartItems'))
-
-            // items = cartItems.map((item) => {
-            //     if (item._id === id) {
-            //         item.quantity += quantity;
-            //         return item
-            //     }
-            //     return item
-            // })
-
             localStorage.setItem('cartItems', JSON.stringify(cartItems))
 
         }
@@ -101,11 +91,9 @@ export default function SingleProduct() {
         else {
             await setcartItems([...cartItems, product]);
 
-            let items = JSON.parse(localStorage.getItem('cartItems'))
-
-            items.push(product)
-
-            localStorage.setItem('cartItems', JSON.stringify(items))
+            let items = JSON.parse(localStorage.getItem('cartItems')) || [];
+            items.push(product);
+            localStorage.setItem('cartItems', JSON.stringify(items));
         }
 
         toast.success("Item added to cart!")

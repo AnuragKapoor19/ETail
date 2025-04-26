@@ -12,7 +12,7 @@ export default function AdminProducts() {
 
     const handleDelete = async (id) => {
         try {
-            const res = await fetch(`http://localhost:5000/api/v1/admin/product/${id}`, {
+            const res = await fetch(`${process.env.REACT_APP_API_URL}/admin/product/${id}`, {
                 method: "DELETE",
                 credentials: 'include'
             })
@@ -31,7 +31,7 @@ export default function AdminProducts() {
     }
 
     const getAdminProducts = async () => {
-        const res = await fetch('http://localhost:5000/api/v1/admin/products', {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/admin/products`, {
             method: 'GET',
             credentials: 'include'
         })

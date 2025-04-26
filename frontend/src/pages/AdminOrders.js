@@ -12,7 +12,7 @@ export default function AdminOrders() {
 
     const handleDelete = async (id) => {
         try {
-            const res = await fetch(`http://localhost:5000/api/v1/admin/order/${id}`, {
+            const res = await fetch(`${process.env.REACT_APP_API_URL}/admin/order/${id}`, {
                 method: 'DELETE',
                 credentials: 'include'
             })
@@ -33,7 +33,7 @@ export default function AdminOrders() {
 
     const getAllorders = async () => {
         try {
-            const res = await fetch('http://localhost:5000/api/v1//admin/orders', {
+            const res = await fetch(`${process.env.REACT_APP_API_URL}//admin/orders`, {
                 method: 'GET',
                 credentials: 'include'
             })

@@ -18,7 +18,7 @@ export default function Dasboard() {
     });
 
     const getAdminProducts = async () => {
-        const res = await fetch('http://localhost:5000/api/v1/admin/products', {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/admin/products`, {
             method: 'GET',
             credentials: 'include'
         })
@@ -39,7 +39,7 @@ export default function Dasboard() {
 
     const getAllorders = async () => {
         try {
-            const res = await fetch('http://localhost:5000/api/v1//admin/orders', {
+            const res = await fetch(`${process.env.REACT_APP_API_URL}/admin/orders`, {
                 method: 'GET',
                 credentials: 'include'
             })
@@ -59,7 +59,7 @@ export default function Dasboard() {
     }, [isOrderUpdated, isOrderDeleted])
 
     const getAllUsers = async () => {
-        const res = await fetch('http://localhost:5000/api/v1/admin/users', {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/admin/users`, {
             method: 'GET',
             credentials: 'include'
         })

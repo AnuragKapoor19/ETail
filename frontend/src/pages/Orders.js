@@ -7,7 +7,7 @@ export default function Orders() {
     const [orders, setorders] = useState([])
 
     const getOrders = async () => {
-        const res = await fetch('http://localhost:5000/api/v1/orders/me', {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/orders/me`, {
             method: "GET",
             credentials: 'include',
         })

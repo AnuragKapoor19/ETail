@@ -4,7 +4,14 @@ const products = JSON.parse(fs.readFileSync('D:/Projects/E-Commerce Website/back
 const productModel = require('../models/productModel')
 const dotenv = require("dotenv")
 const cloudinary = require('cloudinary')
-dotenv.config()
+
+// Detect environment and load correct file
+if (process.env.NODE_ENV === 'production') {
+    dotenv.config({ path: '.env.production' });
+} else {
+    dotenv.config({ path: '.env.development' });
+}
+
 mongodb();
 
 //Setting up cloudinary

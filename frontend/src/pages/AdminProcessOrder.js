@@ -14,7 +14,7 @@ export default function AdminProcessOrder() {
 
     const getSingleOrder = async () => {
         try {
-            const res = await fetch(`http://localhost:5000/api/v1/order/${id}`, {
+            const res = await fetch(`${process.env.REACT_APP_API_URL}/order/${id}`, {
                 method: 'GET',
                 credentials: 'include'
             })
@@ -46,7 +46,7 @@ export default function AdminProcessOrder() {
 
     const handleClick = async () => {
         try {
-            const res = await fetch(`http://localhost:5000/api/v1//admin/order/${id}`, {
+            const res = await fetch(`${process.env.REACT_APP_API_URL}//admin/order/${id}`, {
                 method: "PUT",
                 credentials: 'include',
                 headers: {

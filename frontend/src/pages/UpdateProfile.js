@@ -33,7 +33,7 @@ export default function UpdateProfile() {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        const res = await fetch('http://localhost:5000/api/v1/me/update', {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/me/update`, {
             method: "PUT",
             headers: {
                 'Content-Type': "application/json"

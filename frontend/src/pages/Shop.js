@@ -13,19 +13,19 @@ export default function Shop() {
 
     const getAllProducts = async () => {
         try {
-            let link = `http://localhost:5000/api/v1/products/?keyword=${keyword}&page=${currentPage}&price[$lte]=${maxPrice}&price[$gte]=${minPrice}`;
+            let link = `${process.env.REACT_APP_API_URL}/products/?keyword=${keyword}&page=${currentPage}&price[$lte]=${maxPrice}&price[$gte]=${minPrice}`;
 
             if (category !== '') {
                 if (brand !== '') {
-                    link = `http://localhost:5000/api/v1/products/?keyword=${keyword}&page=${currentPage}&price[$lte]=${maxPrice}&price[$gte]=${minPrice}&category=${category}&seller=${brand}`
+                    link = `${process.env.REACT_APP_API_URL}/products/?keyword=${keyword}&page=${currentPage}&price[$lte]=${maxPrice}&price[$gte]=${minPrice}&category=${category}&seller=${brand}`
                 }
                 else {
-                    link = `http://localhost:5000/api/v1/products/?keyword=${keyword}&page=${currentPage}&price[$lte]=${maxPrice}&price[$gte]=${minPrice}&category=${category}`
+                    link = `${process.env.REACT_APP_API_URL}/products/?keyword=${keyword}&page=${currentPage}&price[$lte]=${maxPrice}&price[$gte]=${minPrice}&category=${category}`
                 }
             }
             else {
                 if (brand !== '') {
-                    link = `http://localhost:5000/api/v1/products/?keyword=${keyword}&page=${currentPage}&price[$lte]=${maxPrice}&price[$gte]=${minPrice}&seller=${brand}`
+                    link = `${process.env.REACT_APP_API_URL}/products/?keyword=${keyword}&page=${currentPage}&price[$lte]=${maxPrice}&price[$gte]=${minPrice}&seller=${brand}`
                 }
             }
 

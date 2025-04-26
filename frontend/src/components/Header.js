@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { FaBagShopping, FaBasketShopping, FaRegUser } from "react-icons/fa6";
+import Logo from '../Logo.png';
+import { FaBasketShopping, FaRegUser } from "react-icons/fa6";
 import { FaHome } from "react-icons/fa";
 import { IoMdSearch } from "react-icons/io";
 import { FiShoppingCart } from "react-icons/fi";
@@ -67,7 +68,7 @@ export default function Headers() {
 
     return (
         <>
-            <div className='nav-container bg-dark py-3'>
+            <div className='nav-container bg-dark pb-3 pt-1'>
                 <div className='row-1 d-flex text-light justify-content-around align-items-center'>
 
                     <div className='menu-icon text-light' onClick={handleToggleMenu}>
@@ -80,8 +81,9 @@ export default function Headers() {
                     }
 
                     <div className='logo d-flex text-warning'>
-                        <FaBagShopping size='2rem' />
-                        <h2>ETail</h2>
+                        {/* <FaBagShopping size='2rem' />
+                        <h2>ETail</h2> */}
+                        <img src={Logo} alt='logo' />
                     </div>
 
                     <Link to={'/'} className='Home text-decoration-none text-light' onClick={handleClick}>
@@ -137,7 +139,7 @@ export default function Headers() {
                     </div>
 
                     <div className='offer'>
-                        <span className='text-warning fw-bolder fs-5 fst-italic me-5'>Free Shipping on orders of above $200</span>
+                        <span className='text-warning fw-bolder fs-5 fst-italic'>Free Shipping on orders of above $200</span>
                     </div>
                 </div>
             </div>

@@ -14,7 +14,7 @@ export default function ResetPassword() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const res = await fetch(`http://localhost:5000/api/v1/password/reset/${token}`, {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/password/reset/${token}`, {
             method: 'PUT',
             headers: {
                 "Content-Type": 'application/json'

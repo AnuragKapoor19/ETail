@@ -52,7 +52,7 @@ export default function AdminCreateProduct() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await fetch('http://localhost:5000/api/v1/admin/product/new', {
+            const res = await fetch(`${process.env.REACT_APP_API_URL}/admin/product/new`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

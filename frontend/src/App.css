@@ -85,6 +85,7 @@
     margin-left: 20px;
     width: 50%;
     text-align: center;
+    font-family:serif;
 }
 
 .login-image-container span {
@@ -93,6 +94,7 @@
     margin-left: 20px;
     color: black;
     text-align: center;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .reset-form-container {
@@ -234,6 +236,23 @@
 
 .cart-item img {
     height: 100%;
+}
+
+.count{
+    width: fit-content;
+}
+
+.name{
+    word-break: break-all;
+}
+
+#arrow{
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#arrow:active{
+    transform: scale(1.2);
 }
 
 .products {
@@ -474,5 +493,11 @@ table{
 
     .pad{
         padding: 0 20px;
+    }
+
+    .name{
+        width: 20%;
+        max-width: 20%;
+        word-break: normal;
     }
 }

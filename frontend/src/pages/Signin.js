@@ -35,7 +35,7 @@ export default function Signin() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch('http://localhost:5000/api/v1/register', {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/register`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json'

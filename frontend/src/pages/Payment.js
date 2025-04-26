@@ -46,7 +46,7 @@ export default function Payment() {
 
   const createOrder = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/v1/order/new', {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/order/new`, {
         method: 'POST',
         credentials: 'include',
         headers: {
@@ -81,7 +81,7 @@ export default function Payment() {
     e.preventDefault();
 
     try {
-      const res = await fetch('http://localhost:5000/api/v1/payment/process', {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/payment/process`, {
         method: "POST",
         headers: {
           'Content-Type': 'application/json'
@@ -160,7 +160,7 @@ export default function Payment() {
             </div>
 
             <div className="payment-method row justify-content-around my-3">
-              <div className={`d-flex flex-column card btn btn-primary border border-5 col-3 ${selected && 'bg-warning'}`} onClick={()=> setselected(!selected)}>
+              <div className={`d-flex flex-column card btn btn-primary border border-5 col-3 ${selected && 'bg-warning'}`} onClick={() => setselected(!selected)}>
                 <i><BsFillCreditCard2BackFill size={25} /></i>
                 <h6>Card</h6>
               </div>
@@ -181,9 +181,9 @@ export default function Payment() {
               <div className='d-flex bg-light px-2'>
                 <CardNumberElement className='col-9 p-2 fw-bold' type='text' id='cardNumber' options={options} />
                 <div className='icons d-flex justify-content-between col-3'>
-                  <i><RiVisaLine size={25} color='black'/></i>
-                  <i><FaCcMastercard size={25} color='black'/></i>
-                  <i><BsFillCreditCard2FrontFill size={25} color='black'/></i>
+                  <i><RiVisaLine size={25} color='black' /></i>
+                  <i><FaCcMastercard size={25} color='black' /></i>
+                  <i><BsFillCreditCard2FrontFill size={25} color='black' /></i>
                 </div>
               </div>
             </div>
