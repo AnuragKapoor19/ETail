@@ -26,11 +26,6 @@ export default function Profile() {
           </button>
           <UpdatePassword />
 
-          {user.role === 'user' &&
-            <button className="sidebar-btn">
-              My Orders
-            </button>
-          }
         </div>
         <div className="profile-main">
           <h1>Welcome, {user.name}!</h1>

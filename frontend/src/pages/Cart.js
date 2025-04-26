@@ -140,7 +140,7 @@ export default function Cart() {
                             {cartItems.map((item, index) => (
                                 <div key={index} className='cart-item d-flex justify-content-around align-items-center border border-dark rounded-3 p-2 my-2'>
                                     <img src={item.images[0].url} alt='Product' className='col-2' />
-                                    <span className='name fw-bolder fs-5 col-2 text-center'>{String(item.name).slice(0, 23)}...</span>
+                                    <span className='i-name fw-bolder fs-5 col-2 text-center'>{String(item.name).slice(0, 23)}...</span>
                                     <span className='price text-warning text-center h5 col-1'>${item.price}</span>
                                     <div className="count d-flex justify-content-center align-items-center flex-column col-2">
                                         <div id='arrow' onClick={() => item.quantity < item.stock && handleAddQuantity(item._id)}><MdKeyboardArrowUp size={25} /></div>

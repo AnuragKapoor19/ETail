@@ -242,7 +242,7 @@
     width: fit-content;
 }
 
-.name {
+.i-name {
     word-break: break-all;
 }
 
@@ -511,7 +511,7 @@ table {
         padding: 0 20px;
     }
 
-    .name {
+    .i-name {
         width: 20%;
         max-width: 20%;
         word-break: normal;

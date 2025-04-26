@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import { ClipLoader } from 'react-spinners'
 
 export default function SingleOrder() {
     const { id } = useParams()
@@ -10,6 +11,7 @@ export default function SingleOrder() {
 
     const getSingleOrder = async () => {
         try {
+            setloading(true)
             const res = await fetch(`${process.env.REACT_APP_API_URL}/order/${id}`, {
                 method: 'GET',
                 credentials: 'include'
@@ -38,7 +40,7 @@ export default function SingleOrder() {
             <Header />
             {loading
                 ?
-                <div>Loading....</div>
+                <ClipLoader size={25} />
                 :
                 <div className='d-flex justify-content-center align-items-center'>
                     <div className='order-container p-3 m-3 col-10'>
@@ -47,13 +49,13 @@ export default function SingleOrder() {
 
                         <div className="order d-flex align-items-center my-2">
                             <h4 className='fw-bold me-3'>Order ID: {order._id}</h4>
-                            <span className='text-warning bg-danger fw-bolder p-1 me-2 rounded-3'>{!order.paymentInfo ? 'Payment Pending' : 'Paid'}</span>
-                            <span className='text-danger bg-warning fw-bolder p-1 rounded-3'>{order.orderStatus !== "Delivered" ? 'Unfulfilled' : 'Fulfilled'}</span>
+                            <span className='text-warning bg-danger px-1 me-2'>{!order.paymentInfo ? 'Payment Pending' : 'Paid'}</span>
+                            <span className='text-danger bg-warning px-1'>{order.orderStatus !== "Delivered" ? 'Unfulfilled' : 'Fulfilled'}</span>
                         </div>
 
                         <span className='fs-6'>
                             {
-                               new Date(order.CreatedAt).toLocaleDateString('en-US', {
+                                new Date(order.CreatedAt).toLocaleDateString('en-US', {
                                     year: "numeric",
                                     month: "long",
                                     day: "2-digit",

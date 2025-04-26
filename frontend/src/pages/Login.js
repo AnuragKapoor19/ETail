@@ -32,7 +32,9 @@ export default function Login() {
         const data = await response.json()
 
         if (!data.success) {
-            return console.log(data.message || data.error)
+            console.log(data.message || data.error)
+            toast.error(data.message || data.error)
+            return
         }
 
         await setuser(data.user)

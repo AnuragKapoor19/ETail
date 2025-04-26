@@ -49,7 +49,9 @@ export default function Signin() {
     const data = await response.json()
 
     if (!data.success) {
-      return console.log(data.message || data.error)
+      console.log(data.message || data.error)
+      toast.error(data.message || data.error)
+      return
     }
 
     await setuser(data.user)
@@ -116,7 +118,7 @@ export default function Signin() {
               </div>
 
               <div className='text-center w-100'>
-                <button className='btn btn-warning mt-5 px-4' type='submit'>{loader ? <PulseLoader size={10} color='white'/> : 'SignUp'}</button>
+                <button className='btn btn-warning mt-5 px-4' type='submit'>{loader ? <PulseLoader size={10} color='white' /> : 'SignUp'}</button>
               </div>
               <Link to='/login' className='text-decoration-none text-center text-primary fs-5 mt-3'><span className='text-danger'>Already a User?</span> Login</Link>
             </form>

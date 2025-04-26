@@ -44,7 +44,7 @@ export default function ConfirmOrder() {
                                 {cartItems.map((item) => (
                                     <div key={item._id} className="d-flex justify-content-around align-items-center border border-dark rounded-3 p-2 my-2">
                                         <img src={item.images[0].url} alt={item.name} className='col-1' />
-                                        <span className='name fw-bolder fs-5 col-5 text-center'>{item.name}</span>
+                                        <span className='name fw-bolder fs-5 col-5 text-center'>{String(item.name).slice(0, 20)}..</span>
                                         <span className='price text-warning text-center h5 col-3 col-sm-4'>${item.price} X {item.quantity} = <b>${item.quantity * item.price}</b></span>
                                     </div>
                                 ))}
