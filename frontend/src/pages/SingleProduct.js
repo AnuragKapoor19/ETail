@@ -128,19 +128,19 @@ export default function SingleProduct() {
                             </div>
                             <div className="carousel-inner">
                                 <div className="carousel-item active">
-                                    <img src={product.images[0].url} className="d-block" alt="img1" style={{ maxHeight: "500px", width: "600px" }} />
+                                    <img src={product.images[0].url} className="product-image d-block" alt="img1" />
                                 </div>
 
                                 {product.images.length > 1 && <div className='carousel-item'>
-                                    <img src={product.images[1].url} className="d-block" alt="img2" style={{ maxHeight: "500px", width: "600px" }} />
+                                    <img src={product.images[1].url} className="product-image d-block" alt="img2" />
                                 </div>}
 
                                 {product.images.length > 2 && <div className='carousel-item'>
-                                    <img src={product.images[2].url} className="d-block" alt="img3" style={{ maxHeight: "500px", width: "600px" }} />
+                                    <img src={product.images[2].url} className="product-image d-block" alt="img3" />
                                 </div>}
 
                                 {product.images.length > 3 && <div className='carousel-item'>
-                                    <img src={product.images[3].url} className="d-block" alt="img3" style={{ maxHeight: "500px", width: "600px" }} />
+                                    <img src={product.images[3].url} className="product-image d-block" alt="img3" />
                                 </div>}
 
                             </div>

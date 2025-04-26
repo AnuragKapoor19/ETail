@@ -9,7 +9,7 @@ import Filter from '../components/Filter';
 
 export default function Shop() {
 
-    const { products, setproducts, setresPerPage, setproductsCount, currentPage, loading, setloading, keyword, minPrice, maxPrice, category, brand, settoggle, isAuthenticated, isProductDeleted, isProductUpdated, isReviewDeleted } = ContextState();
+    const { products, setproducts, setresPerPage, setproductsLength, setproductsCount, currentPage, loading, setloading, keyword, minPrice, maxPrice, category, brand, settoggle, isAuthenticated, isProductDeleted, isProductUpdated, isReviewDeleted } = ContextState();
 
     const getAllProducts = async () => {
         try {
@@ -40,8 +40,9 @@ export default function Shop() {
             }
 
             setproducts(data.products);
-            setproductsCount(data.productCount)
-            setresPerPage(data.resPerPage)
+            setproductsLength(data.products.length);
+            setproductsCount(data.productCount);
+            setresPerPage(data.resPerPage);
 
             await setTimeout(() => {
                 setloading(false)

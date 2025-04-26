@@ -9,6 +9,7 @@ const ContextProvider = ({ children }) => {
     const [currentPage, setcurrentPage] = useState(1)
     const [resPerPage, setresPerPage] = useState()
     const [productsCount, setproductsCount] = useState()
+    const [productsLength, setproductsLength] = useState(0);
     const [loading, setloading] = useState(true)
     const [keyword, setkeyword] = useState('')
     const [minPrice, setminPrice] = useState(0)
@@ -46,6 +47,8 @@ const ContextProvider = ({ children }) => {
             setresPerPage,
             productsCount,
             setproductsCount,
+            productsLength,
+            setproductsLength,
             loading,
             setloading,
             keyword,

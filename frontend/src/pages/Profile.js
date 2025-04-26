@@ -52,7 +52,7 @@ export default function Profile() {
               <p>
                 <strong>Joined On:</strong>
               </p>
-              <p>{String(user.createdAt).substring(0, 10)}</p>
+              <p>{new Date(user.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: '2-digit' })}</p>
             </div>
           </div>
         </div>

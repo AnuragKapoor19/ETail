@@ -3,11 +3,13 @@ import { Link, useNavigate } from 'react-router-dom'
 import { ContextState } from '../contextAPI'
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast from 'react-hot-toast';
+import { PulseLoader } from 'react-spinners';
 
 export default function Login() {
     const { setloading, setuser, setisAuthenticated, isAuthenticated } = ContextState();
     const navigate = useNavigate();
     const [showPassword, setshowPassword] = useState(false)
+    const [loader, setloader] = useState(false)
     const [credentials, setcredentials] = useState({ email: '', password: '' })
 
     const handleChange = (e) => {
@@ -16,6 +18,7 @@ export default function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        await setloader(true)
         await setloading(true)
         const response = await fetch(`${process.env.REACT_APP_API_URL}/login`, {
             method: "POST",
@@ -34,6 +37,7 @@ export default function Login() {
 
         await setuser(data.user)
         await setisAuthenticated(true)
+        setloader(false)
         toast.success("Signed In successfully!")
         navigate('/')
     }
@@ -63,12 +67,12 @@ export default function Login() {
                                 <label htmlFor="password" className="form-label">Password</label>
                                 <div className='login-password-container'>
                                     <input type={`${showPassword ? 'text' : 'password'}`} name='password' className="form-control border-warning fw-bold" id="password" placeholder="password" value={credentials.password} onChange={handleChange} required />
-                                    <i onClick={() => setshowPassword(!showPassword)}>{showPassword ? <FaEyeSlash size={20}/> : <FaEye size={20}/>}</i>
+                                    <i onClick={() => setshowPassword(!showPassword)}>{showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />}</i>
                                 </div>
                             </div>
                             <Link to='/forgotpassword' className="text-decoration-none text-danger mt-2 fs-5">Forgot Password?</Link>
                             <div className='text-center w-100'>
-                                <button className='btn btn-warning mt-5 px-4' type='submit'>Login</button>
+                                <button className='btn btn-warning mt-5 px-4' type='submit'>{loader ? <PulseLoader size={10} color='white'/> : 'Login'}</button>
                             </div>
                             <Link to='/signin' className='text-decoration-none text-center text-primary fs-5 mt-3'><span className='text-danger'>Not a Member?</span> Signup</Link>
                         </form>

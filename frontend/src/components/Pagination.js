@@ -1,17 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { ContextState } from '../contextAPI'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
 
-export default function Pagination() {
-    const { currentPage, setcurrentPage, resPerPage, productsCount, setloading } = ContextState();
-    const totalPages = Math.ceil(productsCount / resPerPage);
+export default function Pagination({ length }) {
+    const { currentPage, setcurrentPage, resPerPage, setloading, productsLength, productCount } = ContextState();
+    const [totalPages, settotalPages] = useState(Math.ceil(productsLength < 8 ? productsLength / resPerPage : productCount / resPerPage))
 
-    const handlePrev = ()=>{
+    useEffect(() => {
+        settotalPages(Math.ceil(productsLength < 8 ? productsLength / resPerPage : productCount / resPerPage));
+    }, [productsLength, productCount, resPerPage])
+
+
+    const handlePrev = () => {
         setcurrentPage(currentPage - 1)
         setloading(true)
     }
 
-    const handleNext = ()=>{
+    const handleNext = () => {
         setcurrentPage(currentPage + 1)
         setloading(true)
     }
@@ -19,9 +24,9 @@ export default function Pagination() {
     return (
         <>
             <div className='pages d-flex justify-content-center my-5'>
-                <button className={`prev btn rounded-circle border border-dark p-2 ${currentPage === 1 ? 'disabled' : ' '}`} onClick={handlePrev}><FaArrowLeft size={25}/></button>
-                <div className='page rounded-circle bg-warning border border-dark fw-bolder px-3 fs-4 mx-3 d-flex align-items-center justify-content-center'>{currentPage}</div>
-                <button className={`next btn rounded-circle border border-dark p-2 ${currentPage === totalPages ? 'disabled' : ' '}`} onClick={handleNext}><FaArrowRight size={25}/></button>
+                <button className={`prev btn border border-dark p-2 ${currentPage === 1 ? 'disabled' : ' '}`} onClick={handlePrev}><FaArrowLeft size={25} /></button>
+                <div className='page bg-warning border border-dark fw-bolder px-3 fs-4 mx-3 d-flex align-items-center justify-content-center'>{currentPage}</div>
+                <button className={`next btn  border border-dark p-2 ${currentPage === totalPages ? 'disabled' : ' '}`} onClick={handleNext}><FaArrowRight size={25} /></button>
             </div>
         </>
     )

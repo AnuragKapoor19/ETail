@@ -96,9 +96,17 @@ export default function Headers() {
                         <h5>Shop</h5>
                     </Link>
 
-                    <div className='search-bar d-flex rounded-5 bg-light text-light justify-content-center align-items-center'>
-                        <input type='text' placeholder='Search ETail' className='search-input border-0 fw-bold ' value={word} onChange={handleChange} />
-                        <IoMdSearch size="2rem" className='search-icon text-dark' onClick={handleSearchClick} />
+                    <div>
+                        <form
+                            className='search-bar d-flex rounded-5 bg-light text-light justify-content-center align-items-center'
+                            onSubmit={(e) => {
+                                e.preventDefault(); // prevent page reload
+                                handleSearchClick();
+                            }}
+                        >
+                            <input type='text' placeholder='Search products...' className='search-input border-0 fw-bold ' value={word} onChange={handleChange} />
+                            <IoMdSearch size="2rem" className='search-icon text-dark' onClick={handleSearchClick} />
+                        </form>
                     </div>
 
                     <div className='cart position-relative'>

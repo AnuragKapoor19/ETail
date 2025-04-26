@@ -3,12 +3,14 @@ import { Link, useNavigate } from 'react-router-dom'
 import { ContextState } from '../contextAPI'
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import toast from 'react-hot-toast';
+import { PulseLoader } from 'react-spinners';
 
 export default function Signin() {
   const { setloading, setuser, setisAuthenticated, isAuthenticated } = ContextState();
   const navigate = useNavigate();
   const [credentials, setcredentials] = useState({ name: '', email: '', password: '' })
   const [avatar, setavatar] = useState('')
+  const [loader, setloader] = useState(false)
   const [showPassword, setshowPassword] = useState(false)
   const [avatarPreview, setavatarPreview] = useState('https://www.kindpng.com/picc/m/22-223863_no-avatar-png-circle-transparent-png.png')
 
@@ -34,7 +36,7 @@ export default function Signin() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    await setloader(true)
     const response = await fetch(`${process.env.REACT_APP_API_URL}/register`, {
       method: "POST",
       headers: {
@@ -53,6 +55,7 @@ export default function Signin() {
     await setuser(data.user)
     await setisAuthenticated(true)
     await setloading(true)
+    setloader(false)
     toast.success("Account Created successfully!")
     navigate('/')
   }
@@ -113,7 +116,7 @@ export default function Signin() {
               </div>
 
               <div className='text-center w-100'>
-                <button className='btn btn-warning mt-5 px-4' type='submit'>Signup</button>
+                <button className='btn btn-warning mt-5 px-4' type='submit'>{loader ? <PulseLoader size={10} color='white'/> : 'SignUp'}</button>
               </div>
               <Link to='/login' className='text-decoration-none text-center text-primary fs-5 mt-3'><span className='text-danger'>Already a User?</span> Login</Link>
             </form>
