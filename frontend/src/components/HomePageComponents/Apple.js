@@ -8,7 +8,7 @@ export default function Apple() {
     const { setproduct } = ContextState()
     const navigate = useNavigate()
     const handleClick = async () => {
-        const res = await fetch('http://localhost:5000/api/v1/product/676275f2b6c1f7419b7ffcab')
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/product/676275f2b6c1f7419b7ffcab`)
 
         const data = await res.json()
 

@@ -11,7 +11,7 @@ export default function Decor() {
 
     const getProducts = async () => {
         try {
-            const res = await fetch('http://localhost:5000/api/v1/products/?category=Furniture', {
+            const res = await fetch(`${process.env.REACT_APP_API_URL}/products/?category=Furniture`, {
                 method: 'GET'
             })
 
