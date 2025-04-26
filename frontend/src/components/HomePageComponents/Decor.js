@@ -6,11 +6,13 @@ import { ContextState } from '../../contextAPI'
 export default function Decor() {
 
     const [products, setproducts] = useState([])
+    const [loading, setloading] = useState(false)
     const { setcategory } = ContextState();
     const navigate = useNavigate();
 
     const getProducts = async () => {
         try {
+            setloading(true)
             const res = await fetch(`${process.env.REACT_APP_API_URL}/products/?category=Furniture`, {
                 method: 'GET'
             })
@@ -18,12 +20,16 @@ export default function Decor() {
             const data = await res.json()
 
             if (!data.success) {
-                return console.log("Error: ", data.message || data.error)
+                console.log("Error: ", data.message || data.error)
+                setloading(false)
+                return
             }
 
             setproducts(data.products);
+            setloading(false)
         } catch (error) {
             console.log("Enable to load server! Please Try again later")
+            setloading(false)
         }
     }
 
@@ -53,9 +59,13 @@ export default function Decor() {
                     <span>Make your house feel like home.</span>
                     <div className='row justify-content-start my-3'>
                         {
-                            products.slice(0, 3).map((product,index) => (
-                                <ProductCard key={index} product={product} collg='4' colmd='4' colsm='4' />
-                            ))
+                            loading
+                                ?
+                                <h3>Loading...</h3>
+                                :
+                                products.slice(0, 3).map((product, index) => (
+                                    <ProductCard key={index} product={product} collg='4' colmd='4' colsm='4' />
+                                ))
                         }
                     </div>
                 </div>

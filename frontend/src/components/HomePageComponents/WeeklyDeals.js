@@ -15,7 +15,9 @@ export default function WeeklyDeals() {
             const data = await res.json()
 
             if (!data.success) {
-                return console.log("Error: ", data.message || data.error)
+                console.log("Error: ", data.message || data.error)
+                setloading(false)
+                return
             }
 
             setproducts(data.products)
@@ -23,6 +25,7 @@ export default function WeeklyDeals() {
 
         } catch (error) {
             console.log("Enable to load server! Please Try again later")
+            setloading(false)
         }
     }
 

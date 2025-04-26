@@ -15,8 +15,8 @@ export default function Home() {
             <Header />
             <FirstComponent />
             <WeeklyDeals />
-            <Decor />
             <Apple />
+            <Decor />
             <Categories />
             <Offer />
             <Fashion />

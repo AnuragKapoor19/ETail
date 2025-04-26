@@ -304,6 +304,7 @@ table {
 }
 
 .product-image {
+    height: 500px;
     max-height: 500px;
     width: 600px;
 }
@@ -445,6 +446,9 @@ table {
 
     .product-image {
         width: 80vw;
+        height: 300px;
+        border-radius: 20px;
+        margin-bottom: 30px;
     }
 }
 
@@ -516,4 +520,5 @@ table {
         max-width: 20%;
         word-break: normal;
     }
+
 }
