@@ -51,6 +51,7 @@ export default function Signin() {
     if (!data.success) {
       console.log(data.message || data.error)
       toast.error(data.message || data.error)
+      setloader(false)
       return
     }
 

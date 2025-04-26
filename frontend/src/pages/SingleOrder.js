@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { ClipLoader } from 'react-spinners'
+import toast from 'react-hot-toast'
 
 export default function SingleOrder() {
     const { id } = useParams()
@@ -20,13 +21,17 @@ export default function SingleOrder() {
             const data = await res.json()
 
             if (!data.success) {
-                return console.log(data.error || data.message)
+                console.log(data.error || data.message)
+                toast.error(data.error || data.message)
+                setloading(false)
+                return
             }
 
             setorder(data.order)
             setloading(false)
         } catch (error) {
             console.log(error.message)
+            setloading(false)
         }
     }
 

@@ -21,6 +21,7 @@ export default function Orders() {
         if (!data.success) {
             console.log(data.error || data.message)
             toast.error(data.error || data.message)
+            setloading(false)
             return
         }
 
