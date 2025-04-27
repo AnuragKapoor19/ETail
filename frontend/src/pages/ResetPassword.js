@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
+import toast from 'react-hot-toast';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useNavigate, useParams } from 'react-router-dom';
+import { PulseLoader } from 'react-spinners';
 
 export default function ResetPassword() {
     const { token } = useParams()     //Takes token from the URL or route
     const navigate = useNavigate()
     const [showPassword, setshowPassword] = useState(false)
+    const [loading, setloading] = useState(false)
     const [credentials, setcredentials] = useState({ password: '', confirmPassword: '' })
     const handleChange = (e) => {
         setcredentials({ ...credentials, [e.target.name]: e.target.value })
@@ -13,7 +16,7 @@ export default function ResetPassword() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+        setloading(true)
         const res = await fetch(`${process.env.REACT_APP_API_URL}/password/reset/${token}`, {
             method: 'PUT',
             headers: {
@@ -25,11 +28,16 @@ export default function ResetPassword() {
         const data = await res.json();
 
         if (!data.success) {
-            return console.log(data.message)
+            console.log(data.message)
+            toast.error(data.message)
+            setloading(false)
+            return
         }
 
         setcredentials({ password: '', confirmPassword: '' })
         console.log(data.message)
+        toast.success(data.message)
+        setloading(false)
         navigate('/login')
     }
 
@@ -52,7 +60,7 @@ export default function ResetPassword() {
                             <i onClick={() => setshowPassword(!showPassword)}>{showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />}</i>
                         </div>
                     </div>
-                    <button className='btn btn-warning w-100 fw-bold' type='submit'>Reset Password</button>
+                    <button className='btn btn-warning w-100 fw-bold' type='submit'>{loading ? <PulseLoader /> : 'Reset Password'}</button>
                 </form>
             </div>
         </>

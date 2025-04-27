@@ -52,7 +52,7 @@ export default function SingleOrder() {
 
                         <hr />
 
-                        <div className="order d-flex align-items-center my-2">
+                        <div className="order d-flex align-items-center my-2 flex-wrap">
                             <h4 className='fw-bold me-3'>Order ID: {order._id}</h4>
                             <span className='text-warning bg-danger px-1 me-2'>{!order.paymentInfo ? 'Payment Pending' : 'Paid'}</span>
                             <span className='text-danger bg-warning px-1'>{order.orderStatus !== "Delivered" ? 'Unfulfilled' : 'Fulfilled'}</span>
@@ -88,7 +88,7 @@ export default function SingleOrder() {
 
                             <div className="address d-flex justify-content-between fs-5">
                                 <span className='fw-bold'>Address</span>
-                                <span>{order.shippingInfo.address},{order.shippingInfo.city},{order.shippingInfo.postalCode},{order.shippingInfo.country}</span>
+                                <span className='sp'>{order.shippingInfo.address},{order.shippingInfo.city},{order.shippingInfo.postalCode},{order.shippingInfo.country}</span>
                             </div>
 
                         </div>

@@ -8,11 +8,14 @@ import { RiVisaLine } from "react-icons/ri";
 import { FaCcMastercard } from 'react-icons/fa6';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header'
+import toast from 'react-hot-toast';
+import { PulseLoader } from 'react-spinners';
 
 
 export default function Payment() {
   const { user, shippingInfo, cartItems, setcartItems } = ContextState()
   const [selected, setselected] = useState(false)
+  const [loading, setloading] = useState(false)
   const stripe = useStripe()
   const elements = useElements()
   const navigate = useNavigate()
@@ -79,7 +82,7 @@ export default function Payment() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setloading(true)
     try {
       const res = await fetch(`${process.env.REACT_APP_API_URL}/payment/process`, {
         method: "POST",
@@ -95,7 +98,7 @@ export default function Payment() {
       const clientSecret = data.client_secret;
 
       if (!stripe || !elements) {
-        return
+        return setloading(false)
       }
 
       const result = await stripe.confirmCardPayment(clientSecret, {
@@ -110,6 +113,8 @@ export default function Payment() {
 
       if (result.error) {
         console.log(result.error.message)
+        toast.error(result.error.message)
+        setloading(false)
       } else {
 
         //The payment is success or not
@@ -122,17 +127,20 @@ export default function Payment() {
 
           //New Order
           await createOrder()
-
+          setloading(false)
           navigate('/success')
         } else {
           console.log("There is some issue while payment processing!");
-
+          toast.error("Some issue while processing your payment! Try again Later!")
+          setloading(false)
         }
 
       }
 
     } catch (error) {
       console.log("Error while payment: ", error.message)
+      toast.error(error.message)
+      setloading(false)
     }
   }
 
@@ -200,7 +208,7 @@ export default function Payment() {
               </div>
             </div>
 
-            <button type='submit' className='btn btn-warning w-100 my-3 fw-bolder'>Pay {` - ${orderData ? orderData.totalPrice : ''}`}</button>
+            <button type='submit' className='btn btn-warning w-100 my-3 fw-bolder'>{loading ? <PulseLoader /> : `Pay - ${orderData ? orderData.totalPrice : ''}`}</button>
           </form>
         </div>
       </div>
