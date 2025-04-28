@@ -309,6 +309,28 @@ table {
     width: 600px;
 }
 
+#description {
+    overflow: "auto";
+    resize: "none";
+    margin: "10px 0";
+    padding: "5px";
+}
+
+#p-image{
+    height: 80px;
+    border-radius: 5px;
+}
+
+.page{
+    margin: 15px;
+    padding: 25px;
+}
+
+#review{
+    word-break: break-all;
+    hyphens: manual;
+}
+
 @media screen and (max-width: 1300px) {
     .product-image {
         width: 450px;
@@ -450,6 +472,12 @@ table {
         border-radius: 20px;
         margin-bottom: 30px;
     }
+
+    #description {
+        width: 100%;
+        max-width: 100%;
+    }
+
 }
 
 /*For Mobiles*/

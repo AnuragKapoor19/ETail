@@ -5,6 +5,7 @@ import { ContextState } from '../contextAPI';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import toast from 'react-hot-toast';
+import { PulseLoader } from 'react-spinners';
 import { Link } from 'react-router-dom';
 
 export default function SingleProduct() {
@@ -13,12 +14,14 @@ export default function SingleProduct() {
     const [quantity, setQuantity] = useState(1);
     const [comment, setcomment] = useState('')
     const [ratingValue, setratingValue] = useState('')
+    const [loader, setloader] = useState(false)
 
     const handleSubmit = async () => {
         try {
             if (!rating || !comment) {
-                return alert('Please enter rating and comment')
+                return toast.error('Please enter rating and comment')
             }
+            setloader(true)
             const res = await fetch(`${process.env.REACT_APP_API_URL}/new/review`, {
                 method: "PUT",
                 headers: {
@@ -31,13 +34,17 @@ export default function SingleProduct() {
             const data = await res.json()
 
             if (!data.success) {
-                return console.log(data.error || data.message)
+                toast.error(data.error || data.message)
+                setloader(false)
+                return
             }
 
             toast.success("Review Added successfully!")
-
+            setloader(false)
         } catch (error) {
             console.log(error.message)
+            toast.error("Please try again later!")
+            setloader(false)
         }
     }
 
@@ -117,7 +124,7 @@ export default function SingleProduct() {
                     size={20}
                 />
                 :
-                <div className="page row m-3 p-5">
+                <div className="page row">
                     <div className="image col col-sm-12 col-md-12 col-lg-6 d-flex justify-content-center align-items-center">
                         <div id="carouselExampleIndicators" className="carousel slide">
                             <div className="carousel-indicators">
@@ -216,7 +223,7 @@ export default function SingleProduct() {
                         <hr />
 
                         {product.reviews
-                            ? <h4>{product.reviews.length} reviews for Ship Your Idea</h4>
+                            ? <h4>{product.reviews.length} reviews</h4>
                             : ''
                         }
 
@@ -240,7 +247,7 @@ export default function SingleProduct() {
                                     }
                                 </div>
                                 <span className='fw-bold'>{review.name}</span>
-                                <p className='mt-3'>{review.comment}</p>
+                                <p id='review' className='mt-3'>{review.comment}</p>
                             </div>
                         ))}
 
@@ -266,7 +273,7 @@ export default function SingleProduct() {
                                         <div className="modal-body">
                                             <div className='d-flex justify-content-between'>
                                                 <div className='col-3'>
-                                                    <img src={product.images[0].url} alt={product.name} className='w-100' />
+                                                    <img id='p-image' src={product.images[0].url} alt={product.name} className='w-100' />
                                                 </div>
                                                 <div className='col-10 ms-3 d-flex justify-content-center flex-column'>
                                                     <div className='fw-bold mb-1 fs-4'>{product.name}</div>
@@ -286,7 +293,7 @@ export default function SingleProduct() {
                                             </div>
 
                                             <label htmlFor='description' className='fw-bold mt-3'>Description</label>
-                                            <textarea id='description' className='rounded' rows="5" cols="60" value={comment} onChange={(e) => setcomment(e.target.value)} style={{ overflow: "auto", resize: "none", margin: "10px 0", padding: "5px" }}></textarea>
+                                            <textarea id='description' className='rounded' rows="5" cols="60" value={comment} onChange={(e) => setcomment(e.target.value)} ></textarea>
 
                                             {user &&
                                                 <div className='user-profile'>
@@ -304,7 +311,7 @@ export default function SingleProduct() {
                                             }
                                         </div>
                                         <div className="modal-footer">
-                                            <button type="button" className="btn btn-warning" data-bs-dismiss="modal" aria-label="Close" onClick={handleSubmit}>Submit</button>
+                                            <button type="button" className="btn btn-warning" data-bs-dismiss="modal" aria-label="Close" onClick={handleSubmit}>{loader ? <PulseLoader size={10}/> : 'Submit'}</button>
                                         </div>
                                     </div>
                                 </div>
