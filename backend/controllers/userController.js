@@ -158,7 +158,7 @@ const forgotPassword = async (req, res) => {
     //Create reset password URL
     //const resetUrl = `${req.protocol}://${req.get("host")}/api/v1/password/reset/${resetToken}`;  //For Production
 
-    const resetUrl = `http://localhost:3000/password/reset/${resetToken}`;   //For Developement
+    const resetUrl = `${process.env.ORIGIN}/password/reset/${resetToken}`;   //For Developement
 
     const message = `Your password reset token is as follows:\n\n${resetUrl}\n\nIf you have not requested this email, then ignore it`
 

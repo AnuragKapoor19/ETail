@@ -1,15 +1,19 @@
 import React, { useState } from 'react'
 import './ForgotPassword.css'
 import { Link } from 'react-router-dom'
+import toast from 'react-hot-toast'
+import { PulseLoader } from 'react-spinners'
 
 export default function ForgotPassword() {
     const [resetEmail, setresetEmail] = useState('')
+    const [loading, setloading] = useState(false)
     const handleResetEmailChange = (e) => {
         setresetEmail(e.target.value)
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setloading(true)
         const res = await fetch(`${process.env.REACT_APP_API_URL}/password/forgot`, {
             method: "POST",
             headers: {
@@ -21,10 +25,15 @@ export default function ForgotPassword() {
         const data = await res.json()
 
         if (!data.success) {
-            return console.log(data.message || data.error)
+            console.log(data.message || data.error)
+            toast.error(data.message)
+            setloading(false)
+            return
         }
 
         console.log(data.message)
+        toast.success(data.message)
+        setloading(false)
         setresetEmail('')
     }
     return (
@@ -38,7 +47,7 @@ export default function ForgotPassword() {
                         <label htmlFor="resetEmail" className="form-label">Email address</label>
                         <input type="email" name='resetEmail' className="form-control border-warning fw-bold" id="resetEmail" placeholder="name@example.com" value={resetEmail} onChange={handleResetEmailChange} required />
                     </div>
-                    <button type="submit" className="btn btn-warning w-100 fw-bold">Request reset link</button>
+                    <button type="submit" className="btn btn-warning w-100 fw-bold">{loading ? <PulseLoader /> : 'Request reset link'}</button>
                     <div className='text-center w-100 mt-3'>
                         <Link className='text-decoration-none fw-bolder text-danger' to='/login'>Back to Login</Link>
                     </div>

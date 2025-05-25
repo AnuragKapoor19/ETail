@@ -29,7 +29,7 @@ export default function Footer() {
                         <h2>Contact Us</h2>
                         <p>Email: support@etail.com</p>
                         <p>Phone: +1 234 567 890</p>
-                        <p>Address: 123 Market Street, City, Country</p>
+                        <p>Address: 123 Majitha Road, Amritsar, India</p>
                     </div>
 
                     {/* Social Media Section */}

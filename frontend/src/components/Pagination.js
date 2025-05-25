@@ -23,9 +23,9 @@ export default function Pagination({ length }) {
 
     return (
         <>
-            <div className='pages d-flex justify-content-center my-5'>
+            <div className='pages d-flex justify-content-center align-items-center my-5' style={{height: '50px'}}>
                 <button className={`prev btn border border-dark p-2 ${currentPage === 1 ? 'disabled' : ' '}`} onClick={handlePrev}><FaArrowLeft size={25} /></button>
-                <div className='page bg-warning border border-dark fw-bolder px-3 fs-4 mx-3 d-flex align-items-center justify-content-center'>{currentPage}</div>
+                <div className='page bg-warning border border-dark fw-bolder px-3 fs-4 mx-3 d-flex align-items-center justify-content-center h-100'>{currentPage}</div>
                 <button className={`next btn  border border-dark p-2 ${currentPage === totalPages ? 'disabled' : ' '}`} onClick={handleNext}><FaArrowRight size={25} /></button>
             </div>
         </>
